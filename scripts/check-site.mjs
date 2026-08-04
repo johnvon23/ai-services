@@ -6,6 +6,7 @@ const requiredFiles = [
   "vercel.json",
   "favicon.svg",
   "robots.txt",
+  "assets/john-von.jpg",
   "assets/tsotne-photo-CQeDVvxh.jpg"
 ];
 

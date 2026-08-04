@@ -1,6 +1,7 @@
 .DS_Store
 .claude/
 .vercel
+assets/johnvon.jpeg
 node_modules
 npm-debug.log*
 *.log
