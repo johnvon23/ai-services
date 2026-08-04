@@ -1,0 +1,13 @@
+{
+  "name": "ai-services",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI operations landing page for independent education companies.",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "check": "node scripts/check-site.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
