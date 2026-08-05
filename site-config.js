@@ -1,4 +1,3 @@
 window.SITE_CONFIG = {
-  // Add the full scheduling URL before the production launch.
-  bookingUrl: ""
+  bookingUrl: "https://calendar.app.google/VbkcutFciHNF8VvUA"
 };
