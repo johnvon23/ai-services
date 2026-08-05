@@ -7,7 +7,12 @@ const requiredFiles = [
   "favicon.svg",
   "robots.txt",
   "assets/john-von.jpg",
-  "assets/tsotne-photo-CQeDVvxh.jpg"
+  "assets/tsotne-photo-CQeDVvxh.jpg",
+  "assets/logos/futureproof.png",
+  "assets/logos/tunepal.png",
+  "assets/logos/343-labs.png",
+  "assets/logos/icon-collective.png",
+  "assets/logos/native-instruments.svg"
 ];
 
 for (const file of requiredFiles) {

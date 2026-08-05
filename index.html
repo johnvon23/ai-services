@@ -311,20 +311,42 @@ section p + p { margin-top: 1rem; }
   color: var(--accent);
 }
 
-.proof.proof-compact {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1.5rem, 4vw, 3rem);
+.proof.case-studies {
+  gap: 0;
   border-left: 0;
   padding-left: 0;
 }
 
-.proof.proof-compact .item {
+.proof.case-studies .item {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
   border-top: 2px solid var(--accent);
-  padding-top: 1rem;
+  padding: clamp(1.5rem, 4vw, 2.75rem) 0;
 }
 
+.proof.case-studies .item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.case-visual {
+  margin: 0;
+  min-width: 0;
+}
+
+.case-visual canvas {
+  display: block;
+  width: 100%;
+  height: 140px;
+  background: transparent;
+}
+
+.case-copy > p:last-child { color: var(--ink-soft); }
+
 @media (max-width: 640px) {
-  .proof.proof-compact { grid-template-columns: 1fr; }
+  .proof.case-studies .item { grid-template-columns: 1fr; gap: 1.25rem; }
+  .case-visual canvas { height: 120px; }
 }
 
 /* ---------- steps ---------- */
@@ -431,17 +453,40 @@ ul.logos {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  align-items: center;
+  gap: 0.65rem;
 }
 
 ul.logos li {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.02rem;
-  color: var(--ink-soft);
-  border: 1px dashed var(--line);
+  flex: 1 1 9.5rem;
+  min-height: 5.25rem;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
   border-radius: 2px;
-  padding: 0.55rem 0.9rem;
+  padding: 1rem 1.15rem;
+}
+
+ul.logos a {
+  width: 100%;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+}
+
+ul.logos img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 2.7rem;
+  object-fit: contain;
+}
+
+ul.logos .logo-square { max-height: 3.15rem; }
+ul.logos .logo-native { filter: invert(1); }
+
+@media (max-width: 420px) {
+  ul.logos li { flex-basis: 8rem; }
 }
 
 .bio h3 {
@@ -651,7 +696,6 @@ footer.site p { margin: 0 0 0.4rem; }
         <p>Automate reports, checks, data entry, and handoffs so the team starts the day with finished work.</p>
       </div>
       <div class="item">
-        <canvas class="vignette-canvas" id="viz-growth"></canvas>
         <p class="label">Connected decisions</p>
         <h3>See what actually drives enrollment.</h3>
         <p>Connect marketing, website activity, sales conversations, and enrollment so you can see what is working.</p>
@@ -663,16 +707,34 @@ footer.site p { margin: 0 0 0.4rem; }
 
   <section>
     <h2>We build these systems in businesses we run.</h2>
-    <div class="proof proof-compact">
+    <div class="proof case-studies">
       <div class="item">
-        <p class="label">Futureproof Music School</p>
-        <h3>More than 30 recurring tasks completed overnight.</h3>
-        <p>John's AI operations agent handles marketing reports, retention checks, competitor monitoring, revenue forecasting, and other recurring work before the team logs in.</p>
+        <figure class="case-visual">
+          <canvas
+            id="viz-ops"
+            role="img"
+            aria-label="Thirty recurring Futureproof Music School tasks completed between midnight and 9am, before the first person logs in."
+          ></canvas>
+        </figure>
+        <div class="case-copy">
+          <p class="label">Futureproof Music School</p>
+          <h3>More than 30 recurring tasks completed overnight.</h3>
+          <p>John's AI operations agent handles marketing reports, retention checks, competitor monitoring, revenue forecasting, and other recurring work before the team logs in.</p>
+        </div>
       </div>
       <div class="item">
-        <p class="label">343 Labs</p>
-        <h3>From 15K to 60K Instagram followers in one year.</h3>
-        <p>Tsotne built internal AI and reporting systems while leading the New York music school's growth.</p>
+        <figure class="case-visual">
+          <canvas
+            id="viz-growth"
+            role="img"
+            aria-label="343 Labs Instagram audience growing from 15,000 to 60,000 followers in one year."
+          ></canvas>
+        </figure>
+        <div class="case-copy">
+          <p class="label">343 Labs</p>
+          <h3>From 15K to 60K Instagram followers in one year.</h3>
+          <p>Tsotne built internal AI and reporting systems while leading the New York music school's growth.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -704,11 +766,11 @@ footer.site p { margin: 0 0 0.4rem; }
   <section class="strip">
     <p class="strip-label">Where we have built this</p>
     <ul class="logos">
-      <li data-placeholder="logo">Futureproof Music School</li>
-      <li data-placeholder="logo">TunePal</li>
-      <li data-placeholder="logo">343 Labs</li>
-      <li data-placeholder="logo">Icon Collective</li>
-      <li data-placeholder="logo">Native Instruments</li>
+      <li><a href="https://futureproofmusicschool.com" target="_blank" rel="noopener" aria-label="Futureproof Music School"><img src="/assets/logos/futureproof.png" alt="Futureproof Music School" loading="lazy"></a></li>
+      <li><a href="https://tunepal.ai" target="_blank" rel="noopener" aria-label="TunePal"><img src="/assets/logos/tunepal.png" alt="TunePal" loading="lazy"></a></li>
+      <li><a href="https://www.343labs.com" target="_blank" rel="noopener" aria-label="343 Labs"><img src="/assets/logos/343-labs.png" alt="343 Labs" class="logo-square" loading="lazy"></a></li>
+      <li><a href="https://www.iconcollective.edu" target="_blank" rel="noopener" aria-label="Icon Collective"><img src="/assets/logos/icon-collective.png" alt="Icon Collective" loading="lazy"></a></li>
+      <li><a href="https://www.native-instruments.com" target="_blank" rel="noopener" aria-label="Native Instruments"><img src="/assets/logos/native-instruments.svg" alt="Native Instruments" class="logo-native" loading="lazy"></a></li>
     </ul>
   </section>
 
