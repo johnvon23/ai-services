@@ -684,13 +684,6 @@ footer.site p { margin: 0 0 0.4rem; }
         <p>Capture every inquiry, assign the next step, and follow up without somebody manually chasing it.</p>
       </div>
       <div class="item">
-        <figure class="viz viz-overnight-wrap">
-          <canvas
-            id="viz-overnight"
-            role="img"
-            aria-label="Overnight automation log: from 11pm to 9am the AI agent completes tasks such as the ad spend report, student retention check and weekly KPI roll-up. By 9:00am, when the team logs in, 31 tasks are already done."
-          ></canvas>
-        </figure>
         <p class="label">Recurring work</p>
         <h3>Give your team the routine work back.</h3>
         <p>Automate reports, checks, data entry, and handoffs so the team starts the day with finished work.</p>
@@ -709,11 +702,11 @@ footer.site p { margin: 0 0 0.4rem; }
     <h2>We build these systems in businesses we run.</h2>
     <div class="proof case-studies">
       <div class="item">
-        <figure class="case-visual">
+        <figure class="case-visual viz-overnight-wrap">
           <canvas
-            id="viz-ops"
+            id="viz-overnight"
             role="img"
-            aria-label="Thirty recurring Futureproof Music School tasks completed between midnight and 9am, before the first person logs in."
+            aria-label="Overnight automation log: from 11pm to 9am the AI agent completes tasks such as the ad spend report, student retention check and weekly KPI roll-up. By 9:00am, when the team logs in, 31 tasks are already done."
           ></canvas>
         </figure>
         <div class="case-copy">
@@ -1284,70 +1277,6 @@ function bookCall() {
 
   var FONT = "600 10px 'Instrument Sans', sans-serif";
 
-  // ================= viz-ops: 30 tasks completed before 9am =================
-  var OPS_N = 30;
-  var opsDots = [];
-  for (var i = 0; i < OPS_N; i++) {
-    var hourFrac = Math.pow(Math.random(), 0.9) * 8.8;
-    opsDots.push({
-      hourFrac: hourFrac,
-      jitter: rand(-7, 7),
-      tStart: Math.min(0.82, (hourFrac / 9) * 0.8 + rand(0, 0.06)),
-      ring: rand(0.12, 0.18)
-    });
-  }
-  function opsX(w, hour) { var m = 10; return m + (hour / 9) * (w - 2 * m); }
-  function opsBase(ctx, w, h, c) {
-    var y = h * 0.55;
-    ctx.strokeStyle = c.chalk;
-    ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(opsX(w, 0), y); ctx.lineTo(opsX(w, 9), y); ctx.stroke();
-    ctx.font = FONT;
-    ctx.textAlign = 'center';
-    [0, 3, 6, 9].forEach(function (hr) {
-      var x = opsX(w, hr);
-      ctx.strokeStyle = c.chalk;
-      ctx.beginPath(); ctx.moveTo(x, y - 5); ctx.lineTo(x, y + 5); ctx.stroke();
-      ctx.fillStyle = c.inkSoft;
-      ctx.fillText(hr === 0 ? '12am' : hr + 'am', x, y + 20);
-    });
-    return y;
-  }
-  function opsScaffold(ctx, w, h, c) { opsBase(ctx, w, h, c); }
-  function opsFrame(ctx, w, h, c, t) {
-    var y = opsBase(ctx, w, h, c);
-    opsDots.forEach(function (d) {
-      if (t < d.tStart) return;
-      var x = opsX(w, d.hourFrac);
-      var dy = y + d.jitter;
-      var localT = clamp01((t - d.tStart) / d.ring);
-      if (localT < 1) {
-        var r = 2 + localT * 7;
-        ctx.globalAlpha = 1 - localT;
-        ctx.strokeStyle = c.accent;
-        ctx.lineWidth = 1.2;
-        ctx.beginPath(); ctx.arc(x, dy, r, 0, Math.PI * 2); ctx.stroke();
-        ctx.globalAlpha = 1;
-      }
-      ctx.fillStyle = c.ink;
-      ctx.beginPath(); ctx.arc(x, dy, 1.8, 0, Math.PI * 2); ctx.fill();
-      if (localT >= 1) drawCheck(ctx, x, dy - 5, 3, c.accent);
-    });
-    var markerT = clamp01((t - 0.85) / 0.15);
-    if (markerT > 0) {
-      var mx = opsX(w, 9);
-      ctx.globalAlpha = markerT;
-      ctx.strokeStyle = c.brass;
-      ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(mx, y - 14); ctx.lineTo(mx, y + 14); ctx.stroke();
-      ctx.fillStyle = c.brass;
-      ctx.font = "600 9px 'Instrument Sans', sans-serif";
-      ctx.textAlign = 'right';
-      ctx.fillText('FIRST HUMAN LOGS IN', mx - 4, y - 16);
-      ctx.globalAlpha = 1;
-    }
-  }
-
   // ================= viz-growth: 15K -> 60K followers =================
   var growthPoints = [
     [0, 0.82], [0.15, 0.78], [0.32, 0.6], [0.48, 0.56], [0.52, 0.55],
@@ -1472,7 +1401,6 @@ function bookCall() {
     controllers.push(createController(canvas, scaffold, frame, duration));
   }
   function setupAll() {
-    make('viz-ops', opsScaffold, opsFrame, 2500);
     make('viz-growth', growthScaffold, growthFrame, 2000);
     make('viz-decisions', decScaffold, decFrame, 2000);
   }
