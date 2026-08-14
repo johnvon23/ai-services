@@ -1,4 +1,4 @@
-# AI Operations for Education
+# Sondera — AI Operations for Education Companies
 
 A static landing page.
 
