@@ -5,3 +5,6 @@ assets/johnvon.jpeg
 node_modules
 npm-debug.log*
 *.log
+
+# local MCP config
+.mcp.json
