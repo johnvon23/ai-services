@@ -1,4 +1,4 @@
-# Sondera — AI Operations for Education Companies
+# Systems with Judgement — AI Operations for Education Companies
 
 A static landing page.
 
