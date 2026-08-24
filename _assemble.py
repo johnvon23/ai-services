@@ -23,6 +23,16 @@ description = (
     "connect disconnected systems, and find opportunities to save time or recover revenue."
 )
 
+# Social scrapers need absolute URLs; several reject relative ones outright.
+site_url = "https://systemswithjudgment.com"
+# Bump when the card art changes, so platforms refetch instead of serving
+# the version they already cached.
+og_image = f"{site_url}/assets/og-image.png?v=2"
+og_image_alt = (
+    "Systems with Judgment. AI systems for music companies. "
+    "Grow the business, not the admin burden."
+)
+
 html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -30,17 +40,22 @@ html = f"""<!doctype html>
 <title>{title}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{description}">
-<link rel="canonical" href="/">
+<link rel="canonical" href="{site_url}/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Systems with Judgment">
+<meta property="og:url" content="{site_url}/">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
-<meta property="og:image" content="/assets/og-image.png">
+<meta property="og:image" content="{og_image}">
+<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{og_image_alt}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
-<meta name="twitter:image" content="/assets/og-image.png">
+<meta name="twitter:image" content="{og_image}">
+<meta name="twitter:image:alt" content="{og_image_alt}">
 <meta name="theme-color" content="#0B0D12">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">

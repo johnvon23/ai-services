@@ -8,3 +8,6 @@ npm-debug.log*
 
 # local MCP config
 .mcp.json
+
+# og-image font cache
+.fontcache/

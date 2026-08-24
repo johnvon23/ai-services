@@ -17,3 +17,20 @@ Then open `http://localhost:3000`.
 Edit `_page.body.html`, `_page.css`, and `_page.js`, then run `npm run build` to regenerate `index.html`.
 
 The booking link lives in `site-config.js`. Both call-to-action buttons use this one value.
+
+## Social share card
+
+`assets/og-image.png` is generated, not hand-drawn. Regenerate it after any
+brand change:
+
+```sh
+python3 scripts/make-og-image.py
+```
+
+It needs Pillow, and caches the two typefaces in `.fontcache/` on first run.
+The colours at the top of the script mirror the tokens in `_page.css`.
+
+## Previous design
+
+`index-b.html` is a self-contained snapshot of the earlier cream-and-serif
+page, kept for reference. It is not linked from the site.
