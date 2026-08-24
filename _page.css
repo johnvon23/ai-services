@@ -12,6 +12,12 @@
   --header-h: 4.25rem;
   --read: 40rem;
   --wrap: min(1120px, calc(100% - 48px));
+  /* single rhythm for the space between every major section */
+  --gap-section: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  :root { --gap-section: 5.5rem; }
 }
 
 :root[data-theme="light"],
@@ -244,7 +250,7 @@ main { position: relative; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 13, 18, 0) 55%, var(--ground) 96%);
+  background: linear-gradient(180deg, rgba(11, 13, 18, 0) 93%, var(--ground) 100%);
 }
 
 .signal-field canvas {
@@ -258,6 +264,7 @@ main { position: relative; }
 .hero {
   position: relative;
   display: grid;
+  align-content: start;
   gap: 2.5rem;
   padding: 3.25rem 0 3rem;
 }
@@ -267,7 +274,11 @@ main { position: relative; }
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     align-items: start;
     gap: 4rem;
-    padding: 4.5rem 0 4rem;
+    padding: 4.5rem 0 3rem;
+    /* fill the first screen so the logo strip always begins below the fold,
+       and the signal field gets an open run to carry the accent line */
+    min-height: calc(100vh - var(--header-h));
+    min-height: calc(100svh - var(--header-h));
   }
 }
 
@@ -561,15 +572,10 @@ html.wf-play .workflow-caption {
 
 /* ---------- logos ---------- */
 
-/* top padding doubles the gap left by the hero's bottom padding (3rem here,
-   4rem from 1024px up) so the logo strip reads as its own beat */
+/* the strip is its own band, with the section gap mirrored on both sides */
 .proof-strip {
   position: relative;
-  padding: 3.3rem 0 0.35rem;
-}
-
-@media (min-width: 1024px) {
-  .proof-strip { padding-top: 4.3rem; }
+  padding: var(--gap-section) 0;
 }
 
 .strip-label {
@@ -627,7 +633,7 @@ ul.logos .logo-native { filter: grayscale(1) invert(1) brightness(1.6); }
 
 section.block {
   position: relative;
-  padding: 4.25rem 0 0;
+  padding: var(--gap-section) 0 0;
 }
 
 .sec-index {
@@ -716,8 +722,6 @@ h2 {
 }
 
 /* ---------- human control ---------- */
-
-.human-control { padding-top: 3rem; }
 
 .human-strip {
   border: 1px solid var(--hairline);
@@ -1032,7 +1036,7 @@ h2 {
 /* ---------- closing ---------- */
 
 .closing {
-  margin-top: 5rem;
+  margin-top: var(--gap-section);
   border-top: 1px solid var(--hairline);
   background: var(--panel-deep);
   padding: 4rem 0 3.5rem;
