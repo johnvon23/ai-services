@@ -275,10 +275,10 @@ main { position: relative; }
     align-items: start;
     gap: 4rem;
     padding: 4.5rem 0 3rem;
-    /* fill the first screen so the logo strip always begins below the fold,
-       and the signal field gets an open run to carry the accent line */
-    min-height: calc(100vh - var(--header-h));
-    min-height: calc(100svh - var(--header-h));
+    /* fill the first screen where it fits, so the logo strip starts below the
+       fold, but cap it: past this the hero is just empty space */
+    min-height: min(calc(100vh - var(--header-h)), 47rem);
+    min-height: min(calc(100svh - var(--header-h)), 47rem);
   }
 }
 
