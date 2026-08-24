@@ -2,10 +2,11 @@
   "name": "ai-services",
   "version": "1.0.0",
   "private": true,
-  "description": "AI operations landing page for independent education companies.",
+  "description": "AI systems landing page for music companies.",
   "scripts": {
-    "dev": "python3 -m http.server 3000",
-    "check": "node scripts/check-site.mjs"
+    "dev": "python -m http.server 3000",
+    "check": "node scripts/check-site.mjs",
+    "build": "python _assemble.py"
   },
   "engines": {
     "node": ">=20"
