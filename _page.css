@@ -4,7 +4,6 @@
   --panel-deep: #0A0D13;
   --ink: #E9ECF2;
   --muted: #98A0B0;
-  --faint: #5C6472;
   --hairline: #1F2530;
   --coral: #FF5A48;
   --coral-ink: #0B0D12;
@@ -22,7 +21,6 @@
   --panel-deep: #0A0D13;
   --ink: #E9ECF2;
   --muted: #98A0B0;
-  --faint: #5C6472;
   --hairline: #1F2530;
   --coral: #FF5A48;
   --coral-ink: #0B0D12;
@@ -178,10 +176,10 @@ header.site.is-stuck {
 
 .tag {
   margin: 0;
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
   line-height: 1.5;
 }
 
@@ -342,11 +340,11 @@ h1 em {
   margin: 1.8rem 0 0;
   padding-top: 1rem;
   border-top: 1px solid var(--hairline);
-  max-width: 34rem;
-  font-size: 0.72rem;
-  line-height: 1.8;
-  letter-spacing: 0.02em;
-  color: var(--faint);
+  max-width: 36rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: var(--muted);
 }
 
 .booking-soon {
@@ -371,10 +369,10 @@ h1 em {
 
 .workflow-kicker {
   margin: 0 0 1.2rem;
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
 }
 
 .flow-wrap {
@@ -474,7 +472,7 @@ h1 em {
 .flow-kind {
   display: block;
   margin-top: 0.14rem;
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--coral);
@@ -499,7 +497,7 @@ h1 em {
   padding-top: 1rem;
   border-top: 1px solid var(--hairline);
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   line-height: 1.7;
   color: var(--muted);
 }
@@ -545,8 +543,8 @@ html.wf-play .workflow-caption {
 }
 
 @keyframes wf-caption {
-  from { color: var(--faint); }
-  to { color: var(--muted); }
+  from { opacity: 0.45; }
+  to { opacity: 1; }
 }
 
 @keyframes wf-human {
@@ -570,10 +568,10 @@ html.wf-play .workflow-caption {
 
 .strip-label {
   margin: 0 0 0.85rem;
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
   max-width: 40rem;
   line-height: 1.6;
 }
@@ -629,7 +627,7 @@ section.block {
 .sec-index {
   margin: 0 0 0.9rem;
   font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--coral);
@@ -652,11 +650,11 @@ h2 {
 
 .label {
   margin: 0 0 0.35rem;
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
 }
 
 /* ---------- opportunities ---------- */
@@ -796,7 +794,7 @@ h2 {
 
 .run-range {
   margin: 0.2rem 0 0;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: var(--muted);
 }
 
@@ -818,10 +816,10 @@ h2 {
 .run-count span {
   display: block;
   margin-top: 0.25rem;
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
 }
 
 .run-log ol {
@@ -836,13 +834,13 @@ h2 {
   gap: 0.85rem;
   padding: 0.52rem 0;
   border-bottom: 1px solid color-mix(in srgb, var(--hairline) 55%, transparent);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
 }
 
 .run-log time {
   flex-shrink: 0;
   width: 4.2rem;
-  color: var(--faint);
+  color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
 
@@ -857,7 +855,7 @@ h2 {
 
 .run-end {
   margin: 0.85rem 0 0;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: var(--ink);
 }
 
@@ -885,13 +883,13 @@ h2 {
   stroke-linecap: round;
 }
 
-.growth-start { fill: var(--faint); }
+.growth-start { fill: var(--muted); }
 .growth-end { fill: var(--coral); }
 
 .growth-label {
   font-family: var(--mono);
-  font-size: 15px;
-  fill: var(--faint);
+  font-size: 16px;
+  fill: var(--muted);
 }
 
 .growth-label--strong {
@@ -994,7 +992,7 @@ h2 {
 .role {
   margin: 0 0 0.85rem;
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   letter-spacing: 0.06em;
   line-height: 1.7;
   color: var(--coral);
@@ -1016,7 +1014,7 @@ h2 {
 
 .links a {
   font-family: var(--mono);
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--coral);
@@ -1070,7 +1068,7 @@ footer.site {
 footer.site p {
   margin: 0.2rem 0 0;
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 0.03em;
-  color: var(--faint);
+  color: var(--muted);
 }
