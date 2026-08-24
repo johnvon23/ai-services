@@ -607,9 +607,15 @@ html.wf-play .workflow-caption {
 
 /* ---------- logos ---------- */
 
+/* top padding doubles the gap left by the hero's bottom padding (3rem here,
+   4rem from 1024px up) so the logo strip reads as its own beat */
 .proof-strip {
   position: relative;
-  padding: 0.15rem 0 0.35rem;
+  padding: 3.3rem 0 0.35rem;
+}
+
+@media (min-width: 1024px) {
+  .proof-strip { padding-top: 4.3rem; }
 }
 
 .strip-label {
