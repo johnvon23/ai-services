@@ -41,7 +41,7 @@ html = f"""<!doctype html>
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="/assets/og-image.png">
-<meta name="theme-color" content="#F4F2ED">
+<meta name="theme-color" content="#0B0D12">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {jsonld}
