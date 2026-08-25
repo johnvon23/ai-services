@@ -82,7 +82,7 @@
     }
 
     /* End the field just above the logo strip, and run the accent line through
-       the open space the hero leaves below its copy — never behind the text. */
+       the open space the hero leaves below its copy, never behind the text. */
     function layout() {
       var label = document.querySelector('.strip-label');
       var copy = document.querySelector('.hero-copy');

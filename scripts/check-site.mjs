@@ -33,7 +33,7 @@ const requiredCopy = [
   "Book a 30-minute working session",
   "Grow the business.",
   "Where the work usually gets stuck.",
-  "Companies we've founded, led, or built systems for",
+  "Companies we’ve founded, led, or built systems for",
   "Bring us the messy version.",
   "data-book=\"header\"",
   "data-book=\"hero\"",
@@ -48,6 +48,7 @@ for (const copy of requiredCopy) {
 }
 
 const forbiddenCopy = [
+  "—", // em dash, banned in all copy
   "The Placeholder Agency",
   "Draft for review",
   "Book a free call",
