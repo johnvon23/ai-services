@@ -1073,3 +1073,194 @@ footer.site p {
   letter-spacing: 0.03em;
   color: var(--muted);
 }
+
+/* ---------- press page ---------- */
+
+.press-hero {
+  padding: 3.2rem 0 0;
+  max-width: 52rem;
+}
+
+@media (min-width: 768px) {
+  .press-hero { padding-top: 4.2rem; }
+}
+
+.press-hero .lede { max-width: 42rem; }
+
+.press-quote {
+  margin: 2rem 0 0;
+  padding: 1.3rem 1.6rem;
+  border: 1px solid var(--hairline);
+  border-left: 2px solid var(--coral);
+  background: var(--panel);
+  max-width: 46rem;
+}
+
+.press-quote p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.press-quote footer {
+  margin-top: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.press-quote cite {
+  font-style: normal;
+  color: var(--ink);
+}
+
+/* featured cards */
+
+.press-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .press-features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.press-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.4rem 1.5rem 1.5rem;
+  border: 1px solid var(--hairline);
+  background: var(--panel);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.press-card:hover {
+  border-color: var(--coral);
+  background: var(--panel-deep);
+}
+
+.press-outlet {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.press-date {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.press-title {
+  display: block;
+  margin: 0.9rem 0 0.6rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.press-blurb {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.press-go {
+  display: block;
+  margin-top: auto;
+  padding-top: 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.press-go::after {
+  content: " \2192";
+  color: var(--coral);
+}
+
+/* full list */
+
+.press-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.press-row {
+  display: grid;
+  gap: 0.5rem 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+@media (min-width: 768px) {
+  .press-row {
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: 0 2.4rem;
+    align-items: baseline;
+  }
+}
+
+.press-meta { margin: 0; }
+
+.press-meta .press-outlet,
+.press-meta .press-date {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.press-body h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.press-body h3 a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.press-body h3 a:hover {
+  color: var(--coral);
+  border-bottom-color: var(--coral);
+}
+
+.press-body p {
+  margin: 0;
+  max-width: 40rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.press-more {
+  margin: 1.8rem 0 0;
+  max-width: var(--read);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.press-more a { color: var(--ink); }
+
+.page-press footer.site a { color: inherit; }

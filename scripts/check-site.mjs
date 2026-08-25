@@ -2,6 +2,7 @@ import { access, readFile } from "node:fs/promises";
 
 const requiredFiles = [
   "index.html",
+  "press.html",
   "site-config.js",
   "vercel.json",
   "favicon.svg",
@@ -24,6 +25,7 @@ for (const file of requiredFiles) {
 }
 
 const html = await readFile("index.html", "utf8");
+const press = await readFile("press.html", "utf8");
 const configSource = await readFile("site-config.js", "utf8");
 const vercelConfig = JSON.parse(await readFile("vercel.json", "utf8"));
 
@@ -63,14 +65,36 @@ const forbiddenCopy = [
 ];
 
 for (const copy of forbiddenCopy) {
-  if (html.includes(copy)) {
-    throw new Error(`Draft or retired copy is still present: ${copy}`);
+  for (const [name, source] of [["index.html", html], ["press.html", press]]) {
+    if (source.includes(copy)) {
+      throw new Error(`Draft or retired copy is still present in ${name}: ${copy}`);
+    }
   }
 }
 
-const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
-if (h1Count !== 1) {
-  throw new Error(`Expected one H1, found ${h1Count}`);
+for (const [name, source] of [["index.html", html], ["press.html", press]]) {
+  const h1Count = (source.match(/<h1(?:\s|>)/g) || []).length;
+  if (h1Count !== 1) {
+    throw new Error(`Expected one H1 in ${name}, found ${h1Count}`);
+  }
+}
+
+if (!html.includes('href="/press"')) {
+  throw new Error("The founder bio no longer links to the local press page.");
+}
+
+const requiredPressCopy = [
+  "Where AI helps.",
+  "LA Examiner",
+  "CNET",
+  "Cointelegraph",
+  "data-book=\"press_cta\""
+];
+
+for (const copy of requiredPressCopy) {
+  if (!press.includes(copy)) {
+    throw new Error(`Missing required press page copy: ${copy}`);
+  }
 }
 
 if (vercelConfig.$schema !== "https://openapi.vercel.sh/vercel.json") {

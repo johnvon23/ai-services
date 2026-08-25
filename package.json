@@ -4,9 +4,9 @@
   "private": true,
   "description": "AI systems landing page for music companies.",
   "scripts": {
-    "dev": "python -m http.server 3000",
+    "dev": "python3 -m http.server 3000",
     "check": "node scripts/check-site.mjs",
-    "build": "python _assemble.py"
+    "build": "python3 _assemble.py"
   },
   "engines": {
     "node": ">=20"
