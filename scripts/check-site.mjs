@@ -33,7 +33,7 @@ const requiredCopy = [
   "Book a 30-minute working session",
   "Grow the business.",
   "Where the work usually gets stuck.",
-  "Companies we've founded, led, or worked in",
+  "Companies we've founded, led, or built systems for",
   "Bring us the messy version.",
   "data-book=\"header\"",
   "data-book=\"hero\"",

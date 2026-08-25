@@ -117,7 +117,6 @@ button:focus-visible {
 
 /* ---------- mono utility voice ---------- */
 
-.eyebrow,
 .label,
 .sec-index,
 .strip-label,
@@ -266,7 +265,7 @@ main { position: relative; }
   display: grid;
   align-content: start;
   gap: 2.5rem;
-  padding: 3.25rem 0 3rem;
+  padding: 2.75rem 0 2.5rem;
 }
 
 @media (min-width: 1024px) {
@@ -274,26 +273,17 @@ main { position: relative; }
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     align-items: start;
     gap: 4rem;
-    padding: 4.5rem 0 3rem;
+    padding: 3rem 0 2.25rem;
     /* fill the first screen where it fits, so the logo strip starts below the
        fold, but cap it: past this the hero is just empty space */
-    min-height: min(calc(100vh - var(--header-h)), 47rem);
-    min-height: min(calc(100svh - var(--header-h)), 47rem);
+    min-height: min(calc(100vh - var(--header-h)), 42rem);
+    min-height: min(calc(100svh - var(--header-h)), 42rem);
   }
 }
 
-.eyebrow {
-  margin: 0 0 1.3rem;
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--coral);
-}
-
 h1 {
-  margin: 0 0 1.4rem;
-  font-size: clamp(2.35rem, 5.4vw, 3.7rem);
+  margin: 0 0 1.1rem;
+  font-size: clamp(2.35rem, 5.4vw, 3.4rem);
   font-weight: 400;
   line-height: 1.07;
   letter-spacing: -0.022em;
@@ -306,7 +296,7 @@ h1 em {
 }
 
 .lede {
-  margin: 0 0 1.8rem;
+  margin: 0 0 1.5rem;
   max-width: 34rem;
   font-size: 1.1rem;
   color: var(--muted);
@@ -320,7 +310,7 @@ h1 em {
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  margin-top: 1.9rem;
+  margin-top: 1.4rem;
   max-width: 30rem;
 }
 
@@ -348,7 +338,7 @@ h1 em {
 }
 
 .best-fit {
-  margin: 1.8rem 0 0;
+  margin: 1.4rem 0 0;
   padding-top: 1rem;
   border-top: 1px solid var(--hairline);
   max-width: 36rem;
@@ -621,6 +611,7 @@ ul.logos img {
 ul.logos .logo-square { height: 30px; }
 ul.logos .logo-wide { height: 20px; max-width: 11.5rem; }
 ul.logos .logo-icon { height: 28px; }
+ul.logos .logo-pb { height: 30px; }
 ul.logos .logo-native { height: 18px; }
 
 /* white-on-transparent marks display natively on the dark ground;
