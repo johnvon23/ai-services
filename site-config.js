@@ -1,3 +1,3 @@
 window.SITE_CONFIG = {
-  bookingUrl: "https://calendar.app.google/VbkcutFciHNF8VvUA"
+  bookingUrl: "https://cal.com/john-von-seggern-czdmwr/30min"
 };
