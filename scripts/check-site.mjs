@@ -1,6 +1,7 @@
 import { access, readFile } from "node:fs/promises";
 
 const requiredFiles = [
+  "index.md",
   "index.html",
   "press.html",
   "site-config.js",
@@ -25,6 +26,7 @@ for (const file of requiredFiles) {
 }
 
 const html = await readFile("index.html", "utf8");
+const markdown = await readFile("index.md", "utf8");
 const press = await readFile("press.html", "utf8");
 const configSource = await readFile("site-config.js", "utf8");
 const vercelConfig = JSON.parse(await readFile("vercel.json", "utf8"));
@@ -51,6 +53,10 @@ const requiredCopy = [
   "book_session_click",
   "scroll_depth"
 ];
+
+if (!markdown.includes("<!-- copy:hero.heading -->")) {
+  throw new Error("index.md is no longer the homepage copy source.");
+}
 
 for (const copy of requiredCopy) {
   if (!html.includes(copy)) {

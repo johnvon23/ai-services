@@ -5,7 +5,7 @@
   "description": "AI systems landing page for music companies.",
   "scripts": {
     "dev": "python3 -m http.server 3000",
-    "check": "node scripts/check-site.mjs",
+    "check": "python3 _assemble.py --check && node scripts/check-site.mjs",
     "build": "python3 _assemble.py"
   },
   "engines": {

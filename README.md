@@ -14,9 +14,16 @@ npm run dev
 
 Then open `http://localhost:3000`.
 
-Edit `_page.body.html` (home), `_press.body.html` (press), `_page.css`, and
-`_page.js`, then run `npm run build` to regenerate `index.html` and `press.html`.
-Both pages share one inlined stylesheet and script, assembled by `_assemble.py`.
+Edit `index.md` to change any homepage text, then run `npm run build` to
+regenerate `index.html`. Keep the `copy:` comments in place; the paragraph below
+each comment is the editable value. Markdown emphasis such as `*this*` is
+supported.
+
+For layout or behavior changes, edit `_page.body.html`, `_page.css`, or
+`_page.js`. The press page content remains in `_press.body.html`. Run
+`npm run build` after any of these changes to regenerate `index.html` and
+`press.html`. Both pages share one inlined stylesheet and script, assembled by
+`_assemble.py`. `npm run check` also confirms the generated HTML is current.
 `vercel.json` sets `cleanUrls`, so `press.html` is served at `/press`.
 
 The booking link lives in `site-config.js`. Both call-to-action buttons use this one value.

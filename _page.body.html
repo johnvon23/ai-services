@@ -1,11 +1,11 @@
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">{{copy:accessibility.skip_link}}</a>
 <header class="site">
   <div class="wrap header-bar">
     <div class="brand">
-      <a class="wordmark" href="/">Systems with Judgment</a>
+      <a class="wordmark" href="/">{{copy:organization.name}}</a>
     </div>
-    <a class="book book--header" data-book="header" href="#book">Free 30-minute session</a>
+    <a class="book book--header" data-book="header" href="#book">{{copy:cta.primary}}</a>
   </div>
 </header>
 <main id="main">
@@ -13,21 +13,21 @@
   <div class="wrap">
     <div class="hero">
       <div class="hero-copy">
-        <h1>AI systems for music companies</h1>
-        <p class="lede">Grow the business. <em>Not the busywork.</em></p>
-        <a class="book" data-book="hero" href="#book">Free 30-minute session</a>
-        <p class="nda">Unreleased music, artist contracts, and royalty data stay private. Happy to sign an NDA before the first call.</p>
+        <h1>{{copy:hero.heading}}</h1>
+        <p class="lede">{{copy:hero.tagline}}</p>
+        <a class="book" data-book="hero" href="#book">{{copy:cta.primary}}</a>
+        <p class="nda">{{copy:privacy.note}}</p>
         <div class="founder-note">
           <div class="faces">
-            <img src="/assets/john-von-640.jpg" alt="John von Seggern" width="128" height="128" style="object-position: center 38%;">
-            <img src="/assets/tsotne-photo-640.jpg" alt="Tsotne Arbolishvili" width="128" height="128">
+            <img src="/assets/john-von-640.jpg" alt="{{attr:founders.john.name}}" width="128" height="128" style="object-position: center 38%;">
+            <img src="/assets/tsotne-photo-640.jpg" alt="{{attr:founders.tsotne.name}}" width="128" height="128">
           </div>
-          <p>Speak directly with John and Tsotne. If we don’t see a worthwhile opportunity, we’ll tell you.</p>
+          <p>{{copy:hero.founder_note}}</p>
         </div>
-        <p class="booking-soon" id="booking-soon" role="status" hidden>Booking will open here shortly. In the meantime, use the LinkedIn links below to reach us directly.</p>
+        <p class="booking-soon" id="booking-soon" role="status" hidden>{{copy:booking.unavailable}}</p>
       </div>
 
-      <figure class="workflow" data-workflow aria-label="Example workflow. New inquiry, CRM updated, and follow-up sent happen automatically. Your team then steps in.">
+      <figure class="workflow" data-workflow aria-label="{{attr:workflow.description}}">
         <div class="flow-wrap">
           <div class="flow-rail" aria-hidden="true">
             <span></span>
@@ -40,8 +40,8 @@
                 <svg class="flow-check" viewBox="0 0 12 12"><path d="M2.2 6.3l2.5 2.5 5.2-5.4"/></svg>
               </span>
               <div class="flow-copy">
-                <strong>New inquiry</strong>
-                <span class="flow-kind">Automatic</span>
+                <strong>{{copy:workflow.inquiry}}</strong>
+                <span class="flow-kind">{{copy:workflow.automatic}}</span>
               </div>
             </li>
             <li class="flow-step is-auto">
@@ -50,8 +50,8 @@
                 <svg class="flow-check" viewBox="0 0 12 12"><path d="M2.2 6.3l2.5 2.5 5.2-5.4"/></svg>
               </span>
               <div class="flow-copy">
-                <strong>CRM updated</strong>
-                <span class="flow-kind">Automatic</span>
+                <strong>{{copy:workflow.crm}}</strong>
+                <span class="flow-kind">{{copy:workflow.automatic}}</span>
               </div>
             </li>
             <li class="flow-step is-auto">
@@ -60,8 +60,8 @@
                 <svg class="flow-check" viewBox="0 0 12 12"><path d="M2.2 6.3l2.5 2.5 5.2-5.4"/></svg>
               </span>
               <div class="flow-copy">
-                <strong>Follow-up sent</strong>
-                <span class="flow-kind">Automatic</span>
+                <strong>{{copy:workflow.followup}}</strong>
+                <span class="flow-kind">{{copy:workflow.automatic}}</span>
               </div>
             </li>
             <li class="flow-step is-human">
@@ -69,62 +69,62 @@
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2" fill="currentColor" stroke="none"/><path d="M5.5 19c.8-4.2 3.6-6 6.5-6s5.7 1.8 6.5 6" fill="currentColor" stroke="none"/></svg>
               </span>
               <div class="flow-copy">
-                <strong>Your team steps in</strong>
-                <span class="flow-kind flow-kind--human">Human</span>
+                <strong>{{copy:workflow.team}}</strong>
+                <span class="flow-kind flow-kind--human">{{copy:workflow.human}}</span>
               </div>
             </li>
           </ol>
         </div>
-        <figcaption class="workflow-caption">Automation handles the handoffs. Your team keeps the judgment.</figcaption>
+        <figcaption class="workflow-caption">{{copy:workflow.caption}}</figcaption>
       </figure>
     </div>
 
     <section class="block results" id="results">
-      <p class="lede">We find the recurring work eating your team’s week, from royalty statements and release checklists to booking inquiries and reporting, then build reliable automations inside the tools you already use.</p>
-      <ul class="stat-chips" aria-label="Results">
-        <li><strong>30+</strong> <span>tasks completed overnight, every night</span></li>
-        <li><strong>3x</strong> <span>online enrollment at Icon Collective</span></li>
-        <li><strong>15K to 60K</strong> <span>followers in 12 months</span></li>
+      <p class="lede">{{copy:results.intro}}</p>
+      <ul class="stat-chips" aria-label="{{attr:results.label}}">
+        <li><strong>{{copy:results.stat_1_value}}</strong> <span>{{copy:results.stat_1_label}}</span></li>
+        <li><strong>{{copy:results.stat_2_value}}</strong> <span>{{copy:results.stat_2_label}}</span></li>
+        <li><strong>{{copy:results.stat_3_value}}</strong> <span>{{copy:results.stat_3_label}}</span></li>
       </ul>
-      <p class="best-fit">Best for growing music companies with small teams, recurring work, and tools that don’t quite talk to each other.</p>
+      <p class="best-fit">{{copy:results.best_fit_tools}}</p>
     </section>
 
     <aside class="position-band" id="office">
-      <p>We automate the spreadsheet work. Never the songwriting, the sound, or the relationships.</p>
+      <p>{{copy:results.position}}</p>
     </aside>
 
-    <aside class="proof-strip" aria-label="Companies we’ve founded, led, or built systems for">
+    <aside class="proof-strip" aria-label="{{attr:proof.label}}">
       <ul class="logos">
         <li>
-          <img src="/assets/logos/futureproof.png" alt="Futureproof Music School" width="264" height="26" class="logo-wide logo-invert">
-          <p class="logo-role">Founded</p>
+          <img src="/assets/logos/futureproof.png" alt="{{attr:proof.futureproof_name}}" width="264" height="26" class="logo-wide logo-invert">
+          <p class="logo-role">{{copy:proof.founded_role}}</p>
         </li>
         <li>
-          <img src="/assets/logos/tunepal.png" alt="TunePal" width="141" height="26" class="logo-invert">
-          <p class="logo-role">Founded</p>
+          <img src="/assets/logos/tunepal.png" alt="{{attr:proof.tunepal_name}}" width="141" height="26" class="logo-invert">
+          <p class="logo-role">{{copy:proof.founded_role}}</p>
         </li>
         <li>
-          <img src="/assets/logos/343-labs.png" alt="343 Labs" width="67" height="32" class="logo-square logo-invert">
-          <p class="logo-role">Head of Growth</p>
+          <img src="/assets/logos/343-labs.png" alt="{{attr:proof.labs_name}}" width="67" height="32" class="logo-square logo-invert">
+          <p class="logo-role">{{copy:proof.growth_role}}</p>
         </li>
         <li>
-          <img src="/assets/logos/icon-collective-mark.png" alt="Icon Collective" width="1344" height="530" class="logo-icon">
-          <p class="logo-role">Director of Online Education</p>
+          <img src="/assets/logos/icon-collective-mark.png" alt="{{attr:proof.icon_name}}" width="1344" height="530" class="logo-icon">
+          <p class="logo-role">{{copy:proof.education_role}}</p>
         </li>
         <li>
-          <img src="/assets/logos/point-blank.svg" alt="Point Blank Music School" width="158" height="45" class="logo-pb logo-invert">
-          <p class="logo-role">Online community</p>
+          <img src="/assets/logos/point-blank.svg" alt="{{attr:proof.point_blank_name}}" width="158" height="45" class="logo-pb logo-invert">
+          <p class="logo-role">{{copy:proof.community_role}}</p>
         </li>
         <li>
-          <img src="/assets/logos/native-instruments.svg" alt="Native Instruments" width="216" height="24" class="logo-native">
-          <p class="logo-role">North America support lead</p>
+          <img src="/assets/logos/native-instruments.svg" alt="{{attr:proof.native_instruments_name}}" width="216" height="24" class="logo-native">
+          <p class="logo-role">{{copy:proof.support_role}}</p>
         </li>
       </ul>
     </aside>
 
     <section class="block" id="segments">
-      <h2>Built for your corner of the industry.</h2>
-      <p class="section-intro">Labels, publishers, distributors, venues, artist businesses, schools: the work looks different in each corner. Here is what we typically automate first.</p>
+      <h2>{{copy:segments.heading}}</h2>
+      <p class="section-intro">{{copy:segments.intro}}</p>
       <div class="segment-grid">
         <article class="segment" id="labels">
           <figure class="segment-fig" aria-hidden="true">
@@ -135,11 +135,11 @@
               <circle cx="24" cy="24" r="1.4"/>
             </svg>
           </figure>
-          <h3>Record labels</h3>
+          <h3>{{copy:segments.labels.heading}}</h3>
           <ul>
-            <li>Royalty statement ingestion with exception flagging</li>
-            <li>Release checklist automation across distributors and DSPs</li>
-            <li>Demo and promo submission triage</li>
+            <li>{{copy:segments.labels.item_1}}</li>
+            <li>{{copy:segments.labels.item_2}}</li>
+            <li>{{copy:segments.labels.item_3}}</li>
           </ul>
         </article>
         <article class="segment" id="publishers">
@@ -150,11 +150,11 @@
               <path d="M13 19h6M13 25h6M29 19h6M29 25h6M29 31h4"/>
             </svg>
           </figure>
-          <h3>Publishers</h3>
+          <h3>{{copy:segments.publishers.heading}}</h3>
           <ul>
-            <li>Catalog metadata cleanup and enrichment</li>
-            <li>Sync opportunity tracking with follow-up reminders</li>
-            <li>Writer split and contract deadline alerts</li>
+            <li>{{copy:segments.publishers.item_1}}</li>
+            <li>{{copy:segments.publishers.item_2}}</li>
+            <li>{{copy:segments.publishers.item_3}}</li>
           </ul>
         </article>
         <article class="segment" id="distributors">
@@ -168,11 +168,11 @@
               <path d="M24 19.3V11.2M28.7 24h8.1M24 28.7v8.1M19.3 24H11.2"/>
             </svg>
           </figure>
-          <h3>Distributors</h3>
+          <h3>{{copy:segments.distributors.heading}}</h3>
           <ul>
-            <li>Label onboarding pipeline</li>
-            <li>Takedown and rights request routing</li>
-            <li>Weekly per-label performance reporting</li>
+            <li>{{copy:segments.distributors.item_1}}</li>
+            <li>{{copy:segments.distributors.item_2}}</li>
+            <li>{{copy:segments.distributors.item_3}}</li>
           </ul>
         </article>
         <article class="segment" id="venues">
@@ -184,11 +184,11 @@
               <path d="M8 38h32"/>
             </svg>
           </figure>
-          <h3>Venues and promoters</h3>
+          <h3>{{copy:segments.venues.heading}}</h3>
           <ul>
-            <li>Booking inquiry routing and advance sheets</li>
-            <li>Settlement reporting</li>
-            <li>Marketing calendar sync across channels</li>
+            <li>{{copy:segments.venues.item_1}}</li>
+            <li>{{copy:segments.venues.item_2}}</li>
+            <li>{{copy:segments.venues.item_3}}</li>
           </ul>
         </article>
         <article class="segment" id="artist-businesses">
@@ -202,11 +202,11 @@
               <path d="M24.6 16.6l8.8-1.2M26.5 24.5H36.4M24.8 31.6l8.2 2.4"/>
             </svg>
           </figure>
-          <h3>Artist businesses and managers</h3>
+          <h3>{{copy:segments.artists.heading}}</h3>
           <ul>
-            <li>Fan and brand-deal inbox triage</li>
-            <li>Touring logistics checklists</li>
-            <li>Revenue roll-up across merch, streaming, and live</li>
+            <li>{{copy:segments.artists.item_1}}</li>
+            <li>{{copy:segments.artists.item_2}}</li>
+            <li>{{copy:segments.artists.item_3}}</li>
           </ul>
         </article>
         <article class="segment" id="schools">
@@ -218,19 +218,19 @@
               <path d="M17 36V25h6v11M25 36V25h6v11"/>
             </svg>
           </figure>
-          <h3>Schools and education</h3>
+          <h3>{{copy:segments.schools.heading}}</h3>
           <ul>
-            <li>Enrollment follow-up sequences</li>
-            <li>Student retention early warning</li>
-            <li>The overnight operations run we already showcase</li>
+            <li>{{copy:segments.schools.item_1}}</li>
+            <li>{{copy:segments.schools.item_2}}</li>
+            <li>{{copy:segments.schools.item_3}}</li>
           </ul>
         </article>
       </div>
     </section>
 
     <section class="block" id="opportunities">
-      <h2>Where the work usually gets stuck.</h2>
-      <p class="section-intro">Every music company runs differently, but the best opportunities usually sit in the same three places.</p>
+      <h2>{{copy:opportunities.heading}}</h2>
+      <p class="section-intro">{{copy:opportunities.intro}}</p>
       <div class="opp-list">
         <article class="opp-row">
           <figure class="opp-fig" aria-hidden="true">
@@ -241,8 +241,8 @@
             </svg>
           </figure>
           <div>
-            <h3>Stop work from falling through.</h3>
-            <p>Capture booking inquiries, release checklists, partner requests, and next steps, then follow up without somebody manually chasing them.</p>
+            <h3>{{copy:opportunities.row_1_heading}}</h3>
+            <p>{{copy:opportunities.row_1_body}}</p>
           </div>
         </article>
         <article class="opp-row">
@@ -254,8 +254,8 @@
             </svg>
           </figure>
           <div>
-            <h3>Get the routine work off your team’s plate.</h3>
-            <p>Automate royalty statements, DSP reporting, data entry, reminders, and handoffs so the team starts the day with finished work.</p>
+            <h3>{{copy:opportunities.row_2_heading}}</h3>
+            <p>{{copy:opportunities.row_2_body}}</p>
           </div>
         </article>
         <article class="opp-row">
@@ -268,133 +268,133 @@
             </svg>
           </figure>
           <div>
-            <h3>See what actually drives the business.</h3>
-            <p>Connect marketing, catalog metadata, sales, and operations so you can see what’s working.</p>
+            <h3>{{copy:opportunities.row_3_heading}}</h3>
+            <p>{{copy:opportunities.row_3_body}}</p>
           </div>
         </article>
       </div>
     </section>
 
     <section class="block" id="process">
-      <h2>How an engagement works.</h2>
-      <p class="section-intro">Bring us the messy version. Walk us through the tools, the handoffs, and the things that keep falling through. If there is something worth building, we will say how. If there is not, we will say so.</p>
+      <h2>{{copy:process.heading}}</h2>
+      <p class="section-intro">{{copy:process.intro}}</p>
       <ol class="steps">
         <li>
           <div>
-            <h3>Working session</h3>
-            <p>30 minutes, free. We map where the time goes.</p>
+            <h3>{{copy:process.step_1_heading}}</h3>
+            <p>{{copy:process.step_1_body}}</p>
           </div>
         </li>
         <li>
           <div>
-            <h3>Opportunity map</h3>
-            <p>A short written audit: the workflows worth automating, ranked by hours saved, with a build recommendation.</p>
+            <h3>{{copy:process.step_2_heading}}</h3>
+            <p>{{copy:process.step_2_body}}</p>
           </div>
         </li>
         <li>
           <div>
-            <h3>Pilot build</h3>
-            <p>One workflow, live in your tools, typically 2 to 4 weeks.</p>
+            <h3>{{copy:process.step_3_heading}}</h3>
+            <p>{{copy:process.step_3_body}}</p>
           </div>
         </li>
         <li>
           <div>
-            <h3>Run and extend</h3>
-            <p>We maintain the system, or hand it to your team documented.</p>
+            <h3>{{copy:process.step_4_heading}}</h3>
+            <p>{{copy:process.step_4_body}}</p>
           </div>
         </li>
       </ol>
     </section>
 
     <section class="block" id="case-studies">
-      <h2>Built in businesses we know firsthand.</h2>
+      <h2>{{copy:cases.heading}}</h2>
       <div class="cases">
         <article class="case">
           <figure class="case-visual">
-            <div class="run-log" data-run-log role="img" aria-label="Overnight automation log: from 11pm to 9am the operations agent completes tasks such as the ad spend report, student retention check and weekly KPI roll-up. By 9:00am, when the team logs in, 31 tasks are already done.">
+            <div class="run-log" data-run-log role="img" aria-label="{{attr:cases.futureproof.chart_description}}">
               <div class="run-head">
                 <div>
-                  <p class="run-range">11:00pm to 9:00am</p>
+                  <p class="run-range">{{copy:cases.futureproof.range}}</p>
                 </div>
-                <p class="run-count"><strong>31</strong><span>tasks already done</span></p>
+                <p class="run-count"><strong>{{copy:cases.futureproof.count}}</strong><span>{{copy:cases.futureproof.count_label}}</span></p>
               </div>
               <ol>
-                <li><time datetime="23:04">11:04pm</time><span>Ad spend report</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="00:20">12:20am</time><span>Student retention check</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="01:35">1:35am</time><span>Competitor scan</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="02:50">2:50am</time><span>Revenue forecast</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="04:10">4:10am</time><span>Lead follow-up queue</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="05:25">5:25am</time><span>Enrollment summary</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="06:40">6:40am</time><span>Support inbox triage</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="07:55">7:55am</time><span>Weekly KPI roll-up</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="23:04">{{copy:cases.futureproof.log_1_time}}</time><span>{{copy:cases.futureproof.log_1_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="00:20">{{copy:cases.futureproof.log_2_time}}</time><span>{{copy:cases.futureproof.log_2_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="01:35">{{copy:cases.futureproof.log_3_time}}</time><span>{{copy:cases.futureproof.log_3_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="02:50">{{copy:cases.futureproof.log_4_time}}</time><span>{{copy:cases.futureproof.log_4_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="04:10">{{copy:cases.futureproof.log_5_time}}</time><span>{{copy:cases.futureproof.log_5_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="05:25">{{copy:cases.futureproof.log_6_time}}</time><span>{{copy:cases.futureproof.log_6_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="06:40">{{copy:cases.futureproof.log_7_time}}</time><span>{{copy:cases.futureproof.log_7_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="07:55">{{copy:cases.futureproof.log_8_time}}</time><span>{{copy:cases.futureproof.log_8_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
               </ol>
-              <p class="run-end">9:00am, the team logs in</p>
+              <p class="run-end">{{copy:cases.futureproof.end}}</p>
             </div>
           </figure>
           <div class="case-copy">
-            <h3>A team of four doing the work of twenty.</h3>
+            <h3>{{copy:cases.futureproof.heading}}</h3>
             <div class="fact">
-              <p>John built the system inside Futureproof Music School, the music school he founded.</p>
+              <p>{{copy:cases.futureproof.fact_1}}</p>
             </div>
             <div class="fact">
-              <p>Nova handles recurring reporting, monitoring, administrative checks, and other routine operational work before the team logs in.</p>
+              <p>{{copy:cases.futureproof.fact_2}}</p>
             </div>
             <div class="fact">
-              <p>More than 30 recurring tasks are completed overnight, letting a core team of four operate like a team of twenty.</p>
+              <p>{{copy:cases.futureproof.fact_3}}</p>
             </div>
           </div>
         </article>
 
         <article class="case case--alt">
           <figure class="case-visual">
-            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="343 Labs Instagram audience grew from 15,000 to 60,000 followers in one year." width="640" height="360">
+            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="{{attr:cases.labs.chart_description}}" width="640" height="360">
               <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
               <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
               <path class="growth-line" pathLength="1" d="M88 248 C 150 244, 210 214, 280 190 S 390 178, 400 176 S 490 118, 540 92 S 575 78, 588 74"/>
               <circle class="growth-start" cx="88" cy="248" r="10"/>
               <circle class="growth-end" cx="588" cy="74" r="12"/>
-              <text class="growth-label growth-label--strong" x="88" y="218">15K</text>
-              <text class="growth-label growth-label--strong growth-count" data-count-from="15" data-count-to="60" data-suffix="K" x="588" y="46" text-anchor="end">60K</text>
-              <text class="growth-label" x="332" y="336" text-anchor="middle">One year</text>
+              <text class="growth-label growth-label--strong" x="88" y="218">{{copy:cases.labs.chart_start}}{{copy:cases.labs.chart_suffix}}</text>
+              <text class="growth-label growth-label--strong growth-count" data-count-from="{{attr:cases.labs.chart_start}}" data-count-to="{{attr:cases.labs.chart_end}}" data-suffix="{{attr:cases.labs.chart_suffix}}" x="588" y="46" text-anchor="end">{{copy:cases.labs.chart_end}}{{copy:cases.labs.chart_suffix}}</text>
+              <text class="growth-label" x="332" y="336" text-anchor="middle">{{copy:cases.labs.chart_period}}</text>
             </svg>
           </figure>
           <div class="case-copy">
-            <h3>From 15K to 60K Instagram followers in one year.</h3>
+            <h3>{{copy:cases.labs.heading}}</h3>
             <div class="fact">
-              <p>Tsotne led growth and marketing at the New York music school for six years: an eight-person core team supporting about 35 instructors across New York, Berlin, and online.</p>
+              <p>{{copy:cases.labs.fact_1}}</p>
             </div>
             <div class="fact">
-              <p>He built an internal AI intelligence layer that pulled data from every company system into one clear picture for the team, while running SEO, CRM, and the full marketing stack.</p>
+              <p>{{copy:cases.labs.fact_2}}</p>
             </div>
             <div class="fact">
-              <p>The Instagram audience grew from 15K to 60K followers in one year, and the site ranked top 3 on Google for its target keywords.</p>
+              <p>{{copy:cases.labs.fact_3}}</p>
             </div>
           </div>
         </article>
 
         <article class="case">
           <figure class="case-visual">
-            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="Icon Collective’s online student population tripled during John’s seven-plus years as Director of Online Education." width="640" height="360">
+            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="{{attr:cases.icon.chart_description}}" width="640" height="360">
               <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
               <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
               <path class="growth-line" pathLength="1" d="M88 256 C 160 250, 230 232, 300 204 S 420 154, 480 126 S 562 88, 588 76"/>
               <circle class="growth-start" cx="88" cy="256" r="10"/>
               <circle class="growth-end" cx="588" cy="76" r="12"/>
-              <text class="growth-label growth-label--strong" x="88" y="226">1&#215;</text>
-              <text class="growth-label growth-label--strong growth-count" data-count-from="1" data-count-to="3" data-suffix="&#215;" x="588" y="48" text-anchor="end">3&#215;</text>
-              <text class="growth-label" x="332" y="336" text-anchor="middle">Seven years</text>
+              <text class="growth-label growth-label--strong" x="88" y="226">{{copy:cases.icon.chart_start}}{{entity:cases.icon.chart_suffix}}</text>
+              <text class="growth-label growth-label--strong growth-count" data-count-from="{{attr:cases.icon.chart_start}}" data-count-to="{{attr:cases.icon.chart_end}}" data-suffix="{{entity:cases.icon.chart_suffix}}" x="588" y="48" text-anchor="end">{{copy:cases.icon.chart_end}}{{entity:cases.icon.chart_suffix}}</text>
+              <text class="growth-label" x="332" y="336" text-anchor="middle">{{copy:cases.icon.chart_period}}</text>
             </svg>
           </figure>
           <div class="case-copy">
-            <h3>Online student population tripled.</h3>
+            <h3>{{copy:cases.icon.heading}}</h3>
             <div class="fact">
-              <p>John ran the online program for seven-plus years as Director of Online Education. Icon’s alumni include SLANDER (Grammy-nominated, 1.7B streams), NGHTMRE, JAUZ, Sullivan King, and Kayzo.</p>
+              <p>{{copy:cases.icon.fact_1}}</p>
             </div>
             <div class="fact">
-              <p>He designed a competency-based, self-paced learning model from scratch and brought AI in early: a chatbot for music production questions, plus AI-assisted course creation and student sentiment analysis.</p>
+              <p>{{copy:cases.icon.fact_2}}</p>
             </div>
             <div class="fact">
-              <p>The online student population tripled during his tenure.</p>
+              <p>{{copy:cases.icon.fact_3}}</p>
             </div>
           </div>
         </article>
@@ -402,38 +402,38 @@
     </section>
 
     <section class="block" id="founders">
-      <h2>You’ll work directly with us.</h2>
-      <p class="section-intro founders-intro">Both of us come from music production and music technology, not from outside consulting. Between us: two decades at Dubspot, Point Blank, Icon Collective, 343 Labs, and Native Instruments, one music school founded, one music technology company founded, and two AI products built from scratch.</p>
+      <h2>{{copy:founders.heading}}</h2>
+      <p class="section-intro founders-intro">{{copy:founders.intro}}</p>
       <div class="founders">
         <article class="bio">
           <figure class="portrait">
-            <img src="/assets/john-von-640.jpg" alt="John von Seggern" width="280" height="280" loading="lazy" style="object-position: center 38%;">
+            <img src="/assets/john-von-640.jpg" alt="{{attr:founders.john.name}}" width="280" height="280" loading="lazy" style="object-position: center 38%;">
           </figure>
           <div>
-            <h3>John von Seggern</h3>
-            <p class="role">Founder, Futureproof Music School</p>
-            <p>John founded Futureproof Music School, where he built Kadence, an AI music-production tutor, and Nova, an operations agent that lets a core team of four operate like a team of twenty. He has run online education at three of the best-known music production schools: as Director of Online Education he tripled Icon Collective’s online student population over seven-plus years, grew Dubspot’s online enrollments by more than 50% (including a complex migration to a new course platform), and built Point Blank’s online community to 5,000+ members. He was putting AI to work in education years before founding Futureproof: at Icon he built an early chatbot for music production questions and used AI for course creation and student sentiment analysis.</p>
-            <p>Earlier, John co-founded Modus Institute, an online school teaching Lean process improvement, and spent six years managing Native Instruments’ North American support team. He wrote the books Ableton Live 6 Power! and Laptop Music Power!, plus the official reference manual for the Massive synthesizer, and has sound design credits on major films including WALL-E. He holds an MA in Ethnomusicology from UC Riverside and a BA in Music from Carleton College.</p>
+            <h3>{{copy:founders.john.name}}</h3>
+            <p class="role">{{copy:founders.john.role}}</p>
+            <p>{{copy:founders.john.bio_1}}</p>
+            <p>{{copy:founders.john.bio_2}}</p>
             <p class="links">
-              <a href="https://www.linkedin.com/in/johnvon/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> for John von Seggern (opens in a new tab)</span></a>
-              <a href="https://futureproofmusicschool.com" target="_blank" rel="noopener noreferrer">Futureproof Music School<span class="visually-hidden"> (opens in a new tab)</span></a>
-              <a href="https://futureproofmusicschool.com" target="_blank" rel="noopener noreferrer">Kadence<span class="visually-hidden"> (opens in a new tab)</span></a>
-              <a href="/press">Press and interviews</a>
+              <a href="https://www.linkedin.com/in/johnvon/" target="_blank" rel="noopener noreferrer">{{copy:founders.john.linkedin_label}}<span class="visually-hidden"> {{copy:founders.john.linkedin_description}}</span></a>
+              <a href="https://futureproofmusicschool.com" target="_blank" rel="noopener noreferrer">{{copy:founders.john.futureproof_label}}<span class="visually-hidden"> {{copy:founders.john.futureproof_description}}</span></a>
+              <a href="https://futureproofmusicschool.com" target="_blank" rel="noopener noreferrer">{{copy:founders.john.kadence_label}}<span class="visually-hidden"> {{copy:founders.john.kadence_description}}</span></a>
+              <a href="/press">{{copy:founders.john.press_label}}</a>
             </p>
           </div>
         </article>
         <article class="bio">
           <figure class="portrait">
-            <img src="/assets/tsotne-photo-640.jpg" alt="Tsotne Arbolishvili" width="280" height="280" loading="lazy">
+            <img src="/assets/tsotne-photo-640.jpg" alt="{{attr:founders.tsotne.name}}" width="280" height="280" loading="lazy">
           </figure>
           <div>
-            <h3>Tsotne Arbolishvili</h3>
-            <p class="role">Founder, CTO and CMO, TunePal<br>Former Head of Growth, 343 Labs</p>
-            <p>Tsotne has spent sixteen years growing music and creative companies, and the last three building AI products and internal business systems. He is the founder, CTO and CMO of TunePal, a browser-based AI music-production studio that generates stems, analyzes loops, and builds full arrangements, including a native Ableton Live export he engineered himself. Before TunePal he spent six years as Head of Growth and Marketing at 343 Labs, the New York music school, where he also created 343 Pro Sessions, a masterclass series that brought more than twenty world-class artists to the school.</p>
-            <p>His technical work is grounded in his own creative practice. He has produced electronic music in Ableton Live for eighteen-plus years (deep house and techno, with releases on Spotify, DJ sets at Good Room and TBA Brooklyn, and his own custom Max for Live devices) and creates 3D visuals in Cinema 4D and Unreal Engine. Since 2010 he has also consulted independently on AI, marketing, and automation for companies across music, SaaS, and the creator economy, guiding several from early stage to profitability.</p>
+            <h3>{{copy:founders.tsotne.name}}</h3>
+            <p class="role">{{copy:founders.tsotne.role_1}}<br>{{copy:founders.tsotne.role_2}}</p>
+            <p>{{copy:founders.tsotne.bio_1}}</p>
+            <p>{{copy:founders.tsotne.bio_2}}</p>
             <p class="links">
-              <a href="https://www.linkedin.com/in/tsotnetunes/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> for Tsotne Arbolishvili (opens in a new tab)</span></a>
-              <a href="https://tunepal.ai" target="_blank" rel="noopener noreferrer">TunePal<span class="visually-hidden"> (opens in a new tab)</span></a>
+              <a href="https://www.linkedin.com/in/tsotnetunes/" target="_blank" rel="noopener noreferrer">{{copy:founders.tsotne.linkedin_label}}<span class="visually-hidden"> {{copy:founders.tsotne.linkedin_description}}</span></a>
+              <a href="https://tunepal.ai" target="_blank" rel="noopener noreferrer">{{copy:founders.tsotne.tunepal_label}}<span class="visually-hidden"> {{copy:founders.tsotne.tunepal_description}}</span></a>
             </p>
           </div>
         </article>
@@ -441,31 +441,31 @@
     </section>
 
     <section class="block" id="faq">
-      <h2>Questions before a call.</h2>
+      <h2>{{copy:faq.heading}}</h2>
       <div class="faq-list">
         <details>
-          <summary>Do you replace staff?</summary>
-          <p>No. Your team keeps judgment, money, and artist communication.</p>
+          <summary>{{copy:faq.question_1}}</summary>
+          <p>{{copy:faq.answer_1}}</p>
         </details>
         <details>
-          <summary>What tools do you work with?</summary>
-          <p>CRMs, email, spreadsheets, royalty portals, and project tools. We build inside the stack you already use.</p>
+          <summary>{{copy:faq.question_2}}</summary>
+          <p>{{copy:faq.answer_2}}</p>
         </details>
         <details>
-          <summary>How long until something is live?</summary>
-          <p>A pilot is typically live in 2 to 4 weeks.</p>
+          <summary>{{copy:faq.question_3}}</summary>
+          <p>{{copy:faq.answer_3}}</p>
         </details>
         <details>
-          <summary>What does it cost?</summary>
-          <p>The working session is free. Pilot pricing is quoted after the opportunity map, once we know the workflow.</p>
+          <summary>{{copy:faq.question_4}}</summary>
+          <p>{{copy:faq.answer_4}}</p>
         </details>
         <details>
-          <summary>What about our unreleased music and contracts?</summary>
-          <p>We are happy to sign an NDA before the first call. Unreleased music, artist contracts, and royalty data stay in your accounts.</p>
+          <summary>{{copy:faq.question_5}}</summary>
+          <p>{{copy:faq.answer_5}}</p>
         </details>
         <details>
-          <summary>Do we need anyone technical on our side?</summary>
-          <p>No.</p>
+          <summary>{{copy:faq.question_6}}</summary>
+          <p>{{copy:faq.answer_6}}</p>
         </details>
       </div>
     </section>
@@ -475,16 +475,16 @@
     <div class="wrap">
       <div class="closing-grid">
         <div class="closing-copy">
-          <h2>Let’s find the best place to start.</h2>
-          <p class="measure">Thirty minutes, free. Bring the systems, the bottlenecks, the unanswered questions. We’ll find the opportunity worth pursuing, or tell you if there isn’t one.</p>
-          <p class="nda">Unreleased music, artist contracts, and royalty data stay private. Happy to sign an NDA before the first call.</p>
+          <h2>{{copy:closing.heading}}</h2>
+          <p class="measure">{{copy:closing.body}}</p>
+          <p class="nda">{{copy:privacy.note}}</p>
         </div>
         <div class="closing-action">
-          <iframe id="booking-embed" class="booking-embed" title="Free 30-minute session" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
-          <a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://calendar.app.google/VbkcutFciHNF8VvUA" target="_blank" rel="noopener noreferrer">Open the calendar in a new tab<span class="visually-hidden"> (opens in a new tab)</span></a>
+          <iframe id="booking-embed" class="booking-embed" title="{{attr:cta.primary}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
+          <a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://calendar.app.google/VbkcutFciHNF8VvUA" target="_blank" rel="noopener noreferrer">{{copy:closing.calendar_label}}<span class="visually-hidden"> {{copy:accessibility.new_tab}}</span></a>
         </div>
       </div>
-      <p class="best-fit">Best for growing music companies with small teams, recurring work, and systems that don’t quite talk to each other.</p>
+      <p class="best-fit">{{copy:closing.best_fit_systems}}</p>
     </div>
   </section>
 </main>
@@ -492,12 +492,12 @@
 <footer class="site">
   <div class="wrap footer-bar">
     <div>
-      <p>© 2026 John von Seggern &amp; Tsotne Arbolishvili.</p>
-      <p>Systems with Judgment. AI systems for music companies.</p>
+      <p>{{copy:footer.copyright}}</p>
+      <p>{{copy:footer.tagline}}</p>
     </div>
     <p class="footer-links">
-      <a href="https://www.linkedin.com/in/johnvon/" target="_blank" rel="noopener noreferrer">John on LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
-      <a href="https://www.linkedin.com/in/tsotnetunes/" target="_blank" rel="noopener noreferrer">Tsotne on LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
+      <a href="https://www.linkedin.com/in/johnvon/" target="_blank" rel="noopener noreferrer">{{copy:footer.john_link}}<span class="visually-hidden"> {{copy:accessibility.new_tab}}</span></a>
+      <a href="https://www.linkedin.com/in/tsotnetunes/" target="_blank" rel="noopener noreferrer">{{copy:footer.tsotne_link}}<span class="visually-hidden"> {{copy:accessibility.new_tab}}</span></a>
       <a id="contact-email" hidden></a>
     </p>
   </div>
