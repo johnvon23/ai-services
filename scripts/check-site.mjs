@@ -32,15 +32,24 @@ const vercelConfig = JSON.parse(await readFile("vercel.json", "utf8"));
 const requiredCopy = [
   "Systems with Judgment",
   "AI systems for music companies",
-  "Book a 30-minute working session",
+  "Free 30-minute session",
   "Grow the business.",
+  "Not the busywork.",
   "Where the work usually gets stuck.",
   "Companies we’ve founded, led, or built systems for",
   "Bring us the messy version.",
+  "Built for your corner of the industry.",
+  "How an engagement works.",
+  "Unreleased music, artist contracts, and royalty data stay private.",
+  "Do you replace staff?",
+  "FAQPage",
+  "AI Automation for Music Companies",
+  "booking-embed",
   "data-book=\"header\"",
   "data-book=\"hero\"",
-  "data-book=\"final_cta\"",
-  "book_session_click"
+  "data-book=\"calendar_tab\"",
+  "book_session_click",
+  "scroll_depth"
 ];
 
 for (const copy of requiredCopy) {
@@ -61,7 +70,8 @@ const forbiddenCopy = [
   "AI operations for education",
   "education companies",
   "Enrollment operations",
-  "student communication"
+  "student communication",
+  "Not the admin burden."
 ];
 
 for (const copy of forbiddenCopy) {
@@ -77,6 +87,10 @@ for (const [name, source] of [["index.html", html], ["press.html", press]]) {
   if (h1Count !== 1) {
     throw new Error(`Expected one H1 in ${name}, found ${h1Count}`);
   }
+}
+
+if (!html.includes("<h1>AI systems for music companies</h1>")) {
+  throw new Error("Home H1 is no longer “AI systems for music companies”.");
 }
 
 if (!html.includes('href="/press"')) {
