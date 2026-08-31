@@ -14,18 +14,41 @@
     } catch (err) {}
   }
 
-  function bookingUrl() {
-    return window.SITE_CONFIG && window.SITE_CONFIG.bookingUrl;
+  function config() {
+    return window.SITE_CONFIG || {};
+  }
+
+  function prefersReducedMotion() {
+    try {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch (err) {
+      return false;
+    }
   }
 
   function setupBooking() {
-    var url = bookingUrl();
+    var url = config().bookingUrl;
+    var embedUrl = config().bookingEmbedUrl || url;
+    var iframe = document.getElementById('booking-embed');
+    var fallback = document.getElementById('booking-fallback');
+
+    if (iframe && embedUrl) {
+      iframe.src = embedUrl;
+      iframe.hidden = false;
+    }
+
+    if (fallback && url) {
+      fallback.setAttribute('href', url);
+    }
+
     var links = document.querySelectorAll('[data-book]');
     for (var i = 0; i < links.length; i++) {
       (function (el) {
-        if (url) el.setAttribute('href', url);
         el.addEventListener('click', function (e) {
           track('book_session_click', { placement: el.getAttribute('data-book') });
+          var href = el.getAttribute('href') || '';
+          var isOnPage = href.charAt(0) === '#' || href.indexOf('/#') === 0;
+          if (isOnPage) return;
           if (!url) {
             e.preventDefault();
             var message = document.getElementById('booking-soon');
@@ -50,13 +73,141 @@
   }
 
   function setupBookingComplete() {
+    var seen = false;
     window.addEventListener('message', function (e) {
+      if (seen) return;
+      var origin = e.origin || '';
       var data = e.data;
-      if (!data) return;
-      var scheduled = data.event === 'calendly.event_scheduled' ||
-        (typeof data === 'string' && data.indexOf('calendly.event_scheduled') !== -1);
-      if (scheduled) track('booking_completed');
+      var fromGoogle = origin.indexOf('calendar.google.com') !== -1 ||
+        origin.indexOf('calendar.app.google') !== -1;
+      var blob = typeof data === 'string' ? data : (data ? JSON.stringify(data) : '');
+      var calendly = data && (
+        data.event === 'calendly.event_scheduled' ||
+        blob.indexOf('calendly.event_scheduled') !== -1
+      );
+      var googleBooked = fromGoogle && /booked|confirmed|appointment_scheduled/i.test(blob);
+      if (calendly || googleBooked) {
+        seen = true;
+        track('booking_completed');
+      }
     });
+  }
+
+  function setupScrollDepth() {
+    var marks = [25, 50, 75, 100];
+    var sent = {};
+    var onScroll = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      if (max <= 0) return;
+      var pct = ((window.pageYOffset || doc.scrollTop) / max) * 100;
+      for (var i = 0; i < marks.length; i++) {
+        var mark = marks[i];
+        if (!sent[mark] && pct >= mark - 0.5) {
+          sent[mark] = true;
+          track('scroll_depth', { percent: mark });
+        }
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  function setupContactEmail() {
+    var email = config().contactEmail;
+    var link = document.getElementById('contact-email');
+    if (!link || !email) return;
+    link.href = 'mailto:' + email;
+    link.textContent = email;
+    link.hidden = false;
+  }
+
+  function onceInView(el, fn) {
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) {
+      fn();
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      if (!entries[0] || !entries[0].isIntersecting) return;
+      observer.disconnect();
+      fn();
+    }, { threshold: 0.35 });
+    observer.observe(el);
+  }
+
+  function setupDrawIcons() {
+    var roots = document.querySelectorAll('.opp-list, .segment-grid');
+    for (var i = 0; i < roots.length; i++) {
+      (function (el) {
+        if (prefersReducedMotion()) {
+          el.classList.add('is-in');
+          return;
+        }
+        onceInView(el, function () {
+          el.classList.add('is-in');
+        });
+      })(roots[i]);
+    }
+  }
+
+  function setupRunLog() {
+    var log = document.querySelector('[data-run-log]');
+    if (!log) return;
+    if (prefersReducedMotion()) return;
+    var items = log.querySelectorAll('ol li');
+    if (!items.length) return;
+    onceInView(log, function () {
+      for (var i = 0; i < items.length; i++) {
+        (function (el, delay) {
+          window.setTimeout(function () {
+            el.classList.add('is-done');
+          }, delay);
+        })(items[i], i * 150);
+      }
+      window.setTimeout(function () {
+        log.classList.add('is-complete');
+      }, items.length * 150);
+    });
+  }
+
+  function setupCharts() {
+    var charts = document.querySelectorAll('[data-growth]');
+    if (!charts.length) return;
+    var reduced = prefersReducedMotion();
+
+    function countUp(el, from, to, suffix, duration) {
+      var start = null;
+      function frame(now) {
+        if (!start) start = now;
+        var t = Math.min(1, (now - start) / duration);
+        var eased = 1 - Math.pow(1 - t, 3);
+        var value = Math.round(from + (to - from) * eased);
+        el.textContent = value + suffix;
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    for (var i = 0; i < charts.length; i++) {
+      (function (svg) {
+        if (reduced) {
+          svg.classList.add('is-drawn');
+          return;
+        }
+        var label = svg.querySelector('.growth-count');
+        var from = label ? parseFloat(label.getAttribute('data-count-from')) : 0;
+        var to = label ? parseFloat(label.getAttribute('data-count-to')) : 0;
+        var suffix = label ? (label.getAttribute('data-suffix') || '') : '';
+        if (label && !isNaN(from)) label.textContent = from + suffix;
+        onceInView(svg, function () {
+          svg.classList.add('is-drawn');
+          if (label && !isNaN(from) && !isNaN(to)) {
+            countUp(label, from, to, suffix, 2000);
+          }
+        });
+      })(charts[i]);
+    }
   }
 
   function setupSignalField() {
@@ -65,7 +216,7 @@
     var ctx = canvas.getContext('2d');
     var field = canvas.parentElement;
     var main = document.getElementById('main');
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reduced = prefersReducedMotion();
     var t = 0;
     var pointerY = 0.5;
     var accentFrac = 0.65;
@@ -84,18 +235,18 @@
     /* End the field just above the logo strip, and run the accent line through
        the open space the hero leaves below its copy, never behind the text. */
     function layout() {
-      var label = document.querySelector('.strip-label');
+      var strip = document.querySelector('.proof-strip');
       var copy = document.querySelector('.hero-copy');
       var workflow = document.querySelector('.workflow');
-      if (label && copy && main) {
+      if (strip && copy && main) {
         var top = pageTop(main);
-        var labelTop = pageTop(label);
-        var height = Math.max(320, Math.round(labelTop - top - 12));
+        var stripTop = pageTop(strip);
+        var height = Math.max(320, Math.round(stripTop - top - 12));
         field.style.height = height + 'px';
 
         var contentBottom = pageBottom(copy);
         if (workflow) contentBottom = Math.max(contentBottom, pageBottom(workflow));
-        var target = contentBottom + (labelTop - contentBottom) * 0.5;
+        var target = contentBottom + (stripTop - contentBottom) * 0.5;
         accentFrac = Math.min(0.96, Math.max(0.12, (target - top) / height));
       }
       size();
@@ -198,5 +349,10 @@
   setupBooking();
   setupHeader();
   setupBookingComplete();
+  setupScrollDepth();
+  setupContactEmail();
+  setupDrawIcons();
+  setupRunLog();
+  setupCharts();
   setupSignalField();
 })();
