@@ -1,46 +1,148 @@
 from pathlib import Path
+import json
 
 fonts = Path("_fonts.css").read_text(encoding="utf8").strip()
 css = Path("_page.css").read_text(encoding="utf8")
 js = Path("_page.js").read_text(encoding="utf8")
 
-jsonld = """{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Systems with Judgment",
-  "description": "Systems with Judgment helps growing music companies reduce recurring work, connect disconnected systems, and find opportunities to save time or recover revenue.",
-  "areaServed": "Music",
-  "founder": [
-    { "@type": "Person", "name": "John von Seggern", "url": "https://www.linkedin.com/in/johnvon/" },
-    { "@type": "Person", "name": "Tsotne Arbolishvili", "url": "https://www.linkedin.com/in/tsotnetunes/" }
-  ]
-}"""
+site_url = "https://systemswithjudgment.com"
 
-press_jsonld = """{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Press and interviews",
-  "url": "https://systemswithjudgment.com/press",
-  "about": {
-    "@type": "Person",
-    "name": "John von Seggern",
-    "url": "https://www.linkedin.com/in/johnvon/"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Systems with Judgment",
-    "url": "https://systemswithjudgment.com/"
-  }
-}"""
+jsonld = json.dumps(
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": ["Organization", "ProfessionalService"],
+                "@id": f"{site_url}/#org",
+                "name": "Systems with Judgment",
+                "url": f"{site_url}/",
+                "description": (
+                    "AI automation for music companies. We automate royalty statements, "
+                    "release checklists, booking inquiries, and reporting inside the tools "
+                    "you already use."
+                ),
+                "areaServed": "Music",
+                "founder": [
+                    {"@id": f"{site_url}/#john"},
+                    {"@id": f"{site_url}/#tsotne"},
+                ],
+            },
+            {
+                "@type": "Person",
+                "@id": f"{site_url}/#john",
+                "name": "John von Seggern",
+                "url": "https://www.linkedin.com/in/johnvon/",
+                "sameAs": ["https://www.linkedin.com/in/johnvon/"],
+                "jobTitle": "Founder",
+                "worksFor": {"@id": f"{site_url}/#org"},
+            },
+            {
+                "@type": "Person",
+                "@id": f"{site_url}/#tsotne",
+                "name": "Tsotne Arbolishvili",
+                "url": "https://www.linkedin.com/in/tsotnetunes/",
+                "sameAs": ["https://www.linkedin.com/in/tsotnetunes/"],
+                "jobTitle": "Founder",
+                "worksFor": {"@id": f"{site_url}/#org"},
+            },
+            {
+                "@type": "FAQPage",
+                "@id": f"{site_url}/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Do you replace staff?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Your team keeps judgment, money, and artist communication.",
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What tools do you work with?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": (
+                                "CRMs, email, spreadsheets, royalty portals, and project tools. "
+                                "We build inside the stack you already use."
+                            ),
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long until something is live?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A pilot is typically live in 2 to 4 weeks.",
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What does it cost?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": (
+                                "The working session is free. Pilot pricing is quoted after "
+                                "the opportunity map, once we know the workflow."
+                            ),
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What about our unreleased music and contracts?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": (
+                                "We are happy to sign an NDA before the first call. Unreleased "
+                                "music, artist contracts, and royalty data stay in your accounts."
+                            ),
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do we need anyone technical on our side?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No.",
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+    indent=2,
+    ensure_ascii=False,
+)
+
+press_jsonld = json.dumps(
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Press and interviews",
+        "url": f"{site_url}/press",
+        "about": {
+            "@type": "Person",
+            "name": "John von Seggern",
+            "url": "https://www.linkedin.com/in/johnvon/",
+            "sameAs": ["https://www.linkedin.com/in/johnvon/"],
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Systems with Judgment",
+            "url": f"{site_url}/",
+        },
+    },
+    indent=2,
+    ensure_ascii=False,
+)
 
 # Social scrapers need absolute URLs; several reject relative ones outright.
-site_url = "https://systemswithjudgment.com"
 # Bump when the card art changes, so platforms refetch instead of serving
 # the version they already cached.
-og_image = f"{site_url}/assets/og-image.png?v=2"
+og_image = f"{site_url}/assets/og-image.png?v=3"
 og_image_alt = (
-    "Systems with Judgment. AI systems for music companies. "
-    "Grow the business, not the admin burden."
+    "John von Seggern and Tsotne Arbolishvili. AI automation for music companies. "
+    "30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers."
 )
 
 
@@ -102,10 +204,11 @@ def render(title, description, path, body_file, out_file, structured_data):
 
 
 render(
-    title="Systems with Judgment | AI Systems for Music Companies",
+    title="AI Automation for Music Companies | Systems with Judgment",
     description=(
-        "Systems with Judgment helps growing music companies reduce recurring work, "
-        "connect disconnected systems, and find opportunities to save time or recover revenue."
+        "AI automation for music companies. We automate royalty statements, release "
+        "checklists, booking inquiries, and reporting inside the tools you already use. "
+        "Never the songwriting."
     ),
     path="/",
     body_file="_page.body.html",
