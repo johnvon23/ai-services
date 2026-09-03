@@ -1871,14 +1871,32 @@ footer.site p {
 
 .hero-brain .accent { stroke: var(--coral); }
 
+.hero-brain .brain-solid {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+
+.hero-brain .brain-trace {
+  stroke: var(--ground);
+  stroke-width: 4;
+}
+
 .hero-brain .node {
   fill: var(--coral);
-  stroke: none;
+  stroke: var(--ground);
+  stroke-width: 3;
 }
 
 html.wf-play .hero-brain:not(.is-in) svg path {
-  stroke-dasharray: 720;
-  stroke-dashoffset: 720;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+}
+
+html.wf-play .hero-brain:not(.is-in) svg .brain-solid { fill-opacity: 0; }
+
+html.wf-play .hero-brain.is-in svg .brain-solid {
+  fill-opacity: 1;
+  transition: fill-opacity 0.8s var(--ease-out) 0.9s, stroke-dashoffset 1.6s var(--ease-out);
 }
 
 html.wf-play .hero-brain.is-in svg path {
