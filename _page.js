@@ -109,7 +109,7 @@
   }
 
   function setupDrawIcons() {
-    var roots = document.querySelectorAll('.opp-list, .segment-grid');
+    var roots = document.querySelectorAll('.opp-list, .segment-grid, [data-draw]');
     for (var i = 0; i < roots.length; i++) {
       (function (el) {
         if (prefersReducedMotion()) {

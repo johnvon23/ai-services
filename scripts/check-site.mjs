@@ -139,6 +139,8 @@ const requiredSecondBrainCopy = [
   "Your company’s second brain.",
   "Explained through ours.",
   "A chatbot answers. A second brain works.",
+  "What a second brain does for a company.",
+  "class=\"hero-brain\"",
   "Nova, from the inside.",
   "A day in Nova’s life.",
   "The rules that make it trustworthy.",

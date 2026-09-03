@@ -1978,6 +1978,102 @@ footer.site p {
   .principles { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* hero: copy left, the half-organic half-circuit brain right */
+
+.brain-hero {
+  display: grid;
+  gap: 2.5rem;
+  max-width: none;
+}
+
+@media (min-width: 1024px) {
+  .brain-hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.brain-hero-copy { max-width: 52rem; }
+
+.hero-brain {
+  margin: 0;
+  justify-self: center;
+  width: min(100%, 20rem);
+  color: var(--ink);
+}
+
+@media (min-width: 1024px) {
+  .hero-brain { width: min(100%, 31rem); }
+}
+
+.hero-brain svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-brain .accent { stroke: var(--coral); }
+
+.hero-brain .node {
+  fill: var(--coral);
+  stroke: none;
+}
+
+html.wf-play .hero-brain:not(.is-in) svg path {
+  stroke-dasharray: 720;
+  stroke-dashoffset: 720;
+}
+
+html.wf-play .hero-brain.is-in svg path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.6s var(--ease-out);
+}
+
+html.wf-play .hero-brain:not(.is-in) svg .node { opacity: 0; }
+
+html.wf-play .hero-brain.is-in svg .node {
+  opacity: 1;
+  transition: opacity 0.6s var(--ease-out) 1.1s;
+}
+
+/* benefit tiles: the segment card recipe with a larger figure and body copy */
+
+.benefit-fig {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.benefit-fig svg {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+.benefit h3 {
+  font-size: 1.22rem;
+  margin-bottom: 0.6rem;
+  text-wrap: balance;
+}
+
+.benefit p {
+  margin: 0;
+  font-size: 0.97rem;
+  color: var(--muted);
+}
+
+.benefit-proof {
+  margin-top: 1rem !important;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--mono);
+  font-size: 0.74rem !important;
+  letter-spacing: 0.04em;
+  color: var(--ink) !important;
+}
+
+.case-links { margin: 1.1rem 0 0; }
+
 </style>
 </head>
 <body>
@@ -2319,6 +2415,9 @@ footer.site p {
             <div class="fact">
               <p>More than 30 recurring tasks are completed overnight, letting a core team of four operate like a team of twenty.</p>
             </div>
+            <p class="links case-links">
+              <a href="/secondbrain">Learn more about Futureproof’s second brain</a>
+            </p>
           </div>
         </article>
 
@@ -2609,7 +2708,7 @@ footer.site p {
   }
 
   function setupDrawIcons() {
-    var roots = document.querySelectorAll('.opp-list, .segment-grid');
+    var roots = document.querySelectorAll('.opp-list, .segment-grid, [data-draw]');
     for (var i = 0; i < roots.length; i++) {
       (function (el) {
         if (prefersReducedMotion()) {

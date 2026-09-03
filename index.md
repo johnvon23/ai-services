@@ -351,6 +351,9 @@ Nova handles recurring reporting, monitoring, administrative checks, and other r
 <!-- copy:cases.futureproof.fact_3 -->
 More than 30 recurring tasks are completed overnight, letting a core team of four operate like a team of twenty.
 
+<!-- copy:cases.futureproof.link_label -->
+Learn more about Futureproof’s second brain
+
 ### 343 Labs
 
 <!-- copy:cases.labs.chart_description -->
