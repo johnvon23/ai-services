@@ -10,6 +10,7 @@ const requiredFiles = [
   "favicon.svg",
   "robots.txt",
   "assets/og-image.png",
+  "assets/brain-icon.png",
   "assets/john-von.jpg",
   "assets/john-von-640.jpg",
   "assets/tsotne-photo-CQeDVvxh.jpg",
