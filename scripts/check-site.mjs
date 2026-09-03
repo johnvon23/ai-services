@@ -47,6 +47,9 @@ const requiredCopy = [
   "FAQPage",
   "AI Automation for Music Companies",
   "booking-embed",
+  "my-cal-inline-30min",
+  "https://app.cal.com/embed/embed.js",
+  "john-von-seggern-czdmwr/30min",
   "data-book=\"header\"",
   "data-book=\"hero\"",
   "data-book=\"calendar_tab\"",
@@ -62,6 +65,14 @@ for (const copy of requiredCopy) {
   if (!html.includes(copy)) {
     throw new Error(`Missing required page copy: ${copy}`);
   }
+}
+
+if (html.includes('class="logo-role"')) {
+  throw new Error("The removed company-logo role tags are still present.");
+}
+
+if (configSource.includes("calendar.google.com") || configSource.includes("calendar.app.google")) {
+  throw new Error("The retired Google Calendar booking configuration is still present.");
 }
 
 const forbiddenCopy = [

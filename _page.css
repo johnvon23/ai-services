@@ -125,7 +125,7 @@ button:focus-visible {
 .tag,
 .run-range,
 .run-end,
-.logo-role,
+.proof-heading,
 .best-fit {
   font-family: var(--mono);
 }
@@ -633,6 +633,16 @@ html.wf-play .is-human .flow-icon {
   padding: calc(var(--gap-section) + 1.25rem) 0;
 }
 
+.proof-heading {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 ul.logos {
   list-style: none;
   margin: 0;
@@ -649,22 +659,10 @@ ul.logos li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 5.4rem;
-  padding: 0.85rem 0.9rem 0.75rem;
+  min-height: 4.75rem;
+  padding: 0.9rem;
   background: var(--panel);
   border: 1px solid var(--hairline);
-}
-
-.logo-role {
-  margin: 0;
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-align: center;
-  line-height: 1.4;
-  max-width: 11rem;
 }
 
 ul.logos img {
@@ -1342,6 +1340,7 @@ html.wf-play .growth.is-drawn .growth-label {
   display: block;
   width: 100%;
   min-height: 38rem;
+  overflow: auto;
   border: 1px solid var(--hairline);
   background: var(--ground);
 }
@@ -1349,8 +1348,6 @@ html.wf-play .growth.is-drawn .growth-label {
 @media (max-width: 767px) {
   .booking-embed { min-height: 32rem; }
 }
-
-.booking-embed[hidden] { display: none; }
 
 .book-fallback {
   display: inline-block;

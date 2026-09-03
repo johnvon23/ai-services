@@ -131,21 +131,6 @@ Point Blank Music School
 <!-- copy:proof.native_instruments_name -->
 Native Instruments
 
-<!-- copy:proof.founded_role -->
-Founded
-
-<!-- copy:proof.growth_role -->
-Head of Growth
-
-<!-- copy:proof.education_role -->
-Director of Online Education
-
-<!-- copy:proof.community_role -->
-Online community
-
-<!-- copy:proof.support_role -->
-North America support lead
-
 ## Industry segments
 
 <!-- copy:segments.heading -->

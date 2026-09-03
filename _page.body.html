@@ -94,30 +94,25 @@
     </aside>
 
     <aside class="proof-strip" aria-label="{{attr:proof.label}}">
+      <p class="proof-heading">{{copy:proof.label}}</p>
       <ul class="logos">
         <li>
           <img src="/assets/logos/futureproof.png" alt="{{attr:proof.futureproof_name}}" width="264" height="26" class="logo-wide logo-invert">
-          <p class="logo-role">{{copy:proof.founded_role}}</p>
         </li>
         <li>
           <img src="/assets/logos/tunepal.png" alt="{{attr:proof.tunepal_name}}" width="141" height="26" class="logo-invert">
-          <p class="logo-role">{{copy:proof.founded_role}}</p>
         </li>
         <li>
           <img src="/assets/logos/343-labs.png" alt="{{attr:proof.labs_name}}" width="67" height="32" class="logo-square logo-invert">
-          <p class="logo-role">{{copy:proof.growth_role}}</p>
         </li>
         <li>
           <img src="/assets/logos/icon-collective-mark.png" alt="{{attr:proof.icon_name}}" width="1344" height="530" class="logo-icon">
-          <p class="logo-role">{{copy:proof.education_role}}</p>
         </li>
         <li>
           <img src="/assets/logos/point-blank.svg" alt="{{attr:proof.point_blank_name}}" width="158" height="45" class="logo-pb logo-invert">
-          <p class="logo-role">{{copy:proof.community_role}}</p>
         </li>
         <li>
           <img src="/assets/logos/native-instruments.svg" alt="{{attr:proof.native_instruments_name}}" width="216" height="24" class="logo-native">
-          <p class="logo-role">{{copy:proof.support_role}}</p>
         </li>
       </ul>
     </aside>
@@ -480,8 +475,8 @@
           <p class="nda">{{copy:privacy.note}}</p>
         </div>
         <div class="closing-action">
-          <iframe id="booking-embed" class="booking-embed" title="{{attr:cta.primary}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
-          <a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://calendar.app.google/VbkcutFciHNF8VvUA" target="_blank" rel="noopener noreferrer">{{copy:closing.calendar_label}}<span class="visually-hidden"> {{copy:accessibility.new_tab}}</span></a>
+          <div id="my-cal-inline-30min" class="booking-embed" role="region" aria-label="{{attr:cta.primary}}"></div>
+          <a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://cal.com/john-von-seggern-czdmwr/30min" target="_blank" rel="noopener noreferrer">{{copy:closing.calendar_label}}<span class="visually-hidden"> {{copy:accessibility.new_tab}}</span></a>
         </div>
       </div>
       <p class="best-fit">{{copy:closing.best_fit_systems}}</p>
