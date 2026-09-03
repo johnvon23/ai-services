@@ -1202,7 +1202,8 @@ html.wf-play .growth.is-drawn .growth-label {
 
 /* ---------- process ---------- */
 
-.steps {
+.steps,
+.principles {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1219,14 +1220,16 @@ html.wf-play .growth.is-drawn .growth-label {
   .steps { grid-template-columns: repeat(4, 1fr); }
 }
 
-.steps li {
+.steps li,
+.principles li {
   counter-increment: step;
   padding: 1.4rem 1.45rem;
   border: 1px solid var(--hairline);
   background: var(--panel);
 }
 
-.steps li::before {
+.steps li::before,
+.principles li::before {
   content: "0" counter(step);
   display: block;
   margin-bottom: 0.85rem;
@@ -1236,14 +1239,16 @@ html.wf-play .growth.is-drawn .growth-label {
   color: var(--coral);
 }
 
-.steps h3 {
+.steps h3,
+.principles h3 {
   margin: 0 0 0.45rem;
   font-size: 1.12rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
-.steps p {
+.steps p,
+.principles p {
   margin: 0;
   font-size: 0.95rem;
   color: var(--muted);
@@ -1471,18 +1476,22 @@ footer.site p {
 
 /* ---------- press page ---------- */
 
-.press-hero {
+.press-hero,
+.page-hero {
   padding: 3.2rem 0 0;
   max-width: 52rem;
 }
 
 @media (min-width: 768px) {
-  .press-hero { padding-top: 4.2rem; }
+  .press-hero,
+  .page-hero { padding-top: 4.2rem; }
 }
 
-.press-hero .lede { max-width: 42rem; }
+.press-hero .lede,
+.page-hero .lede { max-width: 42rem; }
 
-.press-quote {
+.press-quote,
+.pull-quote {
   margin: 2rem 0 0;
   padding: 1.3rem 1.6rem;
   border: 1px solid var(--hairline);
@@ -1491,14 +1500,16 @@ footer.site p {
   max-width: 46rem;
 }
 
-.press-quote p {
+.press-quote p,
+.pull-quote p {
   margin: 0;
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.5;
 }
 
-.press-quote footer {
+.press-quote footer,
+.pull-quote footer {
   margin-top: 0.75rem;
   font-family: var(--mono);
   font-size: 0.72rem;
@@ -1507,7 +1518,8 @@ footer.site p {
   color: var(--muted);
 }
 
-.press-quote cite {
+.press-quote cite,
+.pull-quote cite {
   font-style: normal;
   color: var(--ink);
 }
@@ -1659,6 +1671,227 @@ footer.site p {
 .press-more a { color: var(--ink); }
 
 .page-press footer.site a { color: inherit; }
+
+/* ---------- second brain page ---------- */
+
+.eyebrow {
+  margin: 0 0 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.page-secondbrain .pull-quote { margin-top: 2.4rem; }
+
+/* advantages */
+
+.gains {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .gains { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .gains { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.gain {
+  padding: 1.35rem 1.4rem 1.4rem;
+  border: 1px solid var(--hairline);
+  background: var(--panel);
+}
+
+.gain-label {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.gain h3 {
+  margin: 0.8rem 0 0.5rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.gain p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* the anatomy diagram: sources in, Nova in the middle, rationed output */
+
+.brain-map {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+@media (min-width: 900px) {
+  .brain-map {
+    grid-template-columns: minmax(0, 0.85fr) 2.4rem minmax(0, 1.3fr) 2.4rem minmax(0, 0.85fr);
+    gap: 0.75rem 0;
+    align-items: stretch;
+  }
+}
+
+.map-col {
+  padding: 1.25rem 1.35rem 1.35rem;
+  border: 1px solid var(--hairline);
+  background: var(--panel);
+}
+
+.map-col--core {
+  border-color: var(--coral);
+  background: var(--panel-deep);
+}
+
+.map-label {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.map-col h3 {
+  margin: 0.35rem 0 0.9rem;
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.map-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.map-col li {
+  padding: 0.6rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--hairline) 70%, transparent);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.map-col li strong {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.map-col li.is-human strong { color: var(--coral); }
+
+.map-layer {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--hairline);
+  background: var(--ground);
+}
+
+.map-layer + .map-layer { margin-top: 0.6rem; }
+
+.map-layer strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.map-layer p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.map-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.6rem;
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--coral);
+}
+
+.map-arrow::before { content: "\2193"; }
+
+@media (min-width: 900px) {
+  .map-arrow::before { content: "\2192"; }
+}
+
+.map-loop {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 1rem 1.3rem;
+  border: 1px dashed var(--hairline);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.map-loop::before {
+  content: "\21BA";
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--coral);
+}
+
+.map-caption {
+  grid-column: 1 / -1;
+  margin: 0.6rem 0 0;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* the daily run log shares the case layout; the longer list needs no extra room */
+
+.page-secondbrain #day .case { margin-top: 0.5rem; }
+
+/* materials and limits: plain fact rows at reading width */
+
+.materials {
+  margin-top: 2rem;
+  max-width: var(--read);
+}
+
+.materials .fact p { font-size: 0.98rem; }
+
+.materials .fact p strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* principles: the numbered-card recipe from the process steps, three across */
+
+@media (min-width: 900px) {
+  .principles { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .principles { grid-template-columns: repeat(3, 1fr); }
+}
 
 </style>
 </head>

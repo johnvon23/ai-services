@@ -180,6 +180,46 @@ def build_press_jsonld():
     )
 
 
+def build_secondbrain_jsonld(title, description):
+    return json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "@id": f"{SITE_URL}/secondbrain#article",
+            "headline": title,
+            "description": description,
+            "url": f"{SITE_URL}/secondbrain",
+            "mainEntityOfPage": f"{SITE_URL}/secondbrain",
+            "about": {
+                "@type": "DefinedTerm",
+                "name": "Second brain",
+                "description": (
+                    "An AI agent that holds a company's context, does the recurring "
+                    "work on a schedule, and knows what to escalate to a person."
+                ),
+            },
+            "author": {
+                "@type": "Person",
+                "name": "John von Seggern",
+                "url": "https://www.linkedin.com/in/johnvon/",
+                "sameAs": ["https://www.linkedin.com/in/johnvon/"],
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Systems with Judgment",
+                "url": f"{SITE_URL}/",
+            },
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "Systems with Judgment",
+                "url": f"{SITE_URL}/",
+            },
+        },
+        indent=2,
+        ensure_ascii=False,
+    ).replace("</", "<\\/")
+
+
 def render_html(
     *, title, description, path, body, structured_data, site_name, og_image_alt
 ):
@@ -296,8 +336,33 @@ def main():
         ),
     )
 
+    secondbrain_title = (
+        "What Is a Company\u2019s Second Brain? Nova, Explained | Systems with Judgment"
+    )
+    secondbrain_description = (
+        "A second brain is an AI agent that holds your company\u2019s context, does the "
+        "recurring work on a schedule, and knows what to bring to a person. How Nova runs "
+        "operations at Futureproof Music School, and how we build one for you."
+    )
+    secondbrain_body = Path("_secondbrain.body.html").read_text(encoding="utf8").strip()
+    secondbrain_html = render_html(
+        title=secondbrain_title,
+        description=secondbrain_description,
+        path="/secondbrain",
+        body=secondbrain_body,
+        structured_data=build_secondbrain_jsonld(
+            secondbrain_title, secondbrain_description
+        ),
+        site_name="Systems with Judgment",
+        og_image_alt=(
+            "John von Seggern and Tsotne Arbolishvili. AI automation for music companies. "
+            "30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers."
+        ),
+    )
+
     write_or_check("index.html", home_html, check_only)
     write_or_check("press.html", press_html, check_only)
+    write_or_check("secondbrain.html", secondbrain_html, check_only)
     if check_only:
         print("Built pages are up to date.")
 

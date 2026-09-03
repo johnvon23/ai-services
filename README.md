@@ -20,11 +20,14 @@ each comment is the editable value. Markdown emphasis such as `*this*` is
 supported.
 
 For layout or behavior changes, edit `_page.body.html`, `_page.css`, or
-`_page.js`. The press page content remains in `_press.body.html`. Run
-`npm run build` after any of these changes to regenerate `index.html` and
-`press.html`. Both pages share one inlined stylesheet and script, assembled by
-`_assemble.py`. `npm run check` also confirms the generated HTML is current.
-`vercel.json` sets `cleanUrls`, so `press.html` is served at `/press`.
+`_page.js`. The press page content remains in `_press.body.html`, and the
+second brain explainer (how Nova runs operations at Futureproof, as the worked
+example of the concept) lives in `_secondbrain.body.html`. Run `npm run build`
+after any of these changes to regenerate `index.html`, `press.html`, and
+`secondbrain.html`. All three pages share one inlined stylesheet and script,
+assembled by `_assemble.py`. `npm run check` also confirms the generated HTML is
+current. `vercel.json` sets `cleanUrls`, so `press.html` is served at `/press`
+and `secondbrain.html` at `/secondbrain`.
 
 The booking link lives in `site-config.js`. Both call-to-action buttons use this one value.
 
