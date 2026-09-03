@@ -13,7 +13,7 @@ Markdown emphasis is supported, so `*text*` becomes italic text on the page.
 AI Automation for Music Companies | Systems with Judgment
 
 <!-- copy:page.description -->
-AI automation for music companies. We automate royalty statements, release checklists, booking inquiries, and reporting inside the tools you already use. Never the songwriting.
+AI automation for music companies. We automate royalty statements, release checklists, booking inquiries, and reporting inside the tools you already use.
 
 <!-- copy:page.share_image_alt -->
 John von Seggern and Tsotne Arbolishvili. AI automation for music companies. 30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers.
