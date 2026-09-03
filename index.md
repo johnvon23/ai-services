@@ -545,6 +545,9 @@ Best for growing music companies with small teams, recurring work, and systems t
 <!-- copy:footer.tagline -->
 Systems with Judgment. AI systems for music companies.
 
+<!-- copy:footer.secondbrain_link -->
+What is a second brain?
+
 <!-- copy:footer.john_link -->
 John on LinkedIn
 

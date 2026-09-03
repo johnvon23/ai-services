@@ -111,6 +111,12 @@ if (!html.includes("<h1>AI systems for music companies</h1>")) {
   throw new Error("Home H1 is no longer “AI systems for music companies”.");
 }
 
+for (const [name, source] of [["index.html", html], ["press.html", press], ["secondbrain.html", secondbrain]]) {
+  if (!source.includes('href="/secondbrain"')) {
+    throw new Error(`Footer link to /secondbrain is missing from ${name}`);
+  }
+}
+
 if (!html.includes('href="/press"')) {
   throw new Error("The founder bio no longer links to the local press page.");
 }
