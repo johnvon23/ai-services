@@ -46,7 +46,6 @@ const requiredCopy = [
   "Do you replace staff?",
   "FAQPage",
   "AI Automation for Music Companies",
-  "booking-embed",
   "my-cal-inline-30min",
   "https://app.cal.com/embed/embed.js",
   "john-von-seggern-czdmwr/30min",

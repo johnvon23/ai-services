@@ -1480,17 +1480,16 @@ html.wf-play .growth.is-drawn .growth-label {
   margin-top: 1rem;
 }
 
-.booking-embed {
+#my-cal-inline-30min {
   display: block;
   width: 100%;
   min-height: 38rem;
-  overflow: auto;
   border: 1px solid var(--hairline);
   background: var(--ground);
 }
 
 @media (max-width: 767px) {
-  .booking-embed { min-height: 32rem; }
+  #my-cal-inline-30min { min-height: 32rem; }
 }
 
 .book-fallback {
@@ -2225,7 +2224,23 @@ footer.site p {
           <p class="nda">Unreleased music, artist contracts, and royalty data stay private. Happy to sign an NDA before the first call.</p>
         </div>
         <div class="closing-action">
-          <div id="my-cal-inline-30min" class="booking-embed" role="region" aria-label="Free 30-minute session"></div>
+          <!-- Cal inline embed code begins -->
+          <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "30min", {origin:"https://app.cal.com"});
+            Cal.config = Cal.config || {};
+            Cal.config.forwardQueryParams = true;
+
+            Cal.ns["30min"]("inline", {
+              elementOrSelector:"#my-cal-inline-30min",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+              calLink: "john-von-seggern-czdmwr/30min",
+            });
+
+            Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
+          <!-- Cal inline embed code ends -->
           <a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://cal.com/john-von-seggern-czdmwr/30min" target="_blank" rel="noopener noreferrer">Open the calendar in a new tab<span class="visually-hidden"> (opens in a new tab)</span></a>
         </div>
       </div>
@@ -2278,59 +2293,8 @@ footer.site p {
   }
 
   function setupBooking() {
-    var settings = config();
-    var url = settings.bookingUrl;
-    var calLink = settings.calLink;
-    var container = document.getElementById('my-cal-inline-30min');
+    var url = config().bookingUrl;
     var fallback = document.getElementById('booking-fallback');
-
-    if (container && calLink) {
-      (function (C, A, L) {
-        var p = function (a, ar) { a.q.push(ar); };
-        var d = C.document;
-        C.Cal = C.Cal || function () {
-          var cal = C.Cal;
-          var ar = arguments;
-          if (!cal.loaded) {
-            cal.ns = {};
-            cal.q = cal.q || [];
-            d.head.appendChild(d.createElement('script')).src = A;
-            cal.loaded = true;
-          }
-          if (ar[0] === L) {
-            var api = function () { p(api, arguments); };
-            var namespace = ar[1];
-            api.q = api.q || [];
-            if (typeof namespace === 'string') {
-              cal.ns[namespace] = cal.ns[namespace] || api;
-              p(cal.ns[namespace], ar);
-              p(cal, ['initNamespace', namespace]);
-            } else {
-              p(cal, ar);
-            }
-            return;
-          }
-          p(cal, ar);
-        };
-      })(window, 'https://app.cal.com/embed/embed.js', 'init');
-
-      window.Cal('init', '30min', { origin: 'https://app.cal.com' });
-      window.Cal.config = window.Cal.config || {};
-      window.Cal.config.forwardQueryParams = true;
-      window.Cal.ns['30min']('inline', {
-        elementOrSelector: '#my-cal-inline-30min',
-        config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true' },
-        calLink: calLink
-      });
-      window.Cal.ns['30min']('ui', {
-        hideEventTypeDetails: false,
-        layout: 'month_view'
-      });
-      window.Cal.ns['30min']('on', {
-        action: 'bookingSuccessful',
-        callback: function () { track('booking_completed'); }
-      });
-    }
 
     if (fallback && url) {
       fallback.setAttribute('href', url);

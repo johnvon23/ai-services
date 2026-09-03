@@ -1336,17 +1336,16 @@ html.wf-play .growth.is-drawn .growth-label {
   margin-top: 1rem;
 }
 
-.booking-embed {
+#my-cal-inline-30min {
   display: block;
   width: 100%;
   min-height: 38rem;
-  overflow: auto;
   border: 1px solid var(--hairline);
   background: var(--ground);
 }
 
 @media (max-width: 767px) {
-  .booking-embed { min-height: 32rem; }
+  #my-cal-inline-30min { min-height: 32rem; }
 }
 
 .book-fallback {
