@@ -11,16 +11,17 @@ COPY_PLACEHOLDER = re.compile(r"\{\{(copy|attr|entity):([a-z0-9_.-]+)\}\}")
 EMPHASIS = re.compile(r"(?<!\*)\*([^*\n]+)\*(?!\*)")
 
 
-class HomepageCopy:
-    def __init__(self, values):
+class PageCopy:
+    def __init__(self, values, path):
         self.values = values
+        self.path = path
         self.used = set()
 
     def raw(self, key):
         try:
             value = self.values[key]
         except KeyError as error:
-            raise ValueError(f"Missing copy value in index.md: {key}") from error
+            raise ValueError(f"Missing copy value in {self.path}: {key}") from error
         self.used.add(key)
         return value
 
@@ -43,12 +44,12 @@ class HomepageCopy:
         unused = sorted(set(self.values) - self.used)
         if unused:
             raise ValueError(
-                "Copy values in index.md are not used by the homepage build: "
+                f"Copy values in {self.path} are not used by the page build: "
                 + ", ".join(unused)
             )
 
 
-def read_homepage_copy(path="index.md"):
+def read_copy(path):
     lines = Path(path).read_text(encoding="utf8").splitlines()
     values = {}
 
@@ -76,11 +77,11 @@ def read_homepage_copy(path="index.md"):
     if not values:
         raise ValueError(f"No copy values found in {path}")
 
-    return HomepageCopy(values)
+    return PageCopy(values, path)
 
 
-def fill_homepage_template(copy):
-    template = Path("_page.body.html").read_text(encoding="utf8").strip()
+def fill_template(template_path, copy):
+    template = Path(template_path).read_text(encoding="utf8").strip()
 
     def replace(match):
         mode, key = match.groups()
@@ -92,7 +93,7 @@ def fill_homepage_template(copy):
 
     body = COPY_PLACEHOLDER.sub(replace, template)
     if any(token in body for token in ("{{copy:", "{{attr:", "{{entity:")):
-        raise ValueError("Unresolved copy placeholder in _page.body.html")
+        raise ValueError(f"Unresolved copy placeholder in {template_path}")
     return body
 
 
@@ -303,8 +304,8 @@ def main():
         raise SystemExit(f"Unknown argument: {unknown_args[0]}")
     check_only = "--check" in sys.argv[1:]
 
-    copy = read_homepage_copy()
-    home_body = fill_homepage_template(copy)
+    copy = read_copy("index.md")
+    home_body = fill_template("_page.body.html", copy)
     home_jsonld = build_homepage_jsonld(copy)
     home_html = render_html(
         title=copy.raw("page.title"),
@@ -336,15 +337,10 @@ def main():
         ),
     )
 
-    secondbrain_title = (
-        "What Is a Company\u2019s Second Brain? Nova, Explained | Systems with Judgment"
-    )
-    secondbrain_description = (
-        "A second brain is an AI agent that holds your company\u2019s context, does the "
-        "recurring work on a schedule, and knows what to bring to a person. How Nova runs "
-        "operations at Futureproof Music School, and how we build one for you."
-    )
-    secondbrain_body = Path("_secondbrain.body.html").read_text(encoding="utf8").strip()
+    secondbrain_copy = read_copy("secondbrain.md")
+    secondbrain_title = secondbrain_copy.raw("page.title")
+    secondbrain_description = secondbrain_copy.raw("page.description")
+    secondbrain_body = fill_template("_secondbrain.body.html", secondbrain_copy)
     secondbrain_html = render_html(
         title=secondbrain_title,
         description=secondbrain_description,
@@ -353,12 +349,10 @@ def main():
         structured_data=build_secondbrain_jsonld(
             secondbrain_title, secondbrain_description
         ),
-        site_name="Systems with Judgment",
-        og_image_alt=(
-            "John von Seggern and Tsotne Arbolishvili. AI automation for music companies. "
-            "30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers."
-        ),
+        site_name=secondbrain_copy.raw("organization.name"),
+        og_image_alt=secondbrain_copy.raw("page.share_image_alt"),
     )
+    secondbrain_copy.assert_all_used()
 
     write_or_check("index.html", home_html, check_only)
     write_or_check("press.html", press_html, check_only)

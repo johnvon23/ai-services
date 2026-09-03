@@ -2,6 +2,7 @@ import { access, readFile } from "node:fs/promises";
 
 const requiredFiles = [
   "index.md",
+  "secondbrain.md",
   "index.html",
   "press.html",
   "secondbrain.html",
@@ -61,6 +62,11 @@ const requiredCopy = [
 
 if (!markdown.includes("<!-- copy:hero.heading -->")) {
   throw new Error("index.md is no longer the homepage copy source.");
+}
+
+const secondbrainMarkdown = await readFile("secondbrain.md", "utf8");
+if (!secondbrainMarkdown.includes("<!-- copy:hero.heading -->")) {
+  throw new Error("secondbrain.md is no longer the second brain copy source.");
 }
 
 for (const copy of requiredCopy) {
