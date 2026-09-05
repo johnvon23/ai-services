@@ -106,7 +106,7 @@ followers in 12 months
 Best for growing music companies with small teams, recurring work, and tools that donâ€™t quite talk to each other.
 
 <!-- copy:results.position -->
-We automate the spreadsheet work. Never the songwriting, the sound, or the relationships.
+We automate the spreadsheet work. Not the songwriting, the sound, or the relationships.
 
 ## Company proof
 
@@ -243,13 +243,13 @@ Connect marketing, catalog metadata, sales, and operations so you can see whatâ€
 How an engagement works.
 
 <!-- copy:process.intro -->
-Bring us the messy version. Walk us through the tools, the handoffs, and the things that keep falling through. If there is something worth building, we will say how. If there is not, we will say so.
+Bring us the messy version. Walk us through the tools, the handoffs, and the things that keep falling through. If we see something worth building, we'll tell you how.
 
 <!-- copy:process.step_1_heading -->
 Working session
 
 <!-- copy:process.step_1_body -->
-30 minutes, free. We map where the time goes.
+30 minutes, free. 
 
 <!-- copy:process.step_2_heading -->
 Opportunity map

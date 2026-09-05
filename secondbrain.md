@@ -13,7 +13,7 @@ Markdown emphasis is supported, so `*text*` becomes italic text on the page.
 What Is a Company’s Second Brain? Nova, Explained | Systems with Judgment
 
 <!-- copy:page.description -->
-A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and knows what to bring to a person. How Nova runs operations at Futureproof Music School, and how we build one for you.
+A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and can advise on business strategy across the whole organization. 
 
 <!-- copy:page.share_image_alt -->
 John von Seggern and Tsotne Arbolishvili. AI automation for music companies. 30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers.
@@ -41,16 +41,10 @@ Second brain
 Your company’s second brain. *Explained through ours.*
 
 <!-- copy:hero.lede -->
-A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and knows what to bring to a person. We built one inside Futureproof Music School. Its name is Nova. Rather than describe the idea in the abstract, this page shows you exactly how it works.
+A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and knows what to bring to a person. We built one inside Futureproof Music School. Its name is Nova. This page shows you exactly how it works.
 
 <!-- copy:hero.statement -->
 Nova reads every system the school runs, does more than thirty jobs a day on a schedule, repairs its own failures, learns from the day each night, and brings the founder one decision at a time. A core team of four runs like a team of twenty.
-
-<!-- copy:hero.statement_source -->
-Nova
-
-<!-- copy:hero.statement_source_detail -->
-operations agent at Futureproof Music School
 
 <!-- copy:hero.image_alt -->
 Icon of a brain seen from above. The left hemisphere is an outline with folds, the right hemisphere is solid with circuit traces and coral nodes, joined by a coral line down the middle.
@@ -67,7 +61,7 @@ Not an incremental gain. A four-person team runs like twenty, and the founder st
 Make better decisions, with the whole picture.
 
 <!-- copy:benefits.item_1.body -->
-Revenue, retention, ad spend, support, and production errors are read together every morning, by something that remembers what last week looked like. Decisions get made on the full picture instead of on whichever tab was open.
+Revenue, retention, ad spend, support, and production errors are read together and analyzed every morning, supporting vastly improved decision-making. Calls get made on the full picture instead of on whichever tab was open.
 
 <!-- copy:benefits.item_1.proof -->
 At Futureproof: one morning brief, one ask at most
@@ -76,7 +70,7 @@ At Futureproof: one morning brief, one ask at most
 Move faster than your competitors.
 
 <!-- copy:benefits.item_2.body -->
-Work that used to wait for Monday is done by 6:00am. The recurring work is finished before anyone logs in, so the team’s day starts at the decision, not at the spreadsheet.
+Work that used to wait for somebody to get around to it is done by Monday at 6:00am. The recurring work is finished before anyone logs in, so the team can concentrate on what is most important and valuable. 
 
 <!-- copy:benefits.item_2.proof -->
 At Futureproof: 30+ jobs finished overnight, every night
@@ -96,7 +90,7 @@ At Futureproof: 570+ memory entries and 30 operating rules
 A chatbot answers. A second brain works.
 
 <!-- copy:definition.intro -->
-Most companies have tried an AI assistant: you ask, it answers, it forgets. A second brain is a different kind of thing. Three properties separate it from a chat window.
+Most companies have tried an AI assistant: you ask, it answers, it forgets. A second brain is different. 
 
 <!-- copy:definition.row_1.heading -->
 It holds the context.
@@ -108,13 +102,13 @@ The rules, the history, the numbers, and who decides what are written down in fi
 It works on a schedule, not on request.
 
 <!-- copy:definition.row_2.body -->
-Nobody has to remember to ask. More than thirty jobs run every day on a clock, from a 2:00am review of the previous day to an 11:55pm daily note. The team wakes up to finished reports, drafted emails, and a list of anything that broke overnight.
+Nobody has to remember to ask. More than thirty jobs run every day on a clock, from a 2:00am review of the previous day to an 11:55pm daily note. The team wakes up to finished reports, drafted emails, and a list of anything that broke (and was repaired) overnight.
 
 <!-- copy:definition.row_3.heading -->
 It knows what to escalate.
 
 <!-- copy:definition.row_3.body -->
-A night’s work is mostly files. What reaches a human is rationed: at most one ask a day, no individual customer reports on chat, metrics once a week. The founder reads three lines, not thirty pages, and the detail waits in a report for whoever wants it.
+A night’s work is mostly processing files and data. The founder reads three lines, not thirty pages, and the detail waits in a report for whoever wants it.
 
 ## Three more advantages
 
