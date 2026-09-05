@@ -122,31 +122,16 @@
       </div>
     </section>
 
-    <section class="block" id="why">
-      <h2>{{copy:why.heading}}</h2>
-      <p class="section-intro">{{copy:why.intro}}</p>
-      <div class="gains">
-        <article class="gain">
-          <p class="gain-label">{{copy:why.item_1.label}}</p>
-          <h3>{{copy:why.item_1.heading}}</h3>
-          <p>{{copy:why.item_1.body}}</p>
-        </article>
-        <article class="gain">
-          <p class="gain-label">{{copy:why.item_2.label}}</p>
-          <h3>{{copy:why.item_2.heading}}</h3>
-          <p>{{copy:why.item_2.body}}</p>
-        </article>
-        <article class="gain">
-          <p class="gain-label">{{copy:why.item_3.label}}</p>
-          <h3>{{copy:why.item_3.heading}}</h3>
-          <p>{{copy:why.item_3.body}}</p>
-        </article>
-      </div>
-    </section>
 
     <section class="block" id="anatomy">
       <h2>{{copy:anatomy.heading}}</h2>
       <p class="section-intro">{{copy:anatomy.intro}}</p>
+      <ul class="stat-chips" aria-label="{{attr:anatomy.stats_label}}">
+        <li><strong>{{copy:anatomy.stat_1.value}}</strong> <span>{{copy:anatomy.stat_1.label}}</span></li>
+        <li><strong>{{copy:anatomy.stat_2.value}}</strong> <span>{{copy:anatomy.stat_2.label}}</span></li>
+        <li><strong>{{copy:anatomy.stat_3.value}}</strong> <span>{{copy:anatomy.stat_3.label}}</span></li>
+        <li><strong>{{copy:anatomy.stat_4.value}}</strong> <span>{{copy:anatomy.stat_4.label}}</span></li>
+      </ul>
       <figure class="brain-map" role="group" aria-label="{{attr:anatomy.diagram_description}}">
         <div class="map-col">
           <p class="map-label">{{copy:anatomy.sources.label}}</p>
@@ -237,40 +222,10 @@
           <div class="fact">
             <p>{{copy:day.copy.fact_2}}</p>
           </div>
-          <div class="fact">
-            <p>{{copy:day.copy.fact_3}}</p>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="block" id="materials">
-      <h2>{{copy:materials.heading}}</h2>
-      <p class="section-intro">{{copy:materials.intro}}</p>
-      <ul class="stat-chips" aria-label="{{attr:materials.stats_label}}">
-        <li><strong>{{copy:materials.stat_1.value}}</strong> <span>{{copy:materials.stat_1.label}}</span></li>
-        <li><strong>{{copy:materials.stat_2.value}}</strong> <span>{{copy:materials.stat_2.label}}</span></li>
-        <li><strong>{{copy:materials.stat_3.value}}</strong> <span>{{copy:materials.stat_3.label}}</span></li>
-        <li><strong>{{copy:materials.stat_4.value}}</strong> <span>{{copy:materials.stat_4.label}}</span></li>
-      </ul>
-      <div class="materials">
-        <div class="fact">
-          <p><strong>{{copy:materials.fact_1.lead}}</strong> {{copy:materials.fact_1.body}}</p>
-        </div>
-        <div class="fact">
-          <p><strong>{{copy:materials.fact_2.lead}}</strong> {{copy:materials.fact_2.body}}</p>
-        </div>
-        <div class="fact">
-          <p><strong>{{copy:materials.fact_3.lead}}</strong> {{copy:materials.fact_3.body}}</p>
-        </div>
-        <div class="fact">
-          <p><strong>{{copy:materials.fact_4.lead}}</strong> {{copy:materials.fact_4.body}}</p>
-        </div>
-        <div class="fact">
-          <p><strong>{{copy:materials.fact_5.lead}}</strong> {{copy:materials.fact_5.body}}</p>
-        </div>
-      </div>
-    </section>
 
     <section class="block" id="principles">
       <h2>{{copy:principles.heading}}</h2>

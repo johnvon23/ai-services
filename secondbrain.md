@@ -13,7 +13,7 @@ Markdown emphasis is supported, so `*text*` becomes italic text on the page.
 What Is a Company’s Second Brain? Nova, Explained | Systems with Judgment
 
 <!-- copy:page.description -->
-A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and can advise on business strategy across the whole organization. 
+A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and advises on strategy across the whole organization. Here is ours, from the inside.
 
 <!-- copy:page.share_image_alt -->
 John von Seggern and Tsotne Arbolishvili. AI automation for music companies. 30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers.
@@ -41,10 +41,10 @@ Second brain
 Your company’s second brain. *Explained through ours.*
 
 <!-- copy:hero.lede -->
-A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and knows what to bring to a person. We built one inside Futureproof Music School. Its name is Nova. This page shows you exactly how it works.
+A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and knows what to bring to a person. Ours is called Nova. It runs Futureproof Music School, and this page shows exactly how.
 
 <!-- copy:hero.statement -->
-Nova reads every system the school runs, does more than thirty jobs a day on a schedule, repairs its own failures, learns from the day each night, and brings the founder one decision at a time. A core team of four runs like a team of twenty.
+Nova reads every system the school runs, does thirty-plus jobs a day, repairs its own failures, learns every night, and brings the founder one decision at a time. Four people run like twenty.
 
 <!-- copy:hero.image_alt -->
 Icon of a brain seen from above. The left hemisphere is an outline with folds, the right hemisphere is solid with circuit traces and coral nodes, joined by a coral line down the middle.
@@ -52,37 +52,37 @@ Icon of a brain seen from above. The left hemisphere is an outline with folds, t
 ## Benefits
 
 <!-- copy:benefits.heading -->
-What a second brain does for a company.
+What it does for a company.
 
 <!-- copy:benefits.intro -->
-Not an incremental gain. A four-person team runs like twenty, and the founder starts every day already knowing what changed and what to do about it.
+Not a productivity bump. A different size of company, with the same headcount.
 
 <!-- copy:benefits.item_1.heading -->
-Make better decisions, with the whole picture.
+Decide with the whole picture.
 
 <!-- copy:benefits.item_1.body -->
-Revenue, retention, ad spend, support, and production errors are read together and analyzed every morning, supporting vastly improved decision-making. Calls get made on the full picture instead of on whichever tab was open.
+Revenue, retention, ad spend, support, and errors, read together every morning. Decisions get made on the full picture, not on whichever tab was open.
 
 <!-- copy:benefits.item_1.proof -->
 At Futureproof: one morning brief, one ask at most
 
 <!-- copy:benefits.item_2.heading -->
-Move faster than your competitors.
+Move faster than the competition.
 
 <!-- copy:benefits.item_2.body -->
-Work that used to wait for somebody to get around to it is done by Monday at 6:00am. The recurring work is finished before anyone logs in, so the team can concentrate on what is most important and valuable. 
+The recurring work is done before anyone logs in. The team spends its day on what grows the business.
 
 <!-- copy:benefits.item_2.proof -->
-At Futureproof: 30+ jobs finished overnight, every night
+At Futureproof: 30+ jobs done overnight, every night
 
 <!-- copy:benefits.item_3.heading -->
-Get smarter every single night.
+Get smarter every night.
 
 <!-- copy:benefits.item_3.body -->
-Every evening the agent reviews the day, and every mistake becomes a rule. A correction from the founder on Tuesday is standing policy by Wednesday, for every future run.
+Every mistake becomes a rule. A correction on Tuesday is standing policy by Wednesday, for every future run.
 
 <!-- copy:benefits.item_3.proof -->
-At Futureproof: 570+ memory entries and 30 operating rules
+At Futureproof: 570+ memory entries, 30 operating rules
 
 ## What a second brain is
 
@@ -90,60 +90,25 @@ At Futureproof: 570+ memory entries and 30 operating rules
 A chatbot answers. A second brain works.
 
 <!-- copy:definition.intro -->
-Most companies have tried an AI assistant: you ask, it answers, it forgets. A second brain is different. 
+A chatbot answers and forgets. A second brain is built differently.
 
 <!-- copy:definition.row_1.heading -->
 It holds the context.
 
 <!-- copy:definition.row_1.body -->
-The rules, the history, the numbers, and who decides what are written down in files the agent reads at the start of every run. Nova’s operating document, thirty rules, and roughly six hundred memory entries are the company’s knowledge, in a form that survives staff turnover and forgotten Slack threads.
+Rules, history, numbers, and who decides what, in files the agent reads before every run. Knowledge that survives staff turnover.
 
 <!-- copy:definition.row_2.heading -->
-It works on a schedule, not on request.
+It works on a clock, not on request.
 
 <!-- copy:definition.row_2.body -->
-Nobody has to remember to ask. More than thirty jobs run every day on a clock, from a 2:00am review of the previous day to an 11:55pm daily note. The team wakes up to finished reports, drafted emails, and a list of anything that broke (and was repaired) overnight.
+Nobody has to remember to ask. Thirty-plus jobs run every day on a clock. The team wakes up to finished work.
 
 <!-- copy:definition.row_3.heading -->
 It knows what to escalate.
 
 <!-- copy:definition.row_3.body -->
-A night’s work is mostly processing files and data. The founder reads three lines, not thirty pages, and the detail waits in a report for whoever wants it.
-
-## Three more advantages
-
-<!-- copy:why.heading -->
-Three more, less obvious.
-
-<!-- copy:why.intro -->
-The headline benefits sell themselves. These are the ones founders notice after a month.
-
-<!-- copy:why.item_1.label -->
-Memory
-
-<!-- copy:why.item_1.heading -->
-Knowledge that doesn’t walk out the door.
-
-<!-- copy:why.item_1.body -->
-Why a decision was made, what was tried and failed, which vendor was dropped and when. It lives in versioned files, not in one person’s head. New staff and new agents read the same source.
-
-<!-- copy:why.item_2.label -->
-Cost
-
-<!-- copy:why.item_2.heading -->
-Expensive brain, cheap hands.
-
-<!-- copy:why.item_2.body -->
-The frontier model plans, decides, and verifies. Cheaper models and coding agents do the labour. The bill tracks judgment, not keystrokes, and stays flat as the workload grows.
-
-<!-- copy:why.item_3.label -->
-Trust
-
-<!-- copy:why.item_3.heading -->
-Autonomy that grows one approval at a time.
-
-<!-- copy:why.item_3.body -->
-The agent ships fixes in its own systems, proposes anything customer-facing, and never touches money or deletions. The founder approves a category once and never has to look at that class of problem again.
+The founder reads three lines, not thirty pages. The detail waits in a report for whoever needs it.
 
 ## Anatomy diagram
 
@@ -151,10 +116,37 @@ The agent ships fixes in its own systems, proposes anything customer-facing, and
 Nova, from the inside.
 
 <!-- copy:anatomy.intro -->
-One agent, three columns. What it reads, what it is made of, and what comes out. The loop at the bottom is the part most AI projects skip.
+No custom model. A frontier language model plus a very well-organised folder. That folder is the product.
+
+<!-- copy:anatomy.stats_label -->
+Nova by the numbers
+
+<!-- copy:anatomy.stat_1.value -->
+170+
+
+<!-- copy:anatomy.stat_1.label -->
+named skills
+
+<!-- copy:anatomy.stat_2.value -->
+30
+
+<!-- copy:anatomy.stat_2.label -->
+operating rules
+
+<!-- copy:anatomy.stat_3.value -->
+570+
+
+<!-- copy:anatomy.stat_3.label -->
+memory entries
+
+<!-- copy:anatomy.stat_4.value -->
+110
+
+<!-- copy:anatomy.stat_4.label -->
+canonical state files
 
 <!-- copy:anatomy.diagram_description -->
-Diagram of how Nova works. Left: the sources Nova reads, such as payments, the course platform, ads, email, analytics, community chat, the task board, and the codebase. Centre: Nova itself, made of an operating document and rules, three kinds of memory, canonical state files, and 170-plus skills run on a schedule. Right: what it produces, such as reports and a dashboard, task cards, email drafts that are never sent automatically, repairs to its own tools, delegated code, and at most one direct message a day to the founder, who decides. Underneath: a nightly loop that writes what was learned back into memory and rules.
+Diagram of how Nova works. Left: the sources it reads, from payments and the course platform to ads, email, the task board, and the codebase. Centre: its operating document, rules, memory, canonical state, and scheduled skills. Right: reports, task cards, email drafts, repairs, delegated code, and one message a day to the founder. Underneath: a nightly loop that writes what was learned back into memory.
 
 <!-- copy:anatomy.sources.label -->
 Reads
@@ -166,7 +158,7 @@ Sources
 Payments
 
 <!-- copy:anatomy.sources.item_1.detail -->
-Stripe, for every dollar in and out
+Stripe, every dollar in and out
 
 <!-- copy:anatomy.sources.item_2.name -->
 Course platform
@@ -196,7 +188,7 @@ Trello, both ways
 The codebase
 
 <!-- copy:anatomy.sources.item_6.detail -->
-Every app the school runs, in git
+Every app the school runs
 
 <!-- copy:anatomy.core.label -->
 Is made of
@@ -208,25 +200,25 @@ Nova
 Operating document and rules
 
 <!-- copy:anatomy.core.layer_1.body -->
-One canonical instruction file, which it calls its soul document, plus thirty rules on metrics, communication, code quality, and attention. Every run starts by reading them.
+One instruction file Nova calls its soul document, plus thirty rules. Every run starts by reading them.
 
 <!-- copy:anatomy.core.layer_2.heading -->
 Memory, three kinds
 
 <!-- copy:anatomy.core.layer_2.body -->
-Episodic (what happened), semantic (what is true), procedural (how to do it). Around six hundred entries, with confidence that decays until re-verified.
+What happened, what is true, how to do it. Six hundred entries, each losing confidence until re-verified.
 
 <!-- copy:anatomy.core.layer_3.heading -->
 Canonical state
 
 <!-- copy:anatomy.core.layer_3.body -->
-About a hundred files that hold the one true number for revenue, churn, and the rest. Reports quote them. Nobody re-derives a figure by hand.
+One file holds the one true number for revenue, churn, and the rest. Nobody re-derives a figure by hand.
 
 <!-- copy:anatomy.core.layer_4.heading -->
 Skills, on a clock
 
 <!-- copy:anatomy.core.layer_4.body -->
-170-plus named skills, from a morning brief to a production error sweep. More than thirty run every day, the rest weekly or on request.
+170-plus named skills. Thirty-plus run daily, the rest weekly or on request.
 
 <!-- copy:anatomy.outputs.label -->
 Produces
@@ -250,13 +242,13 @@ Filed, deduplicated, closed when fixed
 Email drafts
 
 <!-- copy:anatomy.outputs.item_3.detail -->
-Written into the founder’s drafts, never sent
+In the founder’s drafts, never sent
 
 <!-- copy:anatomy.outputs.item_4.name -->
 Repairs
 
 <!-- copy:anatomy.outputs.item_4.detail -->
-To its own tools and workflows, verified before reported
+To its own tools, verified before reported
 
 <!-- copy:anatomy.outputs.item_5.name -->
 Delegated code
@@ -271,7 +263,7 @@ One message a day, at most
 To the founder, who decides
 
 <!-- copy:anatomy.loop -->
-Every night at 2:00am Nova reviews the day, extracts what it learned, and writes it back into memory and rules. That is what makes the system better on Friday than it was on Monday.
+Every night at 2:00am Nova reviews the day and writes what it learned back into memory and rules. Friday’s system is better than Monday’s.
 
 <!-- copy:anatomy.caption -->
 Sources in, judgment in the middle, rationed output. The human stays at the end of the line by design.
@@ -282,7 +274,7 @@ Sources in, judgment in the middle, rationed output. The human stays at the end 
 A day in Nova’s life.
 
 <!-- copy:day.log_description -->
-Nova’s daily schedule, Pacific time. 2:00am nightly review and learning. 3:00am build one small automation. 3:30am workflow bug patrol. 4:19am code review across the app fleet. 4:30am student health and revenue check. 6:20am environment canary. 6:30am morning brief. 6:33am up to three email drafts. 6:42am audio brief. 7:03am research crawl. 7:12am smoke test every live app. 8:33am production error sweep. 1:00pm self-heal anything that failed. 11:55pm daily note. More than thirty runs every day.
+Nova’s daily schedule, Pacific time, from a 2:00am review of the previous day through a 6:30am morning brief, morning smoke tests and error sweeps, a 1:00pm self-heal pass, and an 11:55pm daily note. More than thirty runs every day.
 
 <!-- copy:day.range -->
 One weekday, Pacific time
@@ -384,78 +376,11 @@ Sundays: strategy report, weekly essay, team digest. Mondays: exactly one propos
 The team logs in to finished work.
 
 <!-- copy:day.copy.fact_1 -->
-Every job above is a named skill with its own instructions, its own allowed tools, and a record of what it produced. If one fails, a second job at 1:00pm diagnoses and repairs it, and only escalates what a person must do themselves.
+Every job is a named skill with its own instructions and tools. If one fails, the 1:00pm run repairs it and escalates only what a person must do.
 
 <!-- copy:day.copy.fact_2 -->
-Nothing on this list sends anything to a customer. Emails are drafts. Social clips are staged for a person to post. The one message that reaches the founder is a pointer to a report, not the report.
+Nothing here reaches a customer. Emails are drafts, clips are staged for a person to post, and the founder gets a pointer to a report, not the report.
 
-<!-- copy:day.copy.fact_3 -->
-Weekly runs add the slower thinking: a Sunday strategy report on where revenue could come from, an essay on what the week meant, and a Monday proposal for the one thing worth the founder’s attention.
-
-## What Nova is built from
-
-<!-- copy:materials.heading -->
-What it is built from.
-
-<!-- copy:materials.intro -->
-No custom model. Nova is a frontier language model plus a very well-organised folder. That folder is the product. Here is what is in it.
-
-<!-- copy:materials.stats_label -->
-Nova by the numbers
-
-<!-- copy:materials.stat_1.value -->
-170+
-
-<!-- copy:materials.stat_1.label -->
-named skills
-
-<!-- copy:materials.stat_2.value -->
-30
-
-<!-- copy:materials.stat_2.label -->
-operating rules
-
-<!-- copy:materials.stat_3.value -->
-570+
-
-<!-- copy:materials.stat_3.label -->
-memory entries
-
-<!-- copy:materials.stat_4.value -->
-110
-
-<!-- copy:materials.stat_4.label -->
-canonical state files
-
-<!-- copy:materials.fact_1.lead -->
-A soul document.
-
-<!-- copy:materials.fact_1.body -->
-One file that says who Nova is, what the company is for, how decisions get prioritised, and how to talk to the founder. Every agent that touches the company reads the same copy. It opens with a section on being an AI that starts each session fresh, written by Nova, for Nova.
-
-<!-- copy:materials.fact_2.lead -->
-Rules, scoped to the work.
-
-<!-- copy:materials.fact_2.body -->
-Thirty short documents on metrics definitions, communication policy, code quality, data sources, and attention discipline. Most load only when a task touches the files they govern, so the agent is never reading about ad strategy while fixing a spreadsheet.
-
-<!-- copy:materials.fact_3.lead -->
-Memory with a shelf life.
-
-<!-- copy:materials.fact_3.body -->
-Facts carry a last-verified date and lose confidence as they age. Old memory is treated as what the team believed at the time, not as truth, and a nightly queue re-checks the stalest entries against live data.
-
-<!-- copy:materials.fact_4.lead -->
-Canonical numbers.
-
-<!-- copy:materials.fact_4.body -->
-Revenue, churn, and the trial funnel each live in exactly one file, written by exactly one job. Every report reads from there. When two reports disagree, that is a bug, and there is a job that looks for it.
-
-<!-- copy:materials.fact_5.lead -->
-A routing policy.
-
-<!-- copy:materials.fact_5.body -->
-Nova plans and verifies. Self-contained coding tasks go to a cheaper coding agent with a written brief. Anything that needs the company’s accounts or judgment stays with Nova. The brief and the diff are both read before anything is called done.
 
 ## Principles
 
@@ -463,43 +388,43 @@ Nova plans and verifies. Self-contained coding tasks go to a cheaper coding agen
 The rules that make it trustworthy.
 
 <!-- copy:principles.intro -->
-An agent with access to your accounts is only useful if you can stop watching it. These are the rules Nova runs under. Each one was written after something went wrong.
+An agent with access to your accounts is only useful if you can stop watching it. Each rule below was written after something went wrong.
 
 <!-- copy:principles.item_1.heading -->
 Verify before you claim.
 
 <!-- copy:principles.item_1.body -->
-Another agent’s report is a hypothesis until it is checked against the source. Reading a task card is not verification. Hitting the API is.
+Another agent’s report is a hypothesis until it is checked against the source.
 
 <!-- copy:principles.item_2.heading -->
 Diagnose before you fix.
 
 <!-- copy:principles.item_2.body -->
-Name and reproduce the cause, or the deliverable is an investigation, not a fix. A correlation is not a bug.
+Name and reproduce the cause, or the deliverable is an investigation, not a fix.
 
 <!-- copy:principles.item_3.heading -->
 One ask a day.
 
 <!-- copy:principles.item_3.body -->
-Most findings wait in reports. Silence from the founder means handled, not forgotten. Nothing gets re-raised with sharper framing.
+Everything else waits in reports. Silence means handled, not forgotten.
 
 <!-- copy:principles.item_4.heading -->
 Drafts, never sends.
 
 <!-- copy:principles.item_4.body -->
-Every customer email lands as a draft. A person who knows the relationship sends it. This is permanent, by design.
+Every customer email lands as a draft. A person who knows the relationship sends it.
 
 <!-- copy:principles.item_5.heading -->
 A broken tool stops everything.
 
 <!-- copy:principles.item_5.body -->
-No silent fallbacks, no fabricated results. Report the break immediately, fix the cause, verify with fresh evidence, then carry on.
+No silent fallbacks, no invented results. Report the break, fix the cause, then carry on.
 
 <!-- copy:principles.item_6.heading -->
 An autonomy charter.
 
 <!-- copy:principles.item_6.body -->
-Three lists: ship and report, propose first, never. Payments, deletions, and pricing sit on the last list. The first list grows one approval at a time.
+Three lists: ship and report, propose first, never. Payments, deletions, and pricing sit on the last. The first grows one approval at a time.
 
 ## Limits
 
@@ -507,25 +432,25 @@ Three lists: ship and report, propose first, never. Payments, deletions, and pri
 What Nova can’t do.
 
 <!-- copy:limits.intro -->
-We build systems with judgment, which includes judgment about the system. A second brain is powerful because of what it is not allowed to do.
+A second brain is powerful because of what it is not allowed to do.
 
 <!-- copy:limits.fact_1.lead -->
-It doesn’t remember yesterday unless a file does.
+It only remembers what a file remembers.
 
 <!-- copy:limits.fact_1.body -->
-Each run starts fresh. Continuity comes from the memory system, not from the model. That is a constraint we designed around, and it is also why the knowledge is inspectable.
+Each run starts fresh. Continuity lives in files, which is also why the knowledge is inspectable.
 
 <!-- copy:limits.fact_2.lead -->
 It makes confident mistakes.
 
 <!-- copy:limits.fact_2.body -->
-Every rule on this page exists because it once did the wrong thing well. The verification rules, the one-ask cap, and the no-send policy are scar tissue, and they work.
+Every rule above exists because it once did the wrong thing well. Scar tissue, and it works.
 
 <!-- copy:limits.fact_3.lead -->
 It doesn’t replace judgment.
 
 <!-- copy:limits.fact_3.body -->
-Nova surfaces. The founder decides. The system is built so that a person’s time goes to decisions, not to gathering the material for them.
+Nova surfaces. The founder decides. Human time goes to decisions, not to gathering the material for them.
 
 <!-- copy:limits.quote -->
 “Memory records what was decided, not what was correct. My job is to pressure-test past decisions, not validate them.”
@@ -542,31 +467,31 @@ from its rules on using memory
 How we’d build yours.
 
 <!-- copy:build.intro -->
-Nova took two years of iteration inside a live company. Yours does not have to. The structure transfers; the content is what we write together.
+Nova took two years inside a live company. Yours won’t. The structure transfers.
 
 <!-- copy:build.step_1.heading -->
 Map the week
 
 <!-- copy:build.step_1.body -->
-The recurring work and the recurring decisions. What the founder reads every morning, and what nobody reads until it is too late.
+The recurring work and the recurring decisions.
 
 <!-- copy:build.step_2.heading -->
 Write the brain
 
 <!-- copy:build.step_2.body -->
-The operating document, the rules, the data connections. Your tools and your numbers, in one place the agent reads first.
+The operating document, the rules, and the data connections, in one place.
 
 <!-- copy:build.step_3.heading -->
 Schedule the first ten
 
 <!-- copy:build.step_3.body -->
-Monitors, reports, and drafts, running on a clock inside your accounts. Typically live in 4 to 6 weeks.
+Monitors, reports, and drafts on a clock inside your accounts. Live in 4 to 6 weeks.
 
 <!-- copy:build.step_4.heading -->
 Grow the autonomous zone
 
 <!-- copy:build.step_4.body -->
-Each class of fix earns standing authority as it proves itself. The nightly learning loop takes it from there.
+Each class of fix earns standing authority as it proves itself. The nightly loop takes it from there.
 
 ## Closing call to action and footer
 
@@ -574,7 +499,7 @@ Each class of fix earns standing authority as it proves itself. The nightly lear
 See what your second brain would do first.
 
 <!-- copy:closing.body -->
-Thirty minutes, free. Bring the systems, the bottlenecks, and the questions you answer every week by hand. We’ll tell you what a second brain would take off your plate first, or tell you if it isn’t the right move yet.
+Thirty minutes, free. Bring the bottlenecks and the questions you answer by hand every week. We’ll tell you what a second brain would take off your plate first, or if it isn’t the right move yet.
 
 <!-- copy:booking.unavailable -->
 Booking will open here shortly. In the meantime, use the LinkedIn links on the home page to reach us directly.

@@ -294,7 +294,8 @@ def write_or_check(path, html, check_only):
             )
         return
 
-    output.write_text(html, encoding="utf8", newline="\n")
+    with output.open("w", encoding="utf8", newline="\n") as handle:
+        handle.write(html)
     print("wrote", path, output.stat().st_size)
 
 
