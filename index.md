@@ -81,27 +81,6 @@ Automation handles the handoffs. Your team keeps the judgment.
 <!-- copy:results.intro -->
 We find the recurring work eating your team’s week, from royalty statements and release checklists to booking inquiries and reporting, then build reliable automations inside the tools you already use.
 
-<!-- copy:results.label -->
-Results
-
-<!-- copy:results.stat_1_value -->
-30+
-
-<!-- copy:results.stat_1_label -->
-tasks completed overnight, every night
-
-<!-- copy:results.stat_2_value -->
-3x
-
-<!-- copy:results.stat_2_label -->
-online enrollment at Icon Collective
-
-<!-- copy:results.stat_3_value -->
-15K to 60K
-
-<!-- copy:results.stat_3_label -->
-followers in 12 months
-
 <!-- copy:results.best_fit_tools -->
 Best for growing music companies with small teams, recurring work, and tools that don’t quite talk to each other.
 
