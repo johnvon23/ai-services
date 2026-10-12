@@ -8,7 +8,9 @@ import sys
 SITE_URL = "https://systemswithjudgment.com"
 COPY_MARKER = re.compile(r"^<!--\s*copy:([a-z0-9_.-]+)\s*-->$")
 COPY_PLACEHOLDER = re.compile(r"\{\{(copy|attr|entity):([a-z0-9_.-]+)\}\}")
+INCLUDE_PLACEHOLDER = re.compile(r"\{\{include:([A-Za-z0-9_.-]+)\}\}")
 EMPHASIS = re.compile(r"(?<!\*)\*([^*\n]+)\*(?!\*)")
+FAQ_QUESTION = re.compile(r"^faq\.question_(\d+)$")
 
 
 class PageCopy:
@@ -80,8 +82,26 @@ def read_copy(path):
     return PageCopy(values, path)
 
 
+def expand_includes(text, source):
+    """Replace {{include:_file.html}} with that file's contents.
+
+    Shared fragments, such as the Cal.com booking embed in _booking.html, live
+    in one file and appear on every page that includes them.
+    """
+
+    def replace(match):
+        path = Path(match.group(1))
+        if not path.exists():
+            raise ValueError(f"{source} includes {path}, which does not exist")
+        return path.read_text(encoding="utf8").strip()
+
+    return INCLUDE_PLACEHOLDER.sub(replace, text)
+
+
 def fill_template(template_path, copy):
-    template = Path(template_path).read_text(encoding="utf8").strip()
+    template = expand_includes(
+        Path(template_path).read_text(encoding="utf8").strip(), template_path
+    )
 
     def replace(match):
         mode, key = match.groups()
@@ -97,9 +117,23 @@ def fill_template(template_path, copy):
     return body
 
 
+def faq_numbers(copy):
+    numbers = sorted(
+        int(match.group(1))
+        for match in (FAQ_QUESTION.match(key) for key in copy.values)
+        if match
+    )
+    if numbers != list(range(1, len(numbers) + 1)):
+        raise ValueError(
+            f"FAQ questions in {copy.path} must be numbered 1 to {len(numbers)} "
+            f"without gaps; found {numbers}"
+        )
+    return numbers
+
+
 def build_homepage_jsonld(copy):
     questions = []
-    for number in range(1, 7):
+    for number in faq_numbers(copy):
         questions.append(
             {
                 "@type": "Question",
@@ -222,7 +256,15 @@ def build_secondbrain_jsonld(title, description):
 
 
 def render_html(
-    *, title, description, path, body, structured_data, site_name, og_image_alt
+    *,
+    title,
+    description,
+    path,
+    body,
+    structured_data,
+    site_name,
+    og_image_alt,
+    noindex=False,
 ):
     fonts = Path("_fonts.css").read_text(encoding="utf8").strip()
     css = Path("_page.css").read_text(encoding="utf8")
@@ -232,6 +274,14 @@ def render_html(
     # card art changes so platforms fetch the new version.
     og_image = f"{SITE_URL}/assets/og-image.png?v=3"
 
+    # A page that should not appear in search (the 404 page) gets a robots tag
+    # instead of a canonical URL.
+    indexing = (
+        '<meta name="robots" content="noindex">'
+        if noindex
+        else f'<link rel="canonical" href="{SITE_URL}{path}">'
+    )
+
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -239,7 +289,7 @@ def render_html(
 <title>{escape(title)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{escape(description, quote=True)}">
-<link rel="canonical" href="{SITE_URL}{path}">
+{indexing}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{escape(site_name, quote=True)}">
 <meta property="og:url" content="{SITE_URL}{path}">
@@ -324,7 +374,10 @@ def main():
         "Selected press, interviews, and podcasts with John von Seggern on where AI "
         "genuinely helps, where it oversells itself, and what still needs a person in the loop."
     )
-    press_body = Path("_press.body.html").read_text(encoding="utf8").strip()
+    press_body = expand_includes(
+        Path("_press.body.html").read_text(encoding="utf8").strip(),
+        "_press.body.html",
+    )
     press_html = render_html(
         title=press_title,
         description=press_description,
@@ -355,9 +408,42 @@ def main():
     )
     secondbrain_copy.assert_all_used()
 
+    # GitHub Pages serves 404.html for any address that does not exist.
+    not_found_html = render_html(
+        title="Page not found | Systems with Judgment",
+        description=(
+            "This page does not exist. Systems with Judgment builds AI systems "
+            "for music companies; start at the homepage or book a free "
+            "30-minute session."
+        ),
+        path="/404",
+        body=expand_includes(
+            Path("_404.body.html").read_text(encoding="utf8").strip(),
+            "_404.body.html",
+        ),
+        structured_data=json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Page not found",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "Systems with Judgment",
+                    "url": f"{SITE_URL}/",
+                },
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
+        site_name="Systems with Judgment",
+        og_image_alt=copy.raw("page.share_image_alt"),
+        noindex=True,
+    )
+
     write_or_check("index.html", home_html, check_only)
     write_or_check("press.html", press_html, check_only)
     write_or_check("secondbrain.html", secondbrain_html, check_only)
+    write_or_check("404.html", not_found_html, check_only)
     if check_only:
         print("Built pages are up to date.")
 

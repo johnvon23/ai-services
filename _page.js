@@ -1,6 +1,11 @@
 (function () {
   'use strict';
 
+  /* Every event goes to window.dataLayer (for any tag manager) and, when
+     site-config.js names a PostHog project key, to PostHog. Without a key no
+     analytics script loads and nothing leaves the page. */
+  var analytics = { enabled: false, ready: false, queue: [] };
+
   function track(name, payload) {
     try {
       window.dataLayer = window.dataLayer || [];
@@ -12,10 +17,58 @@
       }
       window.dataLayer.push(event);
     } catch (err) {}
+    sendToAnalytics(name, payload || {});
+  }
+
+  function sendToAnalytics(name, payload) {
+    if (!analytics.enabled) return;
+    if (!analytics.ready) {
+      analytics.queue.push([name, payload]);
+      return;
+    }
+    try {
+      window.posthog.capture(name, payload);
+    } catch (err) {}
   }
 
   function config() {
     return window.SITE_CONFIG || {};
+  }
+
+  function setupAnalytics() {
+    var settings = config();
+    var key = settings.posthogKey;
+    if (!key || window.posthog) return;
+    var host = settings.posthogHost || 'https://us.i.posthog.com';
+    analytics.enabled = true;
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.src = host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js';
+    script.onload = function () {
+      try {
+        window.posthog.init(key, {
+          api_host: host,
+          defaults: '2026-05-30',
+          // 'memory' keeps no cookie or local storage: privacy-friendly, but
+          // each page load counts as a new visitor.
+          persistence: settings.posthogPersistence || 'memory'
+        });
+        analytics.ready = true;
+        while (analytics.queue.length) {
+          var item = analytics.queue.shift();
+          window.posthog.capture(item[0], item[1]);
+        }
+      } catch (err) {
+        analytics.enabled = false;
+      }
+    };
+    script.onerror = function () {
+      analytics.enabled = false;
+      analytics.queue = [];
+    };
+    document.head.appendChild(script);
   }
 
   function prefersReducedMotion() {
@@ -53,6 +106,42 @@
         });
       })(links[i]);
     }
+  }
+
+  /* Booking events from the Cal.com embed (cal.com/help/embedding/embed-events):
+     the calendar seen, a booking made, the calendar failing to load. */
+  function setupBookingEvents() {
+    var calendar = document.getElementById('my-cal-inline-30min');
+    if (!calendar) return;
+
+    var viewed = false;
+    function markViewed(source) {
+      if (viewed) return;
+      viewed = true;
+      track('calendar_viewed', { source: source });
+    }
+    onceInView(calendar, function () { markViewed('scroll'); });
+
+    var cal = window.Cal && window.Cal.ns && window.Cal.ns['30min'];
+    if (typeof cal !== 'function') return;
+    cal('on', {
+      action: 'bookerViewed',
+      callback: function () { markViewed('calendar'); }
+    });
+    cal('on', {
+      action: 'bookingSuccessfulV2',
+      callback: function (e) {
+        var data = (e && e.detail && e.detail.data) || {};
+        track('booking_completed', { status: data.status || null });
+      }
+    });
+    cal('on', {
+      action: 'linkFailed',
+      callback: function (e) {
+        var data = (e && e.detail && e.detail.data) || {};
+        track('calendar_failed', { code: data.code || null });
+      }
+    });
   }
 
   function setupHeader() {
@@ -318,7 +407,9 @@
     });
   }
 
+  setupAnalytics();
   setupBooking();
+  setupBookingEvents();
   setupHeader();
   setupScrollDepth();
   setupContactEmail();

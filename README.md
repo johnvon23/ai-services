@@ -21,10 +21,11 @@ comment is the editable value. Markdown emphasis such as `*this*` is supported.
 
 For layout or behavior changes, edit `_page.body.html` (homepage template),
 `_secondbrain.body.html` (second brain template), `_page.css`, or `_page.js`.
-The press page is hand-written HTML in `_press.body.html`. Run `npm run build`
-after any of these changes. All three pages share one inlined stylesheet and
-script, assembled by `_assemble.py`. `npm run check` confirms the generated HTML
-is current and runs the copy checks.
+The press page is hand-written HTML in `_press.body.html`, and the 404 page in
+`_404.body.html`. Run `npm run build` after any of these changes. All pages share
+one inlined stylesheet and script, assembled by `_assemble.py`. A template can
+pull in a shared fragment with `{{include:_file.html}}`. `npm run check` confirms
+the generated HTML is current and runs the copy checks.
 
 ## Deploys
 
@@ -35,12 +36,34 @@ files, so `press.html` answers at `/press` and `secondbrain.html` at
 serves the site today.
 
 Every push to `main` runs `.github/workflows/build-pages.yml`, which rebuilds
-the three pages from the Markdown copy, runs the checks, and commits the
-rebuilt HTML back to `main` if it differs. So editing `index.md` or
+the pages (including `404.html`, which GitHub Pages shows for any missing
+address) from the Markdown copy, runs the checks, and commits the rebuilt HTML
+back to `main` if it differs. So editing `index.md` or
 `secondbrain.md` on GitHub and committing is enough to deploy a copy change;
 running `npm run build` locally first just makes the bot commit a no-op.
 
-The booking link lives in `site-config.js`. Both call-to-action buttons use this one value.
+## Booking
+
+The Cal.com calendar sits at the end of every page (`#book`). Its embed code
+lives once, in `_booking.html`, exactly as Cal.com supplies it; to change the
+event, paste Cal.com's new embed code there and update `bookingUrl` in
+`site-config.js`, which the "open the calendar in a new tab" link uses. The
+site checks fail if the two disagree.
+
+## Analytics
+
+Every button click (`book_session_click`, with its placement), scroll depth,
+the calendar being seen (`calendar_viewed`), a completed booking
+(`booking_completed`) and a calendar that fails to load (`calendar_failed`) are
+pushed to `window.dataLayer`. They also go to PostHog once `posthogKey` in
+`site-config.js` holds a project key; while it is empty, no analytics script
+loads. `posthogPersistence: "memory"` sets no cookies; `"localStorage+cookie"`
+recognises returning visitors but may need a consent banner for EU visitors.
+
+## Search
+
+`sitemap.xml` lists the three public pages and `robots.txt` points to it. The
+old design snapshot `index-b.html` is kept out of search by `robots.txt`.
 
 ## Social share card
 

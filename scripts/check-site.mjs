@@ -6,6 +6,10 @@ const requiredFiles = [
   "index.html",
   "press.html",
   "secondbrain.html",
+  "404.html",
+  "_booking.html",
+  "_404.body.html",
+  "sitemap.xml",
   "site-config.js",
   "vercel.json",
   "favicon.svg",
@@ -32,6 +36,16 @@ const html = await readFile("index.html", "utf8");
 const markdown = await readFile("index.md", "utf8");
 const press = await readFile("press.html", "utf8");
 const secondbrain = await readFile("secondbrain.html", "utf8");
+const notFound = await readFile("404.html", "utf8");
+const booking = await readFile("_booking.html", "utf8");
+const robots = await readFile("robots.txt", "utf8");
+const sitemap = await readFile("sitemap.xml", "utf8");
+const pages = [
+  ["index.html", html],
+  ["press.html", press],
+  ["secondbrain.html", secondbrain],
+  ["404.html", notFound]
+];
 const configSource = await readFile("site-config.js", "utf8");
 const vercelConfig = JSON.parse(await readFile("vercel.json", "utf8"));
 
@@ -56,8 +70,13 @@ const requiredCopy = [
   "data-book=\"header\"",
   "data-book=\"hero\"",
   "data-book=\"calendar_tab\"",
+  "data-book=\"process\"",
   "book_session_click",
-  "scroll_depth"
+  "scroll_depth",
+  "calendar_viewed",
+  "booking_completed",
+  "bookingSuccessfulV2",
+  "What happens in the 30-minute session?"
 ];
 
 if (!markdown.includes("<!-- copy:hero.heading -->")) {
@@ -100,14 +119,14 @@ const forbiddenCopy = [
 ];
 
 for (const copy of forbiddenCopy) {
-  for (const [name, source] of [["index.html", html], ["press.html", press], ["secondbrain.html", secondbrain]]) {
+  for (const [name, source] of pages) {
     if (source.includes(copy)) {
       throw new Error(`Draft or retired copy is still present in ${name}: ${copy}`);
     }
   }
 }
 
-for (const [name, source] of [["index.html", html], ["press.html", press], ["secondbrain.html", secondbrain]]) {
+for (const [name, source] of pages) {
   const h1Count = (source.match(/<h1(?:\s|>)/g) || []).length;
   if (h1Count !== 1) {
     throw new Error(`Expected one H1 in ${name}, found ${h1Count}`);
@@ -118,7 +137,7 @@ if (!html.includes("<h1>AI systems for music companies</h1>")) {
   throw new Error("Home H1 is no longer “AI systems for music companies”.");
 }
 
-for (const [name, source] of [["index.html", html], ["press.html", press], ["secondbrain.html", secondbrain]]) {
+for (const [name, source] of pages) {
   if (!source.includes('href="/secondbrain"')) {
     throw new Error(`Footer link to /secondbrain is missing from ${name}`);
   }
@@ -133,7 +152,7 @@ const requiredPressCopy = [
   "LA Examiner",
   "CNET",
   "Cointelegraph",
-  "data-book=\"press_cta\""
+  "my-cal-inline-30min"
 ];
 
 for (const copy of requiredPressCopy) {
@@ -153,7 +172,8 @@ const requiredSecondBrainCopy = [
   "The rules that make it trustworthy.",
   "What Nova can’t do.",
   "How we’d build yours.",
-  "data-book=\"secondbrain_cta\"",
+  "my-cal-inline-30min",
+  "Prefer to start smaller?",
   "\"@type\": \"Article\""
 ];
 
@@ -163,12 +183,46 @@ for (const copy of requiredSecondBrainCopy) {
   }
 }
 
+// One booking calendar: every page that books shows the same Cal.com event,
+// from _booking.html, and the fallback link in site-config.js points at it.
+const calLink = (booking.match(/calLink:\s*"([^"]+)"/) || [])[1];
+if (!calLink) {
+  throw new Error("_booking.html no longer names a Cal.com calLink.");
+}
+for (const [name, source] of pages.slice(0, 3)) {
+  if (!source.includes(`calLink: "${calLink}"`) || !source.includes('id="my-cal-inline-30min"')) {
+    throw new Error(`${name} does not carry the booking calendar from _booking.html.`);
+  }
+  if (!source.includes('href="#book"')) {
+    throw new Error(`${name} has no booking button that stays on the page.`);
+  }
+}
+if (!configSource.includes(calLink)) {
+  throw new Error(`site-config.js bookingUrl does not point at the embedded event ${calLink}.`);
+}
+
+if (!robots.includes("Sitemap: https://systemswithjudgment.com/sitemap.xml")) {
+  throw new Error("robots.txt no longer points at the sitemap.");
+}
+for (const path of ["/", "/secondbrain", "/press"]) {
+  if (!sitemap.includes(`<loc>https://systemswithjudgment.com${path}</loc>`)) {
+    throw new Error(`sitemap.xml is missing ${path}`);
+  }
+}
+if (!notFound.includes('<meta name="robots" content="noindex">')) {
+  throw new Error("404.html must stay out of search results.");
+}
+
 if (vercelConfig.$schema !== "https://openapi.vercel.sh/vercel.json") {
   throw new Error("Vercel schema is missing or incorrect.");
 }
 
 if (/bookingUrl:\s*["']{2}/.test(configSource)) {
   console.warn("Warning: add the production scheduling URL to site-config.js before launch.");
+}
+
+if (/posthogKey:\s*["']{2}/.test(configSource)) {
+  console.warn("Note: analytics is off until a PostHog project key is added to site-config.js.");
 }
 
 console.log("Site checks passed.");

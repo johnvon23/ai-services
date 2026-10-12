@@ -78,6 +78,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "What happens in the 30-minute session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Walk us through the tools, the handoffs, and the things that keep falling through. If we see something worth building, we’ll tell you how. If we don’t, we’ll say so."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Do you replace staff?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -102,6 +110,14 @@
         },
         {
           "@type": "Question",
+          "name": "What is the difference between a pilot and a second brain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A pilot automates one workflow and is typically live in 2 to 4 weeks. A second brain holds your company’s context and runs many recurring jobs on a schedule; the first ten are live in 4 to 6 weeks."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -121,7 +137,7 @@
           "name": "Do we need anyone technical on our side?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No."
+            "text": "No. We build inside the tools you already use, then maintain the system or hand it to your team documented."
           }
         }
       ]
@@ -159,7 +175,7 @@
   --read: 40rem;
   --wrap: min(1120px, calc(100% - 48px));
   /* single rhythm for the space between every major section */
-  --gap-section: 7rem;
+  --gap-section: 5rem;
 }
 
 @media (min-width: 768px) {
@@ -469,6 +485,18 @@ h1 em {
 .hero .lede em {
   font-style: normal;
   font-weight: 700;
+}
+
+.hero-offer {
+  margin: -0.4rem 0 1.6rem;
+  max-width: 31rem;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .hero-offer { font-size: 1.08rem; }
 }
 
 .founder-note {
@@ -852,14 +880,6 @@ h2 {
   color: var(--muted);
 }
 
-.results .lede {
-  margin-bottom: 0;
-  max-width: var(--read);
-}
-
-.results .best-fit {
-  max-width: var(--read);
-}
 
 /* ---------- position band ---------- */
 
@@ -878,6 +898,13 @@ h2 {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.5;
+}
+
+.position-band .best-fit {
+  margin-top: 1.1rem;
+  font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 /* ---------- segments ---------- */
@@ -1088,6 +1115,15 @@ html.wf-play .opp-list.is-in .opp-row:nth-child(3) .opp-fig svg * { transition-d
 }
 
 .case-visual { margin: 0; }
+
+.case-label {
+  margin: 0 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
 
 .case-copy h3 {
   margin: 0 0 1.2rem;
@@ -1334,9 +1370,56 @@ html.wf-play .growth.is-drawn .growth-label {
   color: var(--muted);
 }
 
+.process-cta {
+  margin: 2rem 0 0;
+}
+
 /* ---------- founders ---------- */
 
-.founders-intro { margin-bottom: 2.4rem; }
+.founders-intro { margin-bottom: 1rem; }
+
+.press-line {
+  margin: 0 0 2.4rem;
+  max-width: var(--read);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.press-line a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--coral);
+}
+
+.press-line a:hover { color: var(--coral); }
+
+.bio-more {
+  margin: 0 0 1rem;
+}
+
+.bio-more summary {
+  display: inline-block;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.1rem;
+}
+
+.bio-more summary::-webkit-details-marker { display: none; }
+
+.bio-more summary::after {
+  content: " +";
+  color: var(--coral);
+}
+
+.bio-more[open] summary::after { content: " \2212"; }
+
+.bio-more summary:hover { color: var(--coral); }
+
+.bio-more[open] summary { margin-bottom: 0.9rem; }
 
 .founders {
   display: grid;
@@ -1478,6 +1561,13 @@ html.wf-play .growth.is-drawn .growth-label {
 
 .closing .nda {
   margin-top: 1rem;
+}
+
+.closing .smaller-step {
+  margin: 1.2rem 0 0;
+  max-width: var(--read);
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 #my-cal-inline-30min {
@@ -2012,6 +2102,21 @@ html.wf-play .hero-brain.is-in img {
 
 .case-links { margin: 1.1rem 0 0; }
 
+/* ---------- 404 page ---------- */
+
+.not-found {
+  padding: 4rem 0 2rem;
+  max-width: 40rem;
+}
+
+.not-found h1 {
+  font-size: clamp(2rem, 4.6vw, 2.9rem);
+}
+
+.not-found .links {
+  margin: 1.4rem 0 2rem;
+}
+
 </style>
 </head>
 <body>
@@ -2031,6 +2136,7 @@ html.wf-play .hero-brain.is-in img {
       <div class="hero-copy">
         <h1>AI systems for music companies</h1>
         <p class="lede">Grow the business. <em>Not the busywork.</em></p>
+        <p class="hero-offer">We find the recurring work eating your team’s week, from royalty statements to booking inquiries, then build reliable automations inside the tools you already use.</p>
         <a class="book" data-book="hero" href="#book">Free 30-minute session</a>
         <p class="nda">Unreleased music, artist contracts, and royalty data stay private. Happy to sign an NDA before the first call.</p>
         <div class="founder-note">
@@ -2095,13 +2201,9 @@ html.wf-play .hero-brain.is-in img {
       </figure>
     </div>
 
-    <section class="block results" id="results">
-      <p class="lede">We find the recurring work eating your team’s week, from royalty statements and release checklists to booking inquiries and reporting, then build reliable automations inside the tools you already use.</p>
-      <p class="best-fit">Best for growing music companies with small teams, recurring work, and tools that don’t quite talk to each other.</p>
-    </section>
-
     <aside class="position-band" id="office">
       <p>We automate the spreadsheet work. Not the songwriting, the sound, or the relationships.</p>
+      <p class="best-fit">Best for growing music companies with small teams, recurring work, and tools that don’t quite talk to each other.</p>
     </aside>
 
     <aside class="proof-strip" aria-label="Companies we’ve founded, led, or built systems for">
@@ -2127,6 +2229,53 @@ html.wf-play .hero-brain.is-in img {
         </li>
       </ul>
     </aside>
+
+    <section class="block" id="opportunities">
+      <h2>Where the work usually gets stuck.</h2>
+      <p class="section-intro">Every music company runs differently, but the best opportunities usually sit in the same three places.</p>
+      <div class="opp-list">
+        <article class="opp-row">
+          <figure class="opp-fig" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 10h32l-6 12H14L8 10z"/>
+              <path d="M14 22h20l-5 10H19L14 22z"/>
+              <circle cx="24" cy="38" r="3.2"/>
+            </svg>
+          </figure>
+          <div>
+            <h3>Stop work from falling through.</h3>
+            <p>Capture booking inquiries, release checklists, partner requests, and next steps, then follow up without somebody manually chasing them.</p>
+          </div>
+        </article>
+        <article class="opp-row">
+          <figure class="opp-fig" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="8" width="28" height="32" rx="2"/>
+              <path d="M16 18h16M16 25h16M16 32h10"/>
+              <path d="M32 31.5l2.2 2.2 4.3-4.7"/>
+            </svg>
+          </figure>
+          <div>
+            <h3>Get the routine work off your team’s plate.</h3>
+            <p>Automate royalty statements, DSP reporting, data entry, reminders, and handoffs so the team starts the day with finished work.</p>
+          </div>
+        </article>
+        <article class="opp-row">
+          <figure class="opp-fig" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="34" r="4"/>
+              <circle cx="24" cy="14" r="4"/>
+              <circle cx="36" cy="28" r="4"/>
+              <path d="M15.5 31L21 17.5M27.5 16.5L33 25"/>
+            </svg>
+          </figure>
+          <div>
+            <h3>See what actually drives the business.</h3>
+            <p>Connect marketing, catalog metadata, sales, and operations so you can see what’s working.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <section class="block" id="segments">
       <h2>Built for your corner of the industry.</h2>
@@ -2228,54 +2377,108 @@ html.wf-play .hero-brain.is-in img {
           <ul>
             <li>Enrollment follow-up sequences</li>
             <li>Student retention early warning</li>
-            <li>The overnight operations run we already showcase</li>
+            <li>An overnight operations run like Futureproof’s</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section class="block" id="opportunities">
-      <h2>Where the work usually gets stuck.</h2>
-      <p class="section-intro">Every music company runs differently, but the best opportunities usually sit in the same three places.</p>
-      <div class="opp-list">
-        <article class="opp-row">
-          <figure class="opp-fig" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 10h32l-6 12H14L8 10z"/>
-              <path d="M14 22h20l-5 10H19L14 22z"/>
-              <circle cx="24" cy="38" r="3.2"/>
-            </svg>
+    <section class="block" id="case-studies">
+      <h2>Built in businesses we know firsthand.</h2>
+      <div class="cases">
+        <article class="case">
+          <figure class="case-visual">
+            <div class="run-log" data-run-log role="img" aria-label="Overnight automation log: from 11pm to 9am the operations agent completes tasks such as the ad spend report, student retention check and weekly KPI roll-up. By 9:00am, when the team logs in, 31 tasks are already done.">
+              <div class="run-head">
+                <div>
+                  <p class="run-range">11:00pm to 9:00am</p>
+                </div>
+                <p class="run-count"><strong>31</strong><span>tasks already done</span></p>
+              </div>
+              <ol>
+                <li><time datetime="23:04">11:04pm</time><span>Ad spend report</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="00:20">12:20am</time><span>Student retention check</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="01:35">1:35am</time><span>Competitor scan</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="02:50">2:50am</time><span>Revenue forecast</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="04:10">4:10am</time><span>Lead follow-up queue</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="05:25">5:25am</time><span>Enrollment summary</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="06:40">6:40am</time><span>Support inbox triage</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="07:55">7:55am</time><span>Weekly KPI roll-up</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+              </ol>
+              <p class="run-end">9:00am, the team logs in</p>
+            </div>
           </figure>
-          <div>
-            <h3>Stop work from falling through.</h3>
-            <p>Capture booking inquiries, release checklists, partner requests, and next steps, then follow up without somebody manually chasing them.</p>
+          <div class="case-copy">
+            <p class="case-label">System we built</p>
+            <h3>A team of four doing the work of twenty.</h3>
+            <div class="fact">
+              <p>John built the system inside Futureproof Music School, the music school he founded.</p>
+            </div>
+            <div class="fact">
+              <p>Nova handles recurring reporting, monitoring, administrative checks, and other routine operational work before the team logs in.</p>
+            </div>
+            <div class="fact">
+              <p>More than 30 recurring tasks are completed overnight, letting a core team of four operate like a team of twenty.</p>
+            </div>
+            <p class="links case-links">
+              <a href="/secondbrain">Learn more about Futureproof’s second brain</a>
+            </p>
           </div>
         </article>
-        <article class="opp-row">
-          <figure class="opp-fig" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="10" y="8" width="28" height="32" rx="2"/>
-              <path d="M16 18h16M16 25h16M16 32h10"/>
-              <path d="M32 31.5l2.2 2.2 4.3-4.7"/>
+
+        <article class="case case--alt">
+          <figure class="case-visual">
+            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="343 Labs Instagram audience grew from 15,000 to 60,000 followers in one year." width="640" height="360">
+              <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
+              <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
+              <path class="growth-line" pathLength="1" d="M88 248 C 150 244, 210 214, 280 190 S 390 178, 400 176 S 490 118, 540 92 S 575 78, 588 74"/>
+              <circle class="growth-start" cx="88" cy="248" r="10"/>
+              <circle class="growth-end" cx="588" cy="74" r="12"/>
+              <text class="growth-label growth-label--strong" x="88" y="218">15K</text>
+              <text class="growth-label growth-label--strong growth-count" data-count-from="15" data-count-to="60" data-suffix="K" x="588" y="46" text-anchor="end">60K</text>
+              <text class="growth-label" x="332" y="336" text-anchor="middle">One year</text>
             </svg>
           </figure>
-          <div>
-            <h3>Get the routine work off your team’s plate.</h3>
-            <p>Automate royalty statements, DSP reporting, data entry, reminders, and handoffs so the team starts the day with finished work.</p>
+          <div class="case-copy">
+            <p class="case-label">Growth we led</p>
+            <h3>From 15K to 60K Instagram followers in one year.</h3>
+            <div class="fact">
+              <p>Tsotne led growth and marketing at the New York music school for six years: an eight-person core team supporting about 35 instructors across New York, Berlin, and online.</p>
+            </div>
+            <div class="fact">
+              <p>He built an internal AI intelligence layer that pulled data from every company system into one clear picture for the team, while running SEO, CRM, and the full marketing stack.</p>
+            </div>
+            <div class="fact">
+              <p>The Instagram audience grew from 15K to 60K followers in one year, and the site ranked top 3 on Google for its target keywords.</p>
+            </div>
           </div>
         </article>
-        <article class="opp-row">
-          <figure class="opp-fig" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="34" r="4"/>
-              <circle cx="24" cy="14" r="4"/>
-              <circle cx="36" cy="28" r="4"/>
-              <path d="M15.5 31L21 17.5M27.5 16.5L33 25"/>
+
+        <article class="case">
+          <figure class="case-visual">
+            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="Icon Collective’s online student population tripled during John’s seven-plus years as Director of Online Education." width="640" height="360">
+              <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
+              <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
+              <path class="growth-line" pathLength="1" d="M88 256 C 160 250, 230 232, 300 204 S 420 154, 480 126 S 562 88, 588 76"/>
+              <circle class="growth-start" cx="88" cy="256" r="10"/>
+              <circle class="growth-end" cx="588" cy="76" r="12"/>
+              <text class="growth-label growth-label--strong" x="88" y="226">1&#215;</text>
+              <text class="growth-label growth-label--strong growth-count" data-count-from="1" data-count-to="3" data-suffix="&#215;" x="588" y="48" text-anchor="end">3&#215;</text>
+              <text class="growth-label" x="332" y="336" text-anchor="middle">Seven years</text>
             </svg>
           </figure>
-          <div>
-            <h3>See what actually drives the business.</h3>
-            <p>Connect marketing, catalog metadata, sales, and operations so you can see what’s working.</p>
+          <div class="case-copy">
+            <p class="case-label">Program we ran</p>
+            <h3>Online student population tripled.</h3>
+            <div class="fact">
+              <p>John ran the online program for seven-plus years as Director of Online Education. Icon’s alumni include SLANDER (Grammy-nominated, 1.7B streams), NGHTMRE, JAUZ, Sullivan King, and Kayzo.</p>
+            </div>
+            <div class="fact">
+              <p>He designed a competency-based, self-paced learning model from scratch and brought AI in early: a chatbot for music production questions, plus AI-assisted course creation and student sentiment analysis.</p>
+            </div>
+            <div class="fact">
+              <p>The online student population tripled during his tenure.</p>
+            </div>
           </div>
         </article>
       </div>
@@ -2310,109 +2513,15 @@ html.wf-play .hero-brain.is-in img {
           </div>
         </li>
       </ol>
-    </section>
-
-    <section class="block" id="case-studies">
-      <h2>Built in businesses we know firsthand.</h2>
-      <div class="cases">
-        <article class="case">
-          <figure class="case-visual">
-            <div class="run-log" data-run-log role="img" aria-label="Overnight automation log: from 11pm to 9am the operations agent completes tasks such as the ad spend report, student retention check and weekly KPI roll-up. By 9:00am, when the team logs in, 31 tasks are already done.">
-              <div class="run-head">
-                <div>
-                  <p class="run-range">11:00pm to 9:00am</p>
-                </div>
-                <p class="run-count"><strong>31</strong><span>tasks already done</span></p>
-              </div>
-              <ol>
-                <li><time datetime="23:04">11:04pm</time><span>Ad spend report</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="00:20">12:20am</time><span>Student retention check</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="01:35">1:35am</time><span>Competitor scan</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="02:50">2:50am</time><span>Revenue forecast</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="04:10">4:10am</time><span>Lead follow-up queue</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="05:25">5:25am</time><span>Enrollment summary</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="06:40">6:40am</time><span>Support inbox triage</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="07:55">7:55am</time><span>Weekly KPI roll-up</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-              </ol>
-              <p class="run-end">9:00am, the team logs in</p>
-            </div>
-          </figure>
-          <div class="case-copy">
-            <h3>A team of four doing the work of twenty.</h3>
-            <div class="fact">
-              <p>John built the system inside Futureproof Music School, the music school he founded.</p>
-            </div>
-            <div class="fact">
-              <p>Nova handles recurring reporting, monitoring, administrative checks, and other routine operational work before the team logs in.</p>
-            </div>
-            <div class="fact">
-              <p>More than 30 recurring tasks are completed overnight, letting a core team of four operate like a team of twenty.</p>
-            </div>
-            <p class="links case-links">
-              <a href="/secondbrain">Learn more about Futureproof’s second brain</a>
-            </p>
-          </div>
-        </article>
-
-        <article class="case case--alt">
-          <figure class="case-visual">
-            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="343 Labs Instagram audience grew from 15,000 to 60,000 followers in one year." width="640" height="360">
-              <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
-              <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
-              <path class="growth-line" pathLength="1" d="M88 248 C 150 244, 210 214, 280 190 S 390 178, 400 176 S 490 118, 540 92 S 575 78, 588 74"/>
-              <circle class="growth-start" cx="88" cy="248" r="10"/>
-              <circle class="growth-end" cx="588" cy="74" r="12"/>
-              <text class="growth-label growth-label--strong" x="88" y="218">15K</text>
-              <text class="growth-label growth-label--strong growth-count" data-count-from="15" data-count-to="60" data-suffix="K" x="588" y="46" text-anchor="end">60K</text>
-              <text class="growth-label" x="332" y="336" text-anchor="middle">One year</text>
-            </svg>
-          </figure>
-          <div class="case-copy">
-            <h3>From 15K to 60K Instagram followers in one year.</h3>
-            <div class="fact">
-              <p>Tsotne led growth and marketing at the New York music school for six years: an eight-person core team supporting about 35 instructors across New York, Berlin, and online.</p>
-            </div>
-            <div class="fact">
-              <p>He built an internal AI intelligence layer that pulled data from every company system into one clear picture for the team, while running SEO, CRM, and the full marketing stack.</p>
-            </div>
-            <div class="fact">
-              <p>The Instagram audience grew from 15K to 60K followers in one year, and the site ranked top 3 on Google for its target keywords.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="case">
-          <figure class="case-visual">
-            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="Icon Collective’s online student population tripled during John’s seven-plus years as Director of Online Education." width="640" height="360">
-              <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
-              <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
-              <path class="growth-line" pathLength="1" d="M88 256 C 160 250, 230 232, 300 204 S 420 154, 480 126 S 562 88, 588 76"/>
-              <circle class="growth-start" cx="88" cy="256" r="10"/>
-              <circle class="growth-end" cx="588" cy="76" r="12"/>
-              <text class="growth-label growth-label--strong" x="88" y="226">1&#215;</text>
-              <text class="growth-label growth-label--strong growth-count" data-count-from="1" data-count-to="3" data-suffix="&#215;" x="588" y="48" text-anchor="end">3&#215;</text>
-              <text class="growth-label" x="332" y="336" text-anchor="middle">Seven years</text>
-            </svg>
-          </figure>
-          <div class="case-copy">
-            <h3>Online student population tripled.</h3>
-            <div class="fact">
-              <p>John ran the online program for seven-plus years as Director of Online Education. Icon’s alumni include SLANDER (Grammy-nominated, 1.7B streams), NGHTMRE, JAUZ, Sullivan King, and Kayzo.</p>
-            </div>
-            <div class="fact">
-              <p>He designed a competency-based, self-paced learning model from scratch and brought AI in early: a chatbot for music production questions, plus AI-assisted course creation and student sentiment analysis.</p>
-            </div>
-            <div class="fact">
-              <p>The online student population tripled during his tenure.</p>
-            </div>
-          </div>
-        </article>
-      </div>
+      <p class="process-cta">
+        <a class="book" data-book="process" href="#book">Free 30-minute session</a>
+      </p>
     </section>
 
     <section class="block" id="founders">
       <h2>You’ll work directly with us.</h2>
       <p class="section-intro founders-intro">Both of us come from music production and music technology, not from outside consulting. Between us: two decades at Dubspot, Point Blank, Icon Collective, 343 Labs, and Native Instruments, one music school founded, one music technology company founded, and two AI products built from scratch.</p>
+      <p class="press-line">John in the press: <a href="/press">CNET, LA Examiner, Cointelegraph, MusicTech and more</a></p>
       <div class="founders">
         <article class="bio">
           <figure class="portrait">
@@ -2422,7 +2531,10 @@ html.wf-play .hero-brain.is-in img {
             <h3>John von Seggern</h3>
             <p class="role">Founder, Futureproof Music School</p>
             <p>John founded Futureproof Music School, where he built Kadence, an AI music-production tutor, and Nova, an operations agent that lets a core team of four operate like a team of twenty. He has run online education at three of the best-known music production schools: as Director of Online Education he tripled Icon Collective’s online student population over seven-plus years, grew Dubspot’s online enrollments by more than 50% (including a complex migration to a new course platform), and built Point Blank’s online community to 5,000+ members. He was putting AI to work in education years before founding Futureproof: at Icon he built an early chatbot for music production questions and used AI for course creation and student sentiment analysis.</p>
-            <p>Earlier, John co-founded Modus Institute, an online school teaching Lean process improvement, and spent six years managing Native Instruments’ North American support team. He wrote the books Ableton Live 6 Power! and Laptop Music Power!, plus the official reference manual for the Massive synthesizer, and has sound design credits on major films including WALL-E. He holds an MA in Ethnomusicology from UC Riverside and a BA in Music from Carleton College.</p>
+            <details class="bio-more">
+              <summary>More about John</summary>
+              <p>Earlier, John co-founded Modus Institute, an online school teaching Lean process improvement, and spent six years managing Native Instruments’ North American support team. He wrote the books Ableton Live 6 Power! and Laptop Music Power!, plus the official reference manual for the Massive synthesizer, and has sound design credits on major films including WALL-E. He holds an MA in Ethnomusicology from UC Riverside and a BA in Music from Carleton College.</p>
+            </details>
             <p class="links">
               <a href="https://www.linkedin.com/in/johnvon/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> for John von Seggern (opens in a new tab)</span></a>
               <a href="https://futureproofmusicschool.com" target="_blank" rel="noopener noreferrer">Futureproof Music School<span class="visually-hidden"> (opens in a new tab)</span></a>
@@ -2439,7 +2551,10 @@ html.wf-play .hero-brain.is-in img {
             <h3>Tsotne Arbolishvili</h3>
             <p class="role">Founder, CTO and CMO, TunePal<br>Former Head of Growth, 343 Labs</p>
             <p>Tsotne has spent sixteen years growing music and creative companies, and the last three building AI products and internal business systems. He is the founder, CTO and CMO of TunePal, a browser-based AI music-production studio that generates stems, analyzes loops, and builds full arrangements, including a native Ableton Live export he engineered himself. Before TunePal he spent six years as Head of Growth and Marketing at 343 Labs, the New York music school, where he also created 343 Pro Sessions, a masterclass series that brought more than twenty world-class artists to the school.</p>
-            <p>His technical work is grounded in his own creative practice. He has produced electronic music in Ableton Live for eighteen-plus years (deep house and techno, with releases on Spotify, DJ sets at Good Room and TBA Brooklyn, and his own custom Max for Live devices) and creates 3D visuals in Cinema 4D and Unreal Engine. Since 2010 he has also consulted independently on AI, marketing, and automation for companies across music, SaaS, and the creator economy, guiding several from early stage to profitability.</p>
+            <details class="bio-more">
+              <summary>More about Tsotne</summary>
+              <p>His technical work is grounded in his own creative practice. He has produced electronic music in Ableton Live for eighteen-plus years (deep house and techno, with releases on Spotify, DJ sets at Good Room and TBA Brooklyn, and his own custom Max for Live devices) and creates 3D visuals in Cinema 4D and Unreal Engine. Since 2010 he has also consulted independently on AI, marketing, and automation for companies across music, SaaS, and the creator economy, guiding several from early stage to profitability.</p>
+            </details>
             <p class="links">
               <a href="https://www.linkedin.com/in/tsotnetunes/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> for Tsotne Arbolishvili (opens in a new tab)</span></a>
               <a href="https://tunepal.ai" target="_blank" rel="noopener noreferrer">TunePal<span class="visually-hidden"> (opens in a new tab)</span></a>
@@ -2453,6 +2568,10 @@ html.wf-play .hero-brain.is-in img {
       <h2>Questions before a call.</h2>
       <div class="faq-list">
         <details>
+          <summary>What happens in the 30-minute session?</summary>
+          <p>Walk us through the tools, the handoffs, and the things that keep falling through. If we see something worth building, we’ll tell you how. If we don’t, we’ll say so.</p>
+        </details>
+        <details>
           <summary>Do you replace staff?</summary>
           <p>No. Your team keeps judgment, money, and artist communication.</p>
         </details>
@@ -2465,6 +2584,10 @@ html.wf-play .hero-brain.is-in img {
           <p>A pilot is typically live in 2 to 4 weeks.</p>
         </details>
         <details>
+          <summary>What is the difference between a pilot and a second brain?</summary>
+          <p>A pilot automates one workflow and is typically live in 2 to 4 weeks. A second brain holds your company’s context and runs many recurring jobs on a schedule; the first ten are live in 4 to 6 weeks.</p>
+        </details>
+        <details>
           <summary>What does it cost?</summary>
           <p>The working session is free. Pilot pricing is quoted after the opportunity map, once we know the workflow.</p>
         </details>
@@ -2474,7 +2597,7 @@ html.wf-play .hero-brain.is-in img {
         </details>
         <details>
           <summary>Do we need anyone technical on our side?</summary>
-          <p>No.</p>
+          <p>No. We build inside the tools you already use, then maintain the system or hand it to your team documented.</p>
         </details>
       </div>
     </section>
@@ -2490,23 +2613,23 @@ html.wf-play .hero-brain.is-in img {
         </div>
         <div class="closing-action">
           <!-- Cal inline embed code begins -->
-          <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
-          <script type="text/javascript">
-            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-            Cal("init", "30min", {origin:"https://app.cal.com"});
-            Cal.config = Cal.config || {};
-            Cal.config.forwardQueryParams = true;
+<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "30min", {origin:"https://app.cal.com"});
+  Cal.config = Cal.config || {};
+  Cal.config.forwardQueryParams = true;
 
-            Cal.ns["30min"]("inline", {
-              elementOrSelector:"#my-cal-inline-30min",
-              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-              calLink: "john-von-seggern-czdmwr/30min",
-            });
+  Cal.ns["30min"]("inline", {
+    elementOrSelector:"#my-cal-inline-30min",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+    calLink: "john-von-seggern-czdmwr/30min",
+  });
 
-            Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-          </script>
-          <!-- Cal inline embed code ends -->
-          <a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://cal.com/john-von-seggern-czdmwr/30min" target="_blank" rel="noopener noreferrer">Open the calendar in a new tab<span class="visually-hidden"> (opens in a new tab)</span></a>
+  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal inline embed code ends -->
+<a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://cal.com/john-von-seggern-czdmwr/30min" target="_blank" rel="noopener noreferrer">Open the calendar in a new tab<span class="visually-hidden"> (opens in a new tab)</span></a>
         </div>
       </div>
       <p class="best-fit">Best for growing music companies with small teams, recurring work, and systems that don’t quite talk to each other.</p>
@@ -2533,6 +2656,11 @@ html.wf-play .hero-brain.is-in img {
 (function () {
   'use strict';
 
+  /* Every event goes to window.dataLayer (for any tag manager) and, when
+     site-config.js names a PostHog project key, to PostHog. Without a key no
+     analytics script loads and nothing leaves the page. */
+  var analytics = { enabled: false, ready: false, queue: [] };
+
   function track(name, payload) {
     try {
       window.dataLayer = window.dataLayer || [];
@@ -2544,10 +2672,58 @@ html.wf-play .hero-brain.is-in img {
       }
       window.dataLayer.push(event);
     } catch (err) {}
+    sendToAnalytics(name, payload || {});
+  }
+
+  function sendToAnalytics(name, payload) {
+    if (!analytics.enabled) return;
+    if (!analytics.ready) {
+      analytics.queue.push([name, payload]);
+      return;
+    }
+    try {
+      window.posthog.capture(name, payload);
+    } catch (err) {}
   }
 
   function config() {
     return window.SITE_CONFIG || {};
+  }
+
+  function setupAnalytics() {
+    var settings = config();
+    var key = settings.posthogKey;
+    if (!key || window.posthog) return;
+    var host = settings.posthogHost || 'https://us.i.posthog.com';
+    analytics.enabled = true;
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.src = host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js';
+    script.onload = function () {
+      try {
+        window.posthog.init(key, {
+          api_host: host,
+          defaults: '2026-05-30',
+          // 'memory' keeps no cookie or local storage: privacy-friendly, but
+          // each page load counts as a new visitor.
+          persistence: settings.posthogPersistence || 'memory'
+        });
+        analytics.ready = true;
+        while (analytics.queue.length) {
+          var item = analytics.queue.shift();
+          window.posthog.capture(item[0], item[1]);
+        }
+      } catch (err) {
+        analytics.enabled = false;
+      }
+    };
+    script.onerror = function () {
+      analytics.enabled = false;
+      analytics.queue = [];
+    };
+    document.head.appendChild(script);
   }
 
   function prefersReducedMotion() {
@@ -2585,6 +2761,42 @@ html.wf-play .hero-brain.is-in img {
         });
       })(links[i]);
     }
+  }
+
+  /* Booking events from the Cal.com embed (cal.com/help/embedding/embed-events):
+     the calendar seen, a booking made, the calendar failing to load. */
+  function setupBookingEvents() {
+    var calendar = document.getElementById('my-cal-inline-30min');
+    if (!calendar) return;
+
+    var viewed = false;
+    function markViewed(source) {
+      if (viewed) return;
+      viewed = true;
+      track('calendar_viewed', { source: source });
+    }
+    onceInView(calendar, function () { markViewed('scroll'); });
+
+    var cal = window.Cal && window.Cal.ns && window.Cal.ns['30min'];
+    if (typeof cal !== 'function') return;
+    cal('on', {
+      action: 'bookerViewed',
+      callback: function () { markViewed('calendar'); }
+    });
+    cal('on', {
+      action: 'bookingSuccessfulV2',
+      callback: function (e) {
+        var data = (e && e.detail && e.detail.data) || {};
+        track('booking_completed', { status: data.status || null });
+      }
+    });
+    cal('on', {
+      action: 'linkFailed',
+      callback: function (e) {
+        var data = (e && e.detail && e.detail.data) || {};
+        track('calendar_failed', { code: data.code || null });
+      }
+    });
   }
 
   function setupHeader() {
@@ -2850,7 +3062,9 @@ html.wf-play .hero-brain.is-in img {
     });
   }
 
+  setupAnalytics();
   setupBooking();
+  setupBookingEvents();
   setupHeader();
   setupScrollDepth();
   setupContactEmail();

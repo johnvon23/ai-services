@@ -6,7 +6,7 @@
       <a class="wordmark" href="/">{{copy:organization.name}}</a>
       <p class="tag">{{copy:header.tag}}</p>
     </div>
-    <a class="book book--header" data-book="header" href="/#book">{{copy:cta.primary}}</a>
+    <a class="book book--header" data-book="header" href="#book">{{copy:cta.primary}}</a>
   </div>
 </header>
 <main id="main">
@@ -328,10 +328,11 @@
         <div class="closing-copy">
           <h2>{{copy:closing.heading}}</h2>
           <p class="measure">{{copy:closing.body}}</p>
+          <p class="smaller-step">{{copy:closing.smaller}}</p>
           <p class="booking-soon" id="booking-soon" role="status" hidden>{{copy:booking.unavailable}}</p>
         </div>
         <div class="closing-action">
-          <a class="book" data-book="secondbrain_cta" href="/#book">{{copy:cta.primary}}</a>
+          {{include:_booking.html}}
         </div>
       </div>
       <p class="best-fit">{{copy:closing.best_fit}}</p>

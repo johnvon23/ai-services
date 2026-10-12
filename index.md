@@ -41,6 +41,9 @@ AI systems for music companies
 <!-- copy:hero.tagline -->
 Grow the business. *Not the busywork.*
 
+<!-- copy:hero.offer -->
+We find the recurring work eating your team’s week, from royalty statements to booking inquiries, then build reliable automations inside the tools you already use.
+
 <!-- copy:privacy.note -->
 Unreleased music, artist contracts, and royalty data stay private. Happy to sign an NDA before the first call.
 
@@ -76,10 +79,7 @@ Human
 <!-- copy:workflow.caption -->
 Automation handles the handoffs. Your team keeps the judgment.
 
-## Results and positioning
-
-<!-- copy:results.intro -->
-We find the recurring work eating your team’s week, from royalty statements and release checklists to booking inquiries and reporting, then build reliable automations inside the tools you already use.
+## Positioning band
 
 <!-- copy:results.best_fit_tools -->
 Best for growing music companies with small teams, recurring work, and tools that don’t quite talk to each other.
@@ -188,7 +188,7 @@ Enrollment follow-up sequences
 Student retention early warning
 
 <!-- copy:segments.schools.item_3 -->
-The overnight operations run we already showcase
+An overnight operations run like Futureproof’s
 
 ## Opportunities
 
@@ -318,6 +318,9 @@ Weekly KPI roll-up
 <!-- copy:cases.futureproof.end -->
 9:00am, the team logs in
 
+<!-- copy:cases.futureproof.label -->
+System we built
+
 <!-- copy:cases.futureproof.heading -->
 A team of four doing the work of twenty.
 
@@ -350,6 +353,9 @@ K
 <!-- copy:cases.labs.chart_period -->
 One year
 
+<!-- copy:cases.labs.label -->
+Growth we led
+
 <!-- copy:cases.labs.heading -->
 From 15K to 60K Instagram followers in one year.
 
@@ -379,6 +385,9 @@ Icon Collective’s online student population tripled during John’s seven-plus
 <!-- copy:cases.icon.chart_period -->
 Seven years
 
+<!-- copy:cases.icon.label -->
+Program we ran
+
 <!-- copy:cases.icon.heading -->
 Online student population tripled.
 
@@ -399,6 +408,12 @@ You’ll work directly with us.
 <!-- copy:founders.intro -->
 Both of us come from music production and music technology, not from outside consulting. Between us: two decades at Dubspot, Point Blank, Icon Collective, 343 Labs, and Native Instruments, one music school founded, one music technology company founded, and two AI products built from scratch.
 
+<!-- copy:founders.press_lead -->
+John in the press:
+
+<!-- copy:founders.press_link -->
+CNET, LA Examiner, Cointelegraph, MusicTech and more
+
 ### John von Seggern
 
 <!-- copy:founders.john.name -->
@@ -412,6 +427,9 @@ John founded Futureproof Music School, where he built Kadence, an AI music-produ
 
 <!-- copy:founders.john.bio_2 -->
 Earlier, John co-founded Modus Institute, an online school teaching Lean process improvement, and spent six years managing Native Instruments’ North American support team. He wrote the books Ableton Live 6 Power! and Laptop Music Power!, plus the official reference manual for the Massive synthesizer, and has sound design credits on major films including WALL-E. He holds an MA in Ethnomusicology from UC Riverside and a BA in Music from Carleton College.
+
+<!-- copy:founders.john.more_label -->
+More about John
 
 <!-- copy:founders.john.linkedin_label -->
 LinkedIn
@@ -451,6 +469,9 @@ Tsotne has spent sixteen years growing music and creative companies, and the las
 <!-- copy:founders.tsotne.bio_2 -->
 His technical work is grounded in his own creative practice. He has produced electronic music in Ableton Live for eighteen-plus years (deep house and techno, with releases on Spotify, DJ sets at Good Room and TBA Brooklyn, and his own custom Max for Live devices) and creates 3D visuals in Cinema 4D and Unreal Engine. Since 2010 he has also consulted independently on AI, marketing, and automation for companies across music, SaaS, and the creator economy, guiding several from early stage to profitability.
 
+<!-- copy:founders.tsotne.more_label -->
+More about Tsotne
+
 <!-- copy:founders.tsotne.linkedin_label -->
 LinkedIn
 
@@ -469,40 +490,52 @@ TunePal
 Questions before a call.
 
 <!-- copy:faq.question_1 -->
-Do you replace staff?
+What happens in the 30-minute session?
 
 <!-- copy:faq.answer_1 -->
-No. Your team keeps judgment, money, and artist communication.
+Walk us through the tools, the handoffs, and the things that keep falling through. If we see something worth building, we’ll tell you how. If we don’t, we’ll say so.
 
 <!-- copy:faq.question_2 -->
-What tools do you work with?
+Do you replace staff?
 
 <!-- copy:faq.answer_2 -->
-CRMs, email, spreadsheets, royalty portals, and project tools. We build inside the stack you already use.
+No. Your team keeps judgment, money, and artist communication.
 
 <!-- copy:faq.question_3 -->
-How long until something is live?
+What tools do you work with?
 
 <!-- copy:faq.answer_3 -->
-A pilot is typically live in 2 to 4 weeks.
+CRMs, email, spreadsheets, royalty portals, and project tools. We build inside the stack you already use.
 
 <!-- copy:faq.question_4 -->
-What does it cost?
+How long until something is live?
 
 <!-- copy:faq.answer_4 -->
-The working session is free. Pilot pricing is quoted after the opportunity map, once we know the workflow.
+A pilot is typically live in 2 to 4 weeks.
 
 <!-- copy:faq.question_5 -->
-What about our unreleased music and contracts?
+What is the difference between a pilot and a second brain?
 
 <!-- copy:faq.answer_5 -->
-We are happy to sign an NDA before the first call. Unreleased music, artist contracts, and royalty data stay in your accounts.
+A pilot automates one workflow and is typically live in 2 to 4 weeks. A second brain holds your company’s context and runs many recurring jobs on a schedule; the first ten are live in 4 to 6 weeks.
 
 <!-- copy:faq.question_6 -->
-Do we need anyone technical on our side?
+What does it cost?
 
 <!-- copy:faq.answer_6 -->
-No.
+The working session is free. Pilot pricing is quoted after the opportunity map, once we know the workflow.
+
+<!-- copy:faq.question_7 -->
+What about our unreleased music and contracts?
+
+<!-- copy:faq.answer_7 -->
+We are happy to sign an NDA before the first call. Unreleased music, artist contracts, and royalty data stay in your accounts.
+
+<!-- copy:faq.question_8 -->
+Do we need anyone technical on our side?
+
+<!-- copy:faq.answer_8 -->
+No. We build inside the tools you already use, then maintain the system or hand it to your team documented.
 
 ## Closing call to action and footer
 
@@ -511,9 +544,6 @@ Let’s find the best place to start.
 
 <!-- copy:closing.body -->
 Thirty minutes, free. Bring the systems, the bottlenecks, the unanswered questions. We’ll find the opportunity worth pursuing, or tell you if there isn’t one.
-
-<!-- copy:closing.calendar_label -->
-Open the calendar in a new tab
 
 <!-- copy:accessibility.new_tab -->
 (opens in a new tab)

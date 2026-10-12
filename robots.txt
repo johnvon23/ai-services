@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /index-b.html
+
+Sitemap: https://systemswithjudgment.com/sitemap.xml
