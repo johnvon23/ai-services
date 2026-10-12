@@ -1252,10 +1252,14 @@ html.wf-play .growth.is-drawn .growth-label {
 
 .bio-more summary::after {
   content: " +";
+  content: " +" / "";
   color: var(--coral);
 }
 
-.bio-more[open] summary::after { content: " \2212"; }
+.bio-more[open] summary::after {
+  content: " \2212";
+  content: " \2212" / "";
+}
 
 .bio-more summary:hover { color: var(--coral); }
 

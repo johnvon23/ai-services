@@ -98,6 +98,12 @@ def expand_includes(text, source):
     return INCLUDE_PLACEHOLDER.sub(replace, text)
 
 
+def assert_no_placeholders(body, source):
+    if any(token in body for token in ("{{copy:", "{{attr:", "{{entity:", "{{include:")):
+        raise ValueError(f"Unresolved placeholder in {source}")
+    return body
+
+
 def fill_template(template_path, copy):
     template = expand_includes(
         Path(template_path).read_text(encoding="utf8").strip(), template_path
@@ -374,8 +380,11 @@ def main():
         "Selected press, interviews, and podcasts with John von Seggern on where AI "
         "genuinely helps, where it oversells itself, and what still needs a person in the loop."
     )
-    press_body = expand_includes(
-        Path("_press.body.html").read_text(encoding="utf8").strip(),
+    press_body = assert_no_placeholders(
+        expand_includes(
+            Path("_press.body.html").read_text(encoding="utf8").strip(),
+            "_press.body.html",
+        ),
         "_press.body.html",
     )
     press_html = render_html(
@@ -417,8 +426,11 @@ def main():
             "30-minute session."
         ),
         path="/404",
-        body=expand_includes(
-            Path("_404.body.html").read_text(encoding="utf8").strip(),
+        body=assert_no_placeholders(
+            expand_includes(
+                Path("_404.body.html").read_text(encoding="utf8").strip(),
+                "_404.body.html",
+            ),
             "_404.body.html",
         ),
         structured_data=json.dumps(

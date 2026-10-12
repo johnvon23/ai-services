@@ -74,6 +74,7 @@ const requiredCopy = [
   "book_session_click",
   "scroll_depth",
   "calendar_viewed",
+  "calendar_loaded",
   "booking_completed",
   "bookingSuccessfulV2",
   "What happens in the 30-minute session?"
@@ -197,6 +198,23 @@ for (const [name, source] of pages.slice(0, 3)) {
     throw new Error(`${name} has no booking button that stays on the page.`);
   }
 }
+for (const [name, source] of pages.slice(0, 3)) {
+  for (const id of ["my-cal-inline-30min", "booking-fallback"]) {
+    const count = source.split(`id="${id}"`).length - 1;
+    if (count !== 1) {
+      throw new Error(`${name} should have exactly one #${id}, found ${count}.`);
+    }
+  }
+}
+
+// The FAQ shown on the page and the FAQ in the structured data must match.
+const faqSection = html.slice(html.indexOf('id="faq"'), html.indexOf("</section>", html.indexOf('id="faq"')));
+const faqShown = (faqSection.match(/<details>/g) || []).length;
+const faqData = (html.match(/"@type": "Question"/g) || []).length;
+if (faqShown === 0 || faqShown !== faqData) {
+  throw new Error(`The FAQ shows ${faqShown} questions but its structured data has ${faqData}; add or remove the <details> in _page.body.html to match index.md.`);
+}
+
 if (!configSource.includes(calLink)) {
   throw new Error(`site-config.js bookingUrl does not point at the embedded event ${calLink}.`);
 }
@@ -209,6 +227,11 @@ for (const path of ["/", "/secondbrain", "/press"]) {
     throw new Error(`sitemap.xml is missing ${path}`);
   }
 }
+const oldDesign = await readFile("index-b.html", "utf8");
+if (!oldDesign.includes('<meta name="robots" content="noindex">')) {
+  throw new Error("index-b.html (the old design snapshot) must stay out of search results.");
+}
+
 if (!notFound.includes('<meta name="robots" content="noindex">')) {
   throw new Error("404.html must stay out of search results.");
 }

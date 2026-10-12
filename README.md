@@ -44,18 +44,20 @@ running `npm run build` locally first just makes the bot commit a no-op.
 
 ## Booking
 
-The Cal.com calendar sits at the end of every page (`#book`). Its embed code
-lives once, in `_booking.html`, exactly as Cal.com supplies it; to change the
-event, paste Cal.com's new embed code there and update `bookingUrl` in
-`site-config.js`, which the "open the calendar in a new tab" link uses. The
-site checks fail if the two disagree.
+The Cal.com calendar sits at the end of the homepage, /secondbrain and /press
+(`#book`). Its embed code lives once, in `_booking.html`, exactly as Cal.com
+supplies it, together with the "Open the calendar in a new tab" link and its
+label. To change the event, paste Cal.com's new embed code there and update
+`bookingUrl` in `site-config.js`, which that link uses. The site checks fail if
+the two disagree.
 
 ## Analytics
 
 Every button click (`book_session_click`, with its placement), scroll depth,
-the calendar being seen (`calendar_viewed`), a completed booking
-(`booking_completed`) and a calendar that fails to load (`calendar_failed`) are
-pushed to `window.dataLayer`. They also go to PostHog once `posthogKey` in
+the calendar scrolled into view (`calendar_viewed`), the calendar drawn by
+Cal.com (`calendar_loaded`), a completed booking (`booking_completed`) and a
+calendar that fails to load (`calendar_failed`) are pushed to
+`window.dataLayer`. They also go to PostHog once `posthogKey` in
 `site-config.js` holds a project key; while it is empty, no analytics script
 loads. `posthogPersistence: "memory"` sets no cookies; `"localStorage+cookie"`
 recognises returning visitors but may need a consent banner for EU visitors.
@@ -63,7 +65,15 @@ recognises returning visitors but may need a consent banner for EU visitors.
 ## Search
 
 `sitemap.xml` lists the three public pages and `robots.txt` points to it. The
-old design snapshot `index-b.html` is kept out of search by `robots.txt`.
+old design snapshot `index-b.html` carries a `noindex` tag so it stays out of
+search results.
+
+## Site checks
+
+`npm run check` requires a few exact strings: the H1, the button label "Free
+30-minute session", several section headings and the NDA sentence. Rewording
+one of them on GitHub makes the deploy workflow fail, so change
+`scripts/check-site.mjs` in the same commit.
 
 ## Social share card
 

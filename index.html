@@ -1412,10 +1412,14 @@ html.wf-play .growth.is-drawn .growth-label {
 
 .bio-more summary::after {
   content: " +";
+  content: " +" / "";
   color: var(--coral);
 }
 
-.bio-more[open] summary::after { content: " \2212"; }
+.bio-more[open] summary::after {
+  content: " \2212";
+  content: " \2212" / "";
+}
 
 .bio-more summary:hover { color: var(--coral); }
 
@@ -2769,19 +2773,28 @@ html.wf-play .hero-brain.is-in img {
     var calendar = document.getElementById('my-cal-inline-30min');
     if (!calendar) return;
 
-    var viewed = false;
-    function markViewed(source) {
-      if (viewed) return;
-      viewed = true;
-      track('calendar_viewed', { source: source });
-    }
-    onceInView(calendar, function () { markViewed('scroll'); });
+    // the visitor scrolled the booking calendar into view
+    onceInView(calendar, function () { track('calendar_viewed'); });
+
+    // the embed never drew its calendar (blocked script, network, Cal.com down)
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        if (!calendar.querySelector('iframe')) {
+          track('calendar_failed', { code: 'embed_not_loaded' });
+        }
+      }, 12000);
+    });
 
     var cal = window.Cal && window.Cal.ns && window.Cal.ns['30min'];
     if (typeof cal !== 'function') return;
+    var loaded = false;
     cal('on', {
       action: 'bookerViewed',
-      callback: function () { markViewed('calendar'); }
+      callback: function () {
+        if (loaded) return;
+        loaded = true;
+        track('calendar_loaded');
+      }
     });
     cal('on', {
       action: 'bookingSuccessfulV2',
