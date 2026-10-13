@@ -74,7 +74,7 @@
   --read: 40rem;
   --wrap: min(1120px, calc(100% - 48px));
   /* single rhythm for the space between every major section */
-  --gap-section: 7rem;
+  --gap-section: 5rem;
 }
 
 @media (min-width: 768px) {
@@ -384,6 +384,18 @@ h1 em {
 .hero .lede em {
   font-style: normal;
   font-weight: 700;
+}
+
+.hero-offer {
+  margin: -0.4rem 0 1.6rem;
+  max-width: 31rem;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .hero-offer { font-size: 1.08rem; }
 }
 
 .founder-note {
@@ -767,14 +779,6 @@ h2 {
   color: var(--muted);
 }
 
-.results .lede {
-  margin-bottom: 0;
-  max-width: var(--read);
-}
-
-.results .best-fit {
-  max-width: var(--read);
-}
 
 /* ---------- position band ---------- */
 
@@ -793,6 +797,13 @@ h2 {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.5;
+}
+
+.position-band .best-fit {
+  margin-top: 1.1rem;
+  font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 /* ---------- segments ---------- */
@@ -1003,6 +1014,15 @@ html.wf-play .opp-list.is-in .opp-row:nth-child(3) .opp-fig svg * { transition-d
 }
 
 .case-visual { margin: 0; }
+
+.case-label {
+  margin: 0 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
 
 .case-copy h3 {
   margin: 0 0 1.2rem;
@@ -1249,9 +1269,60 @@ html.wf-play .growth.is-drawn .growth-label {
   color: var(--muted);
 }
 
+.process-cta {
+  margin: 2rem 0 0;
+}
+
 /* ---------- founders ---------- */
 
-.founders-intro { margin-bottom: 2.4rem; }
+.founders-intro { margin-bottom: 1rem; }
+
+.press-line {
+  margin: 0 0 2.4rem;
+  max-width: var(--read);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.press-line a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--coral);
+}
+
+.press-line a:hover { color: var(--coral); }
+
+.bio-more {
+  margin: 0 0 1rem;
+}
+
+.bio-more summary {
+  display: inline-block;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.1rem;
+}
+
+.bio-more summary::-webkit-details-marker { display: none; }
+
+.bio-more summary::after {
+  content: " +";
+  content: " +" / "";
+  color: var(--coral);
+}
+
+.bio-more[open] summary::after {
+  content: " \2212";
+  content: " \2212" / "";
+}
+
+.bio-more summary:hover { color: var(--coral); }
+
+.bio-more[open] summary { margin-bottom: 0.9rem; }
 
 .founders {
   display: grid;
@@ -1393,6 +1464,13 @@ html.wf-play .growth.is-drawn .growth-label {
 
 .closing .nda {
   margin-top: 1rem;
+}
+
+.closing .smaller-step {
+  margin: 1.2rem 0 0;
+  max-width: var(--read);
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 #my-cal-inline-30min {
@@ -1927,6 +2005,21 @@ html.wf-play .hero-brain.is-in img {
 
 .case-links { margin: 1.1rem 0 0; }
 
+/* ---------- 404 page ---------- */
+
+.not-found {
+  padding: 4rem 0 2rem;
+  max-width: 40rem;
+}
+
+.not-found h1 {
+  font-size: clamp(2rem, 4.6vw, 2.9rem);
+}
+
+.not-found .links {
+  margin: 1.4rem 0 2rem;
+}
+
 </style>
 </head>
 <body class="page-press">
@@ -1937,7 +2030,7 @@ html.wf-play .hero-brain.is-in img {
       <a class="wordmark" href="/">Systems with Judgment</a>
       <p class="tag">AI systems for music companies</p>
     </div>
-    <a class="book book--header" data-book="header" href="/#book">Free 30-minute session</a>
+    <a class="book book--header" data-book="header" href="#book">Free 30-minute session</a>
   </div>
 </header>
 <main id="main">
@@ -2066,7 +2159,24 @@ html.wf-play .hero-brain.is-in img {
           <p class="booking-soon" id="booking-soon" role="status" hidden>Booking will open here shortly. In the meantime, use the LinkedIn links on the home page to reach us directly.</p>
         </div>
         <div class="closing-action">
-          <a class="book" data-book="press_cta" href="/#book">Free 30-minute session</a>
+          <!-- Cal inline embed code begins -->
+<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "30min", {origin:"https://app.cal.com"});
+  Cal.config = Cal.config || {};
+  Cal.config.forwardQueryParams = true;
+
+  Cal.ns["30min"]("inline", {
+    elementOrSelector:"#my-cal-inline-30min",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+    calLink: "john-von-seggern-czdmwr/30min",
+  });
+
+  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal inline embed code ends -->
+<a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://cal.com/john-von-seggern-czdmwr/30min" target="_blank" rel="noopener noreferrer">Open the calendar in a new tab<span class="visually-hidden"> (opens in a new tab)</span></a>
         </div>
       </div>
       <p class="best-fit">Best for growing music companies with small teams, recurring work, and systems that don’t quite talk to each other.</p>
@@ -2093,6 +2203,11 @@ html.wf-play .hero-brain.is-in img {
 (function () {
   'use strict';
 
+  /* Every event goes to window.dataLayer (for any tag manager) and, when
+     site-config.js names a PostHog project key, to PostHog. Without a key no
+     analytics script loads and nothing leaves the page. */
+  var analytics = { enabled: false, ready: false, queue: [] };
+
   function track(name, payload) {
     try {
       window.dataLayer = window.dataLayer || [];
@@ -2104,10 +2219,58 @@ html.wf-play .hero-brain.is-in img {
       }
       window.dataLayer.push(event);
     } catch (err) {}
+    sendToAnalytics(name, payload || {});
+  }
+
+  function sendToAnalytics(name, payload) {
+    if (!analytics.enabled) return;
+    if (!analytics.ready) {
+      analytics.queue.push([name, payload]);
+      return;
+    }
+    try {
+      window.posthog.capture(name, payload);
+    } catch (err) {}
   }
 
   function config() {
     return window.SITE_CONFIG || {};
+  }
+
+  function setupAnalytics() {
+    var settings = config();
+    var key = settings.posthogKey;
+    if (!key || window.posthog) return;
+    var host = settings.posthogHost || 'https://us.i.posthog.com';
+    analytics.enabled = true;
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.src = host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js';
+    script.onload = function () {
+      try {
+        window.posthog.init(key, {
+          api_host: host,
+          defaults: '2026-05-30',
+          // 'memory' keeps no cookie or local storage: privacy-friendly, but
+          // each page load counts as a new visitor.
+          persistence: settings.posthogPersistence || 'memory'
+        });
+        analytics.ready = true;
+        while (analytics.queue.length) {
+          var item = analytics.queue.shift();
+          window.posthog.capture(item[0], item[1]);
+        }
+      } catch (err) {
+        analytics.enabled = false;
+      }
+    };
+    script.onerror = function () {
+      analytics.enabled = false;
+      analytics.queue = [];
+    };
+    document.head.appendChild(script);
   }
 
   function prefersReducedMotion() {
@@ -2145,6 +2308,51 @@ html.wf-play .hero-brain.is-in img {
         });
       })(links[i]);
     }
+  }
+
+  /* Booking events from the Cal.com embed (cal.com/help/embedding/embed-events):
+     the calendar seen, a booking made, the calendar failing to load. */
+  function setupBookingEvents() {
+    var calendar = document.getElementById('my-cal-inline-30min');
+    if (!calendar) return;
+
+    // the visitor scrolled the booking calendar into view
+    onceInView(calendar, function () { track('calendar_viewed'); });
+
+    // the embed never drew its calendar (blocked script, network, Cal.com down)
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        if (!calendar.querySelector('iframe')) {
+          track('calendar_failed', { code: 'embed_not_loaded' });
+        }
+      }, 12000);
+    });
+
+    var cal = window.Cal && window.Cal.ns && window.Cal.ns['30min'];
+    if (typeof cal !== 'function') return;
+    var loaded = false;
+    cal('on', {
+      action: 'bookerViewed',
+      callback: function () {
+        if (loaded) return;
+        loaded = true;
+        track('calendar_loaded');
+      }
+    });
+    cal('on', {
+      action: 'bookingSuccessfulV2',
+      callback: function (e) {
+        var data = (e && e.detail && e.detail.data) || {};
+        track('booking_completed', { status: data.status || null });
+      }
+    });
+    cal('on', {
+      action: 'linkFailed',
+      callback: function (e) {
+        var data = (e && e.detail && e.detail.data) || {};
+        track('calendar_failed', { code: data.code || null });
+      }
+    });
   }
 
   function setupHeader() {
@@ -2410,7 +2618,9 @@ html.wf-play .hero-brain.is-in img {
     });
   }
 
+  setupAnalytics();
   setupBooking();
+  setupBookingEvents();
   setupHeader();
   setupScrollDepth();
   setupContactEmail();
