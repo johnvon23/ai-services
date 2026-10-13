@@ -15,7 +15,7 @@
   --read: 40rem;
   --wrap: min(1120px, calc(100% - 48px));
   /* single rhythm for the space between every major section */
-  --gap-section: 7rem;
+  --gap-section: 5rem;
 }
 
 @media (min-width: 768px) {
@@ -325,6 +325,18 @@ h1 em {
 .hero .lede em {
   font-style: normal;
   font-weight: 700;
+}
+
+.hero-offer {
+  margin: -0.4rem 0 1.6rem;
+  max-width: 31rem;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .hero-offer { font-size: 1.08rem; }
 }
 
 .founder-note {
@@ -708,14 +720,6 @@ h2 {
   color: var(--muted);
 }
 
-.results .lede {
-  margin-bottom: 0;
-  max-width: var(--read);
-}
-
-.results .best-fit {
-  max-width: var(--read);
-}
 
 /* ---------- position band ---------- */
 
@@ -734,6 +738,13 @@ h2 {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.5;
+}
+
+.position-band .best-fit {
+  margin-top: 1.1rem;
+  font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 /* ---------- segments ---------- */
@@ -944,6 +955,15 @@ html.wf-play .opp-list.is-in .opp-row:nth-child(3) .opp-fig svg * { transition-d
 }
 
 .case-visual { margin: 0; }
+
+.case-label {
+  margin: 0 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
 
 .case-copy h3 {
   margin: 0 0 1.2rem;
@@ -1190,9 +1210,60 @@ html.wf-play .growth.is-drawn .growth-label {
   color: var(--muted);
 }
 
+.process-cta {
+  margin: 2rem 0 0;
+}
+
 /* ---------- founders ---------- */
 
-.founders-intro { margin-bottom: 2.4rem; }
+.founders-intro { margin-bottom: 1rem; }
+
+.press-line {
+  margin: 0 0 2.4rem;
+  max-width: var(--read);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.press-line a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--coral);
+}
+
+.press-line a:hover { color: var(--coral); }
+
+.bio-more {
+  margin: 0 0 1rem;
+}
+
+.bio-more summary {
+  display: inline-block;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.1rem;
+}
+
+.bio-more summary::-webkit-details-marker { display: none; }
+
+.bio-more summary::after {
+  content: " +";
+  content: " +" / "";
+  color: var(--coral);
+}
+
+.bio-more[open] summary::after {
+  content: " \2212";
+  content: " \2212" / "";
+}
+
+.bio-more summary:hover { color: var(--coral); }
+
+.bio-more[open] summary { margin-bottom: 0.9rem; }
 
 .founders {
   display: grid;
@@ -1334,6 +1405,13 @@ html.wf-play .growth.is-drawn .growth-label {
 
 .closing .nda {
   margin-top: 1rem;
+}
+
+.closing .smaller-step {
+  margin: 1.2rem 0 0;
+  max-width: var(--read);
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 #my-cal-inline-30min {
@@ -1867,3 +1945,18 @@ html.wf-play .hero-brain.is-in img {
 }
 
 .case-links { margin: 1.1rem 0 0; }
+
+/* ---------- 404 page ---------- */
+
+.not-found {
+  padding: 4rem 0 2rem;
+  max-width: 40rem;
+}
+
+.not-found h1 {
+  font-size: clamp(2rem, 4.6vw, 2.9rem);
+}
+
+.not-found .links {
+  margin: 1.4rem 0 2rem;
+}

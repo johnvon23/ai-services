@@ -1,5 +1,5 @@
 # The live site is GitHub Pages serving the main branch as committed. This
-# workflow rebuilds index.html, press.html and secondbrain.html from the
+# workflow rebuilds index.html, press.html, secondbrain.html and 404.html from the
 # Markdown copy sources on every push, and commits the result back when it
 # differs, so an edit to index.md or secondbrain.md is enough to deploy.
 name: Build pages from Markdown
@@ -33,12 +33,12 @@ jobs:
         run: npm run check
       - name: Commit rebuilt pages when they changed
         run: |
-          if git diff --quiet -- index.html press.html secondbrain.html; then
+          if git diff --quiet -- index.html press.html secondbrain.html 404.html; then
             echo "Built pages already match the committed HTML."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html press.html secondbrain.html
+          git add index.html press.html secondbrain.html 404.html
           git commit -m "Rebuild pages from Markdown copy"
           git push

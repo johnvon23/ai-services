@@ -206,7 +206,7 @@ One instruction file Nova calls its soul document, plus thirty rules. Every run 
 Memory, three kinds
 
 <!-- copy:anatomy.core.layer_2.body -->
-What happened, what is true, how to do it. Six hundred entries, each losing confidence until re-verified.
+What happened, what is true, how to do it. More than 570 entries, each losing confidence until re-verified.
 
 <!-- copy:anatomy.core.layer_3.heading -->
 Canonical state
@@ -500,6 +500,9 @@ See what your second brain would do first.
 
 <!-- copy:closing.body -->
 Thirty minutes, free. Bring the bottlenecks and the questions you answer by hand every week. We’ll tell you what a second brain would take off your plate first, or if it isn’t the right move yet.
+
+<!-- copy:closing.smaller -->
+Prefer to start smaller? A pilot automates one workflow and is typically live in your tools in 2 to 4 weeks.
 
 <!-- copy:booking.unavailable -->
 Booking will open here shortly. In the meantime, use the LinkedIn links on the home page to reach us directly.

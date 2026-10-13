@@ -15,6 +15,7 @@
       <div class="hero-copy">
         <h1>{{copy:hero.heading}}</h1>
         <p class="lede">{{copy:hero.tagline}}</p>
+        <p class="hero-offer">{{copy:hero.offer}}</p>
         <a class="book" data-book="hero" href="#book">{{copy:cta.primary}}</a>
         <p class="nda">{{copy:privacy.note}}</p>
         <div class="founder-note">
@@ -79,13 +80,9 @@
       </figure>
     </div>
 
-    <section class="block results" id="results">
-      <p class="lede">{{copy:results.intro}}</p>
-      <p class="best-fit">{{copy:results.best_fit_tools}}</p>
-    </section>
-
     <aside class="position-band" id="office">
       <p>{{copy:results.position}}</p>
+      <p class="best-fit">{{copy:results.best_fit_tools}}</p>
     </aside>
 
     <aside class="proof-strip" aria-label="{{attr:proof.label}}">
@@ -111,6 +108,53 @@
         </li>
       </ul>
     </aside>
+
+    <section class="block" id="opportunities">
+      <h2>{{copy:opportunities.heading}}</h2>
+      <p class="section-intro">{{copy:opportunities.intro}}</p>
+      <div class="opp-list">
+        <article class="opp-row">
+          <figure class="opp-fig" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 10h32l-6 12H14L8 10z"/>
+              <path d="M14 22h20l-5 10H19L14 22z"/>
+              <circle cx="24" cy="38" r="3.2"/>
+            </svg>
+          </figure>
+          <div>
+            <h3>{{copy:opportunities.row_1_heading}}</h3>
+            <p>{{copy:opportunities.row_1_body}}</p>
+          </div>
+        </article>
+        <article class="opp-row">
+          <figure class="opp-fig" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="8" width="28" height="32" rx="2"/>
+              <path d="M16 18h16M16 25h16M16 32h10"/>
+              <path d="M32 31.5l2.2 2.2 4.3-4.7"/>
+            </svg>
+          </figure>
+          <div>
+            <h3>{{copy:opportunities.row_2_heading}}</h3>
+            <p>{{copy:opportunities.row_2_body}}</p>
+          </div>
+        </article>
+        <article class="opp-row">
+          <figure class="opp-fig" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="34" r="4"/>
+              <circle cx="24" cy="14" r="4"/>
+              <circle cx="36" cy="28" r="4"/>
+              <path d="M15.5 31L21 17.5M27.5 16.5L33 25"/>
+            </svg>
+          </figure>
+          <div>
+            <h3>{{copy:opportunities.row_3_heading}}</h3>
+            <p>{{copy:opportunities.row_3_body}}</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <section class="block" id="segments">
       <h2>{{copy:segments.heading}}</h2>
@@ -218,48 +262,102 @@
       </div>
     </section>
 
-    <section class="block" id="opportunities">
-      <h2>{{copy:opportunities.heading}}</h2>
-      <p class="section-intro">{{copy:opportunities.intro}}</p>
-      <div class="opp-list">
-        <article class="opp-row">
-          <figure class="opp-fig" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 10h32l-6 12H14L8 10z"/>
-              <path d="M14 22h20l-5 10H19L14 22z"/>
-              <circle cx="24" cy="38" r="3.2"/>
-            </svg>
+    <section class="block" id="case-studies">
+      <h2>{{copy:cases.heading}}</h2>
+      <div class="cases">
+        <article class="case">
+          <figure class="case-visual">
+            <div class="run-log" data-run-log role="img" aria-label="{{attr:cases.futureproof.chart_description}}">
+              <div class="run-head">
+                <div>
+                  <p class="run-range">{{copy:cases.futureproof.range}}</p>
+                </div>
+                <p class="run-count"><strong>{{copy:cases.futureproof.count}}</strong><span>{{copy:cases.futureproof.count_label}}</span></p>
+              </div>
+              <ol>
+                <li><time datetime="23:04">{{copy:cases.futureproof.log_1_time}}</time><span>{{copy:cases.futureproof.log_1_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="00:20">{{copy:cases.futureproof.log_2_time}}</time><span>{{copy:cases.futureproof.log_2_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="01:35">{{copy:cases.futureproof.log_3_time}}</time><span>{{copy:cases.futureproof.log_3_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="02:50">{{copy:cases.futureproof.log_4_time}}</time><span>{{copy:cases.futureproof.log_4_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="04:10">{{copy:cases.futureproof.log_5_time}}</time><span>{{copy:cases.futureproof.log_5_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="05:25">{{copy:cases.futureproof.log_6_time}}</time><span>{{copy:cases.futureproof.log_6_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="06:40">{{copy:cases.futureproof.log_7_time}}</time><span>{{copy:cases.futureproof.log_7_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><time datetime="07:55">{{copy:cases.futureproof.log_8_time}}</time><span>{{copy:cases.futureproof.log_8_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+              </ol>
+              <p class="run-end">{{copy:cases.futureproof.end}}</p>
+            </div>
           </figure>
-          <div>
-            <h3>{{copy:opportunities.row_1_heading}}</h3>
-            <p>{{copy:opportunities.row_1_body}}</p>
+          <div class="case-copy">
+            <p class="case-label">{{copy:cases.futureproof.label}}</p>
+            <h3>{{copy:cases.futureproof.heading}}</h3>
+            <div class="fact">
+              <p>{{copy:cases.futureproof.fact_1}}</p>
+            </div>
+            <div class="fact">
+              <p>{{copy:cases.futureproof.fact_2}}</p>
+            </div>
+            <div class="fact">
+              <p>{{copy:cases.futureproof.fact_3}}</p>
+            </div>
+            <p class="links case-links">
+              <a href="/secondbrain">{{copy:cases.futureproof.link_label}}</a>
+            </p>
           </div>
         </article>
-        <article class="opp-row">
-          <figure class="opp-fig" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="10" y="8" width="28" height="32" rx="2"/>
-              <path d="M16 18h16M16 25h16M16 32h10"/>
-              <path d="M32 31.5l2.2 2.2 4.3-4.7"/>
+
+        <article class="case case--alt">
+          <figure class="case-visual">
+            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="{{attr:cases.labs.chart_description}}" width="640" height="360">
+              <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
+              <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
+              <path class="growth-line" pathLength="1" d="M88 248 C 150 244, 210 214, 280 190 S 390 178, 400 176 S 490 118, 540 92 S 575 78, 588 74"/>
+              <circle class="growth-start" cx="88" cy="248" r="10"/>
+              <circle class="growth-end" cx="588" cy="74" r="12"/>
+              <text class="growth-label growth-label--strong" x="88" y="218">{{copy:cases.labs.chart_start}}{{copy:cases.labs.chart_suffix}}</text>
+              <text class="growth-label growth-label--strong growth-count" data-count-from="{{attr:cases.labs.chart_start}}" data-count-to="{{attr:cases.labs.chart_end}}" data-suffix="{{attr:cases.labs.chart_suffix}}" x="588" y="46" text-anchor="end">{{copy:cases.labs.chart_end}}{{copy:cases.labs.chart_suffix}}</text>
+              <text class="growth-label" x="332" y="336" text-anchor="middle">{{copy:cases.labs.chart_period}}</text>
             </svg>
           </figure>
-          <div>
-            <h3>{{copy:opportunities.row_2_heading}}</h3>
-            <p>{{copy:opportunities.row_2_body}}</p>
+          <div class="case-copy">
+            <p class="case-label">{{copy:cases.labs.label}}</p>
+            <h3>{{copy:cases.labs.heading}}</h3>
+            <div class="fact">
+              <p>{{copy:cases.labs.fact_1}}</p>
+            </div>
+            <div class="fact">
+              <p>{{copy:cases.labs.fact_2}}</p>
+            </div>
+            <div class="fact">
+              <p>{{copy:cases.labs.fact_3}}</p>
+            </div>
           </div>
         </article>
-        <article class="opp-row">
-          <figure class="opp-fig" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="34" r="4"/>
-              <circle cx="24" cy="14" r="4"/>
-              <circle cx="36" cy="28" r="4"/>
-              <path d="M15.5 31L21 17.5M27.5 16.5L33 25"/>
+
+        <article class="case">
+          <figure class="case-visual">
+            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="{{attr:cases.icon.chart_description}}" width="640" height="360">
+              <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
+              <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
+              <path class="growth-line" pathLength="1" d="M88 256 C 160 250, 230 232, 300 204 S 420 154, 480 126 S 562 88, 588 76"/>
+              <circle class="growth-start" cx="88" cy="256" r="10"/>
+              <circle class="growth-end" cx="588" cy="76" r="12"/>
+              <text class="growth-label growth-label--strong" x="88" y="226">{{copy:cases.icon.chart_start}}{{entity:cases.icon.chart_suffix}}</text>
+              <text class="growth-label growth-label--strong growth-count" data-count-from="{{attr:cases.icon.chart_start}}" data-count-to="{{attr:cases.icon.chart_end}}" data-suffix="{{entity:cases.icon.chart_suffix}}" x="588" y="48" text-anchor="end">{{copy:cases.icon.chart_end}}{{entity:cases.icon.chart_suffix}}</text>
+              <text class="growth-label" x="332" y="336" text-anchor="middle">{{copy:cases.icon.chart_period}}</text>
             </svg>
           </figure>
-          <div>
-            <h3>{{copy:opportunities.row_3_heading}}</h3>
-            <p>{{copy:opportunities.row_3_body}}</p>
+          <div class="case-copy">
+            <p class="case-label">{{copy:cases.icon.label}}</p>
+            <h3>{{copy:cases.icon.heading}}</h3>
+            <div class="fact">
+              <p>{{copy:cases.icon.fact_1}}</p>
+            </div>
+            <div class="fact">
+              <p>{{copy:cases.icon.fact_2}}</p>
+            </div>
+            <div class="fact">
+              <p>{{copy:cases.icon.fact_3}}</p>
+            </div>
           </div>
         </article>
       </div>
@@ -294,109 +392,15 @@
           </div>
         </li>
       </ol>
-    </section>
-
-    <section class="block" id="case-studies">
-      <h2>{{copy:cases.heading}}</h2>
-      <div class="cases">
-        <article class="case">
-          <figure class="case-visual">
-            <div class="run-log" data-run-log role="img" aria-label="{{attr:cases.futureproof.chart_description}}">
-              <div class="run-head">
-                <div>
-                  <p class="run-range">{{copy:cases.futureproof.range}}</p>
-                </div>
-                <p class="run-count"><strong>{{copy:cases.futureproof.count}}</strong><span>{{copy:cases.futureproof.count_label}}</span></p>
-              </div>
-              <ol>
-                <li><time datetime="23:04">{{copy:cases.futureproof.log_1_time}}</time><span>{{copy:cases.futureproof.log_1_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="00:20">{{copy:cases.futureproof.log_2_time}}</time><span>{{copy:cases.futureproof.log_2_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="01:35">{{copy:cases.futureproof.log_3_time}}</time><span>{{copy:cases.futureproof.log_3_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="02:50">{{copy:cases.futureproof.log_4_time}}</time><span>{{copy:cases.futureproof.log_4_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="04:10">{{copy:cases.futureproof.log_5_time}}</time><span>{{copy:cases.futureproof.log_5_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="05:25">{{copy:cases.futureproof.log_6_time}}</time><span>{{copy:cases.futureproof.log_6_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="06:40">{{copy:cases.futureproof.log_7_time}}</time><span>{{copy:cases.futureproof.log_7_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-                <li><time datetime="07:55">{{copy:cases.futureproof.log_8_time}}</time><span>{{copy:cases.futureproof.log_8_task}}</span><svg class="run-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.6 2.6L10.2 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-              </ol>
-              <p class="run-end">{{copy:cases.futureproof.end}}</p>
-            </div>
-          </figure>
-          <div class="case-copy">
-            <h3>{{copy:cases.futureproof.heading}}</h3>
-            <div class="fact">
-              <p>{{copy:cases.futureproof.fact_1}}</p>
-            </div>
-            <div class="fact">
-              <p>{{copy:cases.futureproof.fact_2}}</p>
-            </div>
-            <div class="fact">
-              <p>{{copy:cases.futureproof.fact_3}}</p>
-            </div>
-            <p class="links case-links">
-              <a href="/secondbrain">{{copy:cases.futureproof.link_label}}</a>
-            </p>
-          </div>
-        </article>
-
-        <article class="case case--alt">
-          <figure class="case-visual">
-            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="{{attr:cases.labs.chart_description}}" width="640" height="360">
-              <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
-              <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
-              <path class="growth-line" pathLength="1" d="M88 248 C 150 244, 210 214, 280 190 S 390 178, 400 176 S 490 118, 540 92 S 575 78, 588 74"/>
-              <circle class="growth-start" cx="88" cy="248" r="10"/>
-              <circle class="growth-end" cx="588" cy="74" r="12"/>
-              <text class="growth-label growth-label--strong" x="88" y="218">{{copy:cases.labs.chart_start}}{{copy:cases.labs.chart_suffix}}</text>
-              <text class="growth-label growth-label--strong growth-count" data-count-from="{{attr:cases.labs.chart_start}}" data-count-to="{{attr:cases.labs.chart_end}}" data-suffix="{{attr:cases.labs.chart_suffix}}" x="588" y="46" text-anchor="end">{{copy:cases.labs.chart_end}}{{copy:cases.labs.chart_suffix}}</text>
-              <text class="growth-label" x="332" y="336" text-anchor="middle">{{copy:cases.labs.chart_period}}</text>
-            </svg>
-          </figure>
-          <div class="case-copy">
-            <h3>{{copy:cases.labs.heading}}</h3>
-            <div class="fact">
-              <p>{{copy:cases.labs.fact_1}}</p>
-            </div>
-            <div class="fact">
-              <p>{{copy:cases.labs.fact_2}}</p>
-            </div>
-            <div class="fact">
-              <p>{{copy:cases.labs.fact_3}}</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="case">
-          <figure class="case-visual">
-            <svg class="growth" data-growth viewBox="0 0 640 360" role="img" aria-label="{{attr:cases.icon.chart_description}}" width="640" height="360">
-              <line class="growth-axis" x1="72" y1="292" x2="592" y2="292"/>
-              <line class="growth-grid" x1="72" y1="68" x2="592" y2="68"/>
-              <path class="growth-line" pathLength="1" d="M88 256 C 160 250, 230 232, 300 204 S 420 154, 480 126 S 562 88, 588 76"/>
-              <circle class="growth-start" cx="88" cy="256" r="10"/>
-              <circle class="growth-end" cx="588" cy="76" r="12"/>
-              <text class="growth-label growth-label--strong" x="88" y="226">{{copy:cases.icon.chart_start}}{{entity:cases.icon.chart_suffix}}</text>
-              <text class="growth-label growth-label--strong growth-count" data-count-from="{{attr:cases.icon.chart_start}}" data-count-to="{{attr:cases.icon.chart_end}}" data-suffix="{{entity:cases.icon.chart_suffix}}" x="588" y="48" text-anchor="end">{{copy:cases.icon.chart_end}}{{entity:cases.icon.chart_suffix}}</text>
-              <text class="growth-label" x="332" y="336" text-anchor="middle">{{copy:cases.icon.chart_period}}</text>
-            </svg>
-          </figure>
-          <div class="case-copy">
-            <h3>{{copy:cases.icon.heading}}</h3>
-            <div class="fact">
-              <p>{{copy:cases.icon.fact_1}}</p>
-            </div>
-            <div class="fact">
-              <p>{{copy:cases.icon.fact_2}}</p>
-            </div>
-            <div class="fact">
-              <p>{{copy:cases.icon.fact_3}}</p>
-            </div>
-          </div>
-        </article>
-      </div>
+      <p class="process-cta">
+        <a class="book" data-book="process" href="#book">{{copy:cta.primary}}</a>
+      </p>
     </section>
 
     <section class="block" id="founders">
       <h2>{{copy:founders.heading}}</h2>
       <p class="section-intro founders-intro">{{copy:founders.intro}}</p>
+      <p class="press-line">{{copy:founders.press_lead}} <a href="/press">{{copy:founders.press_link}}</a></p>
       <div class="founders">
         <article class="bio">
           <figure class="portrait">
@@ -406,7 +410,10 @@
             <h3>{{copy:founders.john.name}}</h3>
             <p class="role">{{copy:founders.john.role}}</p>
             <p>{{copy:founders.john.bio_1}}</p>
-            <p>{{copy:founders.john.bio_2}}</p>
+            <details class="bio-more">
+              <summary>{{copy:founders.john.more_label}}</summary>
+              <p>{{copy:founders.john.bio_2}}</p>
+            </details>
             <p class="links">
               <a href="https://www.linkedin.com/in/johnvon/" target="_blank" rel="noopener noreferrer">{{copy:founders.john.linkedin_label}}<span class="visually-hidden"> {{copy:founders.john.linkedin_description}}</span></a>
               <a href="https://futureproofmusicschool.com" target="_blank" rel="noopener noreferrer">{{copy:founders.john.futureproof_label}}<span class="visually-hidden"> {{copy:founders.john.futureproof_description}}</span></a>
@@ -423,7 +430,10 @@
             <h3>{{copy:founders.tsotne.name}}</h3>
             <p class="role">{{copy:founders.tsotne.role_1}}<br>{{copy:founders.tsotne.role_2}}</p>
             <p>{{copy:founders.tsotne.bio_1}}</p>
-            <p>{{copy:founders.tsotne.bio_2}}</p>
+            <details class="bio-more">
+              <summary>{{copy:founders.tsotne.more_label}}</summary>
+              <p>{{copy:founders.tsotne.bio_2}}</p>
+            </details>
             <p class="links">
               <a href="https://www.linkedin.com/in/tsotnetunes/" target="_blank" rel="noopener noreferrer">{{copy:founders.tsotne.linkedin_label}}<span class="visually-hidden"> {{copy:founders.tsotne.linkedin_description}}</span></a>
               <a href="https://tunepal.ai" target="_blank" rel="noopener noreferrer">{{copy:founders.tsotne.tunepal_label}}<span class="visually-hidden"> {{copy:founders.tsotne.tunepal_description}}</span></a>
@@ -460,6 +470,14 @@
           <summary>{{copy:faq.question_6}}</summary>
           <p>{{copy:faq.answer_6}}</p>
         </details>
+        <details>
+          <summary>{{copy:faq.question_7}}</summary>
+          <p>{{copy:faq.answer_7}}</p>
+        </details>
+        <details>
+          <summary>{{copy:faq.question_8}}</summary>
+          <p>{{copy:faq.answer_8}}</p>
+        </details>
       </div>
     </section>
   </div>
@@ -473,24 +491,7 @@
           <p class="nda">{{copy:privacy.note}}</p>
         </div>
         <div class="closing-action">
-          <!-- Cal inline embed code begins -->
-          <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
-          <script type="text/javascript">
-            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-            Cal("init", "30min", {origin:"https://app.cal.com"});
-            Cal.config = Cal.config || {};
-            Cal.config.forwardQueryParams = true;
-
-            Cal.ns["30min"]("inline", {
-              elementOrSelector:"#my-cal-inline-30min",
-              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-              calLink: "john-von-seggern-czdmwr/30min",
-            });
-
-            Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-          </script>
-          <!-- Cal inline embed code ends -->
-          <a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://cal.com/john-von-seggern-czdmwr/30min" target="_blank" rel="noopener noreferrer">{{copy:closing.calendar_label}}<span class="visually-hidden"> {{copy:accessibility.new_tab}}</span></a>
+          {{include:_booking.html}}
         </div>
       </div>
       <p class="best-fit">{{copy:closing.best_fit_systems}}</p>
