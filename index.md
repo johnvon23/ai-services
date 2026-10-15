@@ -10,19 +10,19 @@ Markdown emphasis is supported, so `*text*` becomes italic text on the page.
 ## Browser and sharing
 
 <!-- copy:page.title -->
-AI Automation for Music Companies | Systems with Judgment
+AI Systems for Founders and Small Teams | Systems with Judgment
 
 <!-- copy:page.description -->
-AI automation for music companies. We automate royalty statements, release checklists, booking inquiries, and reporting inside the tools you already use.
+AI automation for founders and small teams, from people who run it inside their own music school and music-tech company. Lead follow-up, reporting, support, and admin, built inside the tools you already use.
 
 <!-- copy:page.share_image_alt -->
-John von Seggern and Tsotne Arbolishvili. AI automation for music companies. 30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers.
+John von Seggern and Tsotne Arbolishvili. AI systems for founders and small teams. 30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers.
 
 <!-- copy:organization.name -->
 Systems with Judgment
 
 <!-- copy:organization.description -->
-AI automation for music companies. We automate royalty statements, release checklists, booking inquiries, and reporting inside the tools you already use.
+AI automation for founders and small teams. We automate lead follow-up, reporting, support, and admin inside the tools you already use.
 
 <!-- copy:schema.founder_job_title -->
 Founder
@@ -36,16 +36,16 @@ Skip to content
 Free 30-minute session
 
 <!-- copy:hero.heading -->
-AI systems for music companies
+AI systems for founders and small teams
 
 <!-- copy:hero.tagline -->
 Grow the business. *Not the busywork.*
 
 <!-- copy:privacy.note -->
-Unreleased music, artist contracts, and royalty data stay private. Happy to sign an NDA before the first call.
+Customer data, contracts, and unreleased work stay private. Happy to sign an NDA before the first call.
 
 <!-- copy:hero.founder_note -->
-Speak directly with John and Tsotne. If we don’t see a worthwhile opportunity, we’ll tell you.
+We run these systems in our own music school and music-tech company. Speak directly with John and Tsotne. If we don’t see a worthwhile opportunity, we’ll tell you.
 
 <!-- copy:booking.unavailable -->
 Booking will open here shortly. In the meantime, use the LinkedIn links below to reach us directly.
@@ -79,13 +79,13 @@ Automation handles the handoffs. Your team keeps the judgment.
 ## Results and positioning
 
 <!-- copy:results.intro -->
-We find the recurring work eating your team’s week, from royalty statements and release checklists to booking inquiries and reporting, then build reliable automations inside the tools you already use.
+We find the recurring work eating your week, from lead follow-up and support inboxes to reporting and admin, then build reliable automations inside the tools you already use.
 
 <!-- copy:results.best_fit_tools -->
-Best for growing music companies with small teams, recurring work, and tools that don’t quite talk to each other.
+Best for founders and small teams with recurring work, more tools than people, and no time to work out AI on their own.
 
 <!-- copy:results.position -->
-We automate the spreadsheet work. Not the songwriting, the sound, or the relationships.
+We automate the spreadsheet work. Not the creative work, the decisions, or the relationships.
 
 ## Company proof
 
@@ -113,82 +113,46 @@ Native Instruments
 ## Industry segments
 
 <!-- copy:segments.heading -->
-Built for your corner of the industry.
+Where we know the work best.
 
 <!-- copy:segments.intro -->
-Labels, publishers, distributors, venues, artist businesses, schools: the work looks different in each corner. Here is what we typically automate first.
-
-<!-- copy:segments.labels.heading -->
-Record labels
-
-<!-- copy:segments.labels.item_1 -->
-Royalty statement ingestion with exception flagging
-
-<!-- copy:segments.labels.item_2 -->
-Release checklist automation across distributors and DSPs
-
-<!-- copy:segments.labels.item_3 -->
-Demo and promo submission triage
-
-<!-- copy:segments.publishers.heading -->
-Publishers
-
-<!-- copy:segments.publishers.item_1 -->
-Catalog metadata cleanup and enrichment
-
-<!-- copy:segments.publishers.item_2 -->
-Sync opportunity tracking with follow-up reminders
-
-<!-- copy:segments.publishers.item_3 -->
-Writer split and contract deadline alerts
-
-<!-- copy:segments.distributors.heading -->
-Distributors
-
-<!-- copy:segments.distributors.item_1 -->
-Label onboarding pipeline
-
-<!-- copy:segments.distributors.item_2 -->
-Takedown and rights request routing
-
-<!-- copy:segments.distributors.item_3 -->
-Weekly per-label performance reporting
-
-<!-- copy:segments.venues.heading -->
-Venues and promoters
-
-<!-- copy:segments.venues.item_1 -->
-Booking inquiry routing and advance sheets
-
-<!-- copy:segments.venues.item_2 -->
-Settlement reporting
-
-<!-- copy:segments.venues.item_3 -->
-Marketing calendar sync across channels
-
-<!-- copy:segments.artists.heading -->
-Artist businesses and managers
-
-<!-- copy:segments.artists.item_1 -->
-Fan and brand-deal inbox triage
-
-<!-- copy:segments.artists.item_2 -->
-Touring logistics checklists
-
-<!-- copy:segments.artists.item_3 -->
-Revenue roll-up across merch, streaming, and live
+Our background is music education and music technology, and the same systems work for any small team. Here is what we typically automate first.
 
 <!-- copy:segments.schools.heading -->
-Schools and education
+Music schools and online courses
 
 <!-- copy:segments.schools.item_1 -->
-Enrollment follow-up sequences
+Lead and enrollment follow-up sequences
 
 <!-- copy:segments.schools.item_2 -->
 Student retention early warning
 
 <!-- copy:segments.schools.item_3 -->
-The overnight operations run we already showcase
+Course platform, CRM, and payment data in one weekly report
+
+<!-- copy:segments.musictech.heading -->
+Music tech and software companies
+
+<!-- copy:segments.musictech.item_1 -->
+Support inbox triage with drafted replies
+
+<!-- copy:segments.musictech.item_2 -->
+Launch and release checklists that run themselves
+
+<!-- copy:segments.musictech.item_3 -->
+Customer feedback and review roundups
+
+<!-- copy:segments.founders.heading -->
+Founders and small teams, any field
+
+<!-- copy:segments.founders.item_1 -->
+Overnight reporting, finished before you log in
+
+<!-- copy:segments.founders.item_2 -->
+Inbox, follow-ups, and reminders handled
+
+<!-- copy:segments.founders.item_3 -->
+A second brain that remembers every customer and decision
 
 ## Opportunities
 
@@ -196,25 +160,25 @@ The overnight operations run we already showcase
 Where the work usually gets stuck.
 
 <!-- copy:opportunities.intro -->
-Every music company runs differently, but the best opportunities usually sit in the same three places.
+Every business runs differently, but the best opportunities usually sit in the same three places.
 
 <!-- copy:opportunities.row_1_heading -->
 Stop work from falling through.
 
 <!-- copy:opportunities.row_1_body -->
-Capture booking inquiries, release checklists, partner requests, and next steps, then follow up without somebody manually chasing them.
+Capture leads, customer requests, partner emails, and next steps, then follow up without somebody manually chasing them.
 
 <!-- copy:opportunities.row_2_heading -->
 Get the routine work off your team’s plate.
 
 <!-- copy:opportunities.row_2_body -->
-Automate royalty statements, DSP reporting, data entry, reminders, and handoffs so the team starts the day with finished work.
+Automate reporting, data entry, reminders, and handoffs so the team starts the day with finished work.
 
 <!-- copy:opportunities.row_3_heading -->
 See what actually drives the business.
 
 <!-- copy:opportunities.row_3_body -->
-Connect marketing, catalog metadata, sales, and operations so you can see what’s working.
+Connect marketing, sales, customers, and operations so you can see what’s working.
 
 ## Engagement process
 
@@ -472,13 +436,13 @@ Questions before a call.
 Do you replace staff?
 
 <!-- copy:faq.answer_1 -->
-No. Your team keeps judgment, money, and artist communication.
+No. Your team keeps the judgment, the money, and the customer relationships.
 
 <!-- copy:faq.question_2 -->
 What tools do you work with?
 
 <!-- copy:faq.answer_2 -->
-CRMs, email, spreadsheets, royalty portals, and project tools. We build inside the stack you already use.
+CRMs, email, spreadsheets, course and payment platforms, and project tools. We build inside the stack you already use.
 
 <!-- copy:faq.question_3 -->
 How long until something is live?
@@ -493,10 +457,10 @@ What does it cost?
 The working session is free. Pilot pricing is quoted after the opportunity map, once we know the workflow.
 
 <!-- copy:faq.question_5 -->
-What about our unreleased music and contracts?
+What about our private data?
 
 <!-- copy:faq.answer_5 -->
-We are happy to sign an NDA before the first call. Unreleased music, artist contracts, and royalty data stay in your accounts.
+We are happy to sign an NDA before the first call. Customer data, contracts, and unreleased work stay in your accounts.
 
 <!-- copy:faq.question_6 -->
 Do we need anyone technical on our side?
@@ -519,13 +483,13 @@ Open the calendar in a new tab
 (opens in a new tab)
 
 <!-- copy:closing.best_fit_systems -->
-Best for growing music companies with small teams, recurring work, and systems that don’t quite talk to each other.
+Best for founders and small teams with recurring work and systems that don’t quite talk to each other.
 
 <!-- copy:footer.copyright -->
 © 2026 John von Seggern & Tsotne Arbolishvili.
 
 <!-- copy:footer.tagline -->
-Systems with Judgment. AI systems for music companies.
+Systems with Judgment. AI systems for founders and small teams.
 
 <!-- copy:footer.secondbrain_link -->
 What is a second brain?

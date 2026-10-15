@@ -159,7 +159,7 @@ img.alpha_composite(faces, (PAD, PAD + 4 * S))
 d = ImageDraw.Draw(img)
 
 text_x = PAD + faces.width + 28 * S
-tracked(d, (text_x, PAD + 4 * S), "AI AUTOMATION FOR MUSIC COMPANIES", mono(18), CORAL, 3.0)
+tracked(d, (text_x, PAD + 4 * S), "AI SYSTEMS FOR FOUNDERS AND SMALL TEAMS", mono(18), CORAL, 3.0)
 
 name_font = grotesk(52, 700)
 name_y = PAD + 36 * S

@@ -1,6 +1,6 @@
-# Systems with Judgment — AI Systems for Music Companies
+# Systems with Judgment: AI Systems for Founders and Small Teams
 
-A static landing page for John von Seggern and Tsotne Arbolishvili’s AI systems work with music companies.
+A static landing page for John von Seggern and Tsotne Arbolishvili’s AI systems work with founders and small teams, rooted in music education and music technology.
 
 ## Local preview
 
@@ -53,6 +53,15 @@ python3 scripts/make-og-image.py
 
 It needs Pillow, and caches the two typefaces in `.fontcache/` on first run.
 The colours at the top of the script mirror the tokens in `_page.css`.
+
+## Favicons
+
+`favicon.svg`, `favicon.ico` and `apple-touch-icon.png` are generated from
+the decision-node mark (grey process boxes, coral decision diamond):
+
+```sh
+python3 scripts/make-favicons.py
+```
 
 ## Previous design
 

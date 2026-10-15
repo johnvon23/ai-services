@@ -16,7 +16,7 @@ What Is a Company’s Second Brain? Nova, Explained | Systems with Judgment
 A second brain is an AI agent that holds your company’s context, does the recurring work on a schedule, and advises on strategy across the whole organization. Here is ours, from the inside.
 
 <!-- copy:page.share_image_alt -->
-John von Seggern and Tsotne Arbolishvili. AI automation for music companies. 30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers.
+John von Seggern and Tsotne Arbolishvili. AI systems for founders and small teams. 30+ overnight tasks, 3x Icon enrollment, 15K to 60K followers.
 
 ## Header
 
@@ -27,7 +27,7 @@ Skip to content
 Systems with Judgment
 
 <!-- copy:header.tag -->
-AI systems for music companies
+AI systems for founders and small teams
 
 <!-- copy:cta.primary -->
 Free 30-minute session
@@ -505,13 +505,13 @@ Thirty minutes, free. Bring the bottlenecks and the questions you answer by hand
 Booking will open here shortly. In the meantime, use the LinkedIn links on the home page to reach us directly.
 
 <!-- copy:closing.best_fit -->
-Best for growing music companies with small teams, recurring work, and a founder reading too many dashboards.
+Best for founders and small teams with recurring work and too many dashboards to read.
 
 <!-- copy:footer.copyright -->
 © 2026 John von Seggern & Tsotne Arbolishvili.
 
 <!-- copy:footer.tagline_suffix -->
-AI systems for music companies
+AI systems for founders and small teams
 
 <!-- copy:footer.secondbrain_link -->
 What is a second brain?

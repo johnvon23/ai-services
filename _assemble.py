@@ -256,7 +256,9 @@ def render_html(
 <meta name="twitter:image" content="{og_image}">
 <meta name="twitter:image:alt" content="{escape(og_image_alt, quote=True)}">
 <meta name="theme-color" content="#0B0D12">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script type="application/ld+json">
 {structured_data}
 </script>

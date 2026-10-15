@@ -9,6 +9,8 @@ const requiredFiles = [
   "site-config.js",
   "vercel.json",
   "favicon.svg",
+  "favicon.ico",
+  "apple-touch-icon.png",
   "robots.txt",
   "assets/og-image.png",
   "assets/brain-icon.png",
@@ -37,19 +39,19 @@ const vercelConfig = JSON.parse(await readFile("vercel.json", "utf8"));
 
 const requiredCopy = [
   "Systems with Judgment",
-  "AI systems for music companies",
+  "AI systems for founders and small teams",
   "Free 30-minute session",
   "Grow the business.",
   "Not the busywork.",
   "Where the work usually gets stuck.",
   "Companies we’ve founded, led, or built systems for",
   "Bring us the messy version.",
-  "Built for your corner of the industry.",
+  "Where we know the work best.",
   "How an engagement works.",
-  "Unreleased music, artist contracts, and royalty data stay private.",
+  "Customer data, contracts, and unreleased work stay private.",
   "Do you replace staff?",
   "FAQPage",
-  "AI Automation for Music Companies",
+  "AI Systems for Founders and Small Teams",
   "my-cal-inline-30min",
   "https://app.cal.com/embed/embed.js",
   "john-von-seggern-czdmwr/30min",
@@ -96,7 +98,9 @@ const forbiddenCopy = [
   "education companies",
   "Enrollment operations",
   "student communication",
-  "Not the admin burden."
+  "Not the admin burden.",
+  "AI systems for music companies",
+  "royalty"
 ];
 
 for (const copy of forbiddenCopy) {
@@ -114,8 +118,8 @@ for (const [name, source] of [["index.html", html], ["press.html", press], ["sec
   }
 }
 
-if (!html.includes("<h1>AI systems for music companies</h1>")) {
-  throw new Error("Home H1 is no longer “AI systems for music companies”.");
+if (!html.includes("<h1>AI systems for founders and small teams</h1>")) {
+  throw new Error("Home H1 is no longer “AI systems for founders and small teams”.");
 }
 
 for (const [name, source] of [["index.html", html], ["press.html", press], ["secondbrain.html", secondbrain]]) {
