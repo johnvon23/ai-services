@@ -1942,6 +1942,40 @@ html.wf-play .hero-brain.is-in img {
 
 .case-links { margin: 1.1rem 0 0; }
 
+/* Focused outreach pages: a short, readable walk through the working day. */
+.usecase-links { margin-top: 2rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2rem; }
+.usecase-links h3 { grid-column: 1 / -1; margin-bottom: .75rem; }
+.usecase-links a { padding: .85rem 0; border-bottom: 1px solid var(--hairline); text-decoration: none; display: flex; justify-content: space-between; gap: 1rem; }
+.usecase-links a:hover { color: var(--coral); }
+.usecase-links a span { color: var(--coral); }
+.usecase-hero { padding: clamp(3rem, 7vw, 6rem) 0 3.5rem; max-width: 850px; }
+.usecase-eyebrow { color: var(--coral); font-size: .85rem; font-weight: 600; margin: 0 0 1.25rem; }
+.usecase-hero h1 { font-size: clamp(2.4rem, 5.5vw, 4.3rem); }
+.usecase-hero h1 em { display: block; }
+.usecase-hero .lede { max-width: 42rem; }
+.usecase-note { color: var(--muted); font-size: .85rem; margin-top: 1rem; }
+.usecase-section-head { border-top: 1px solid var(--hairline); padding-top: 2.5rem; }
+.usecase-section-head h2 { max-width: 28rem; }
+.usecase-section-head p { color: var(--muted); }
+.day-list { list-style: none; padding: 0; margin: 2rem 0 0; }
+.day-list li { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--hairline); }
+.day-time { color: var(--coral); font-size: .9rem; margin: .2rem 0; }
+.day-list h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); line-height: 1.25; margin: 0 0 .75rem; }
+.day-list div { max-width: 43rem; }
+.day-list div p { margin: .65rem 0 0; color: var(--muted); }
+.day-list div .day-result { color: var(--ink); font-weight: 600; }
+.usecase-start { max-width: 45rem; padding: 3.5rem 0; }
+.usecase-start p, .usecase-book > p { color: var(--muted); }
+.usecase-proof { font-size: .95rem; }
+.usecase-book { border-top: 1px solid var(--hairline); padding: 3rem 0 4rem; scroll-margin-top: 6rem; }
+.usecase-book > p { max-width: 40rem; }
+.usecase-book .usecase-eyebrow { color: var(--coral); }
+@media (max-width: 599px) {
+  .usecase-links { grid-template-columns: 1fr; }
+  .day-list li { grid-template-columns: 1fr; gap: .75rem; }
+  .page-usecase .book--header { font-size: .72rem; padding: .65rem .7rem; }
+}
+
 </style>
 </head>
 <body class="page-secondbrain">

@@ -176,3 +176,23 @@ if (/bookingUrl:\s*["']{2}/.test(configSource)) {
 }
 
 console.log("Site checks passed.");
+
+const usecaseSlugs = [
+  'record-labels', 'publishers', 'distributors', 'venues-and-promoters',
+  'artists-and-managers', 'schools-and-education'
+];
+for (const slug of usecaseSlugs) {
+  await access(`use-cases/${slug}.md`);
+  const page = await readFile(`${slug}.html`, 'utf8');
+  if (!html.includes(`href="/${slug}.html"`)) throw new Error(`Missing homepage link: ${slug}`);
+  if ((page.match(/<h1(?:\s|>)/g) || []).length !== 1) throw new Error(`Expected one H1: ${slug}`);
+  if (!page.includes(`href="https://systemswithjudgment.com/${slug}.html"`)) throw new Error(`Missing canonical: ${slug}`);
+  if (!page.includes('id="booking-fallback"') || !page.includes('id="book"')) throw new Error(`Missing booking flow: ${slug}`);
+  if (/\{\{(?:copy|attr|entity):/.test(page)) throw new Error(`Unresolved copy: ${slug}`);
+  const ids = [...page.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+  if (ids.length !== new Set(ids).size) throw new Error(`Duplicate IDs: ${slug}`);
+  for (const [, target] of page.matchAll(/href="#([^"]+)"/g)) {
+    if (!ids.includes(target)) throw new Error(`Broken anchor ${target}: ${slug}`);
+  }
+}
+console.log('All six outreach pages and homepage links passed.');

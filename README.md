@@ -67,3 +67,13 @@ python3 scripts/make-favicons.py
 
 `index-b.html` is a self-contained snapshot of the earlier cream-and-serif
 page, kept for reference. It is not linked from the site.
+
+## Industry outreach pages
+
+Six short landing pages cover record labels, publishers, distributors, venues
+and promoters, artists and managers, and schools and education. Edit their copy
+in `use-cases/*.md` and layout in `_usecase.body.html`, then run `npm run build`.
+The homepage links to each page. Use the explicit `.html` URLs when sharing;
+they work on both GitHub Pages and the local Python preview server.
+All pages use the shared styles, script, booking configuration, and social metadata.
+The build workflow regenerates these pages along with the original three pages.

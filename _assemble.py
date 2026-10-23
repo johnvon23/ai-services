@@ -360,6 +360,24 @@ def main():
     write_or_check("index.html", home_html, check_only)
     write_or_check("press.html", press_html, check_only)
     write_or_check("secondbrain.html", secondbrain_html, check_only)
+    for source in sorted(Path("use-cases").glob("*.md")):
+        usecase = read_copy(source)
+        title = usecase.raw("page.title")
+        description = usecase.raw("page.description")
+        path = f"/{source.stem}.html"
+        body = fill_template("_usecase.body.html", usecase)
+        html = render_html(
+            title=title, description=description, path=path, body=body,
+            structured_data=json.dumps({
+                "@context": "https://schema.org", "@type": "WebPage",
+                "name": title, "description": description, "url": SITE_URL + path,
+            }, ensure_ascii=False).replace("</", "<\\/"),
+            site_name="Systems with Judgment",
+            og_image_alt="Systems with Judgment: John von Seggern and Tsotne Arbolishvili",
+        )
+        usecase.assert_all_used()
+        write_or_check(f"{source.stem}.html", html, check_only)
+
     if check_only:
         print("Built pages are up to date.")
 
