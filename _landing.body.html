@@ -1,0 +1,69 @@
+<body class="page-usecase page-landing">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap header-bar">
+    <div class="brand"><a class="wordmark" href="/">Systems with Judgment</a><p class="tag">{{copy:header.tag}}</p></div>
+    <a class="book book--header" data-book="landing_header" href="#book">Free 30-minute session</a>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <section class="usecase-hero landing-hero" aria-labelledby="landing-title">
+      <h1 id="landing-title">{{copy:hero.heading}}</h1>
+      <p class="lede"><strong>{{copy:hero.tagline}}</strong> {{copy:hero.intro}}</p>
+      <a class="book" data-book="landing_hero" href="#book">Free 30-minute session</a>
+      <p class="usecase-note">{{copy:hero.note}}</p>
+    </section>
+
+    <section class="landing-section" aria-labelledby="how-title">
+      <div class="usecase-section-head"><h2 id="how-title">{{copy:how.heading}}</h2><p>{{copy:how.intro}}</p></div>
+      <ol class="steps">
+        <li><div><h3>{{copy:how.step_1.heading}}</h3><p class="step-when">{{copy:how.step_1.when}}</p><p>{{copy:how.step_1.body}}</p></div></li>
+        <li><div><h3>{{copy:how.step_2.heading}}</h3><p class="step-when">{{copy:how.step_2.when}}</p><p>{{copy:how.step_2.body}}</p></div></li>
+        <li><div><h3>{{copy:how.step_3.heading}}</h3><p class="step-when">{{copy:how.step_3.when}}</p><p>{{copy:how.step_3.body}}</p></div></li>
+        <li><div><h3>{{copy:how.step_4.heading}}</h3><p class="step-when">{{copy:how.step_4.when}}</p><p>{{copy:how.step_4.body}}</p></div></li>
+      </ol>
+    </section>
+
+    <section class="landing-section" aria-labelledby="first-title">
+      <div class="usecase-section-head"><h2 id="first-title">{{copy:first.heading}}</h2><p>{{copy:first.intro}}</p></div>
+      <div class="segment-grid landing-grid">
+        <article class="segment"><h3>{{copy:first.group_1.heading}}</h3><ul><li>{{copy:first.group_1.item_1}}</li><li>{{copy:first.group_1.item_2}}</li><li>{{copy:first.group_1.item_3}}</li></ul></article>
+        <article class="segment"><h3>{{copy:first.group_2.heading}}</h3><ul><li>{{copy:first.group_2.item_1}}</li><li>{{copy:first.group_2.item_2}}</li><li>{{copy:first.group_2.item_3}}</li></ul></article>
+        <article class="segment"><h3>{{copy:first.group_3.heading}}</h3><ul><li>{{copy:first.group_3.item_1}}</li><li>{{copy:first.group_3.item_2}}</li><li>{{copy:first.group_3.item_3}}</li></ul></article>
+        <article class="segment"><h3>{{copy:first.group_4.heading}}</h3><ul><li>{{copy:first.group_4.item_1}}</li><li>{{copy:first.group_4.item_2}}</li><li>{{copy:first.group_4.item_3}}</li></ul></article>
+      </div>
+      <p class="landing-control"><strong>{{copy:first.control_lead}}</strong> {{copy:first.control}}</p>
+    </section>
+
+    <section class="landing-section" aria-labelledby="proof-title">
+      <div class="usecase-section-head"><h2 id="proof-title">{{copy:proof.heading}}</h2></div>
+      <div class="landing-proof">
+        <p class="landing-stat"><strong>{{copy:proof.stat}}</strong> <span>{{copy:proof.stat_body}}</span></p>
+        <div class="landing-people">
+          <div class="landing-person"><img src="/assets/john-von-640.jpg" alt="John von Seggern" width="128" height="128" loading="lazy" style="object-position: center 38%;"><p><strong>John von Seggern.</strong> {{copy:proof.john}}</p></div>
+          <div class="landing-person"><img src="/assets/tsotne-photo-640.jpg" alt="Tsotne Arbolishvili" width="128" height="128" loading="lazy"><p><strong>Tsotne Arbolishvili.</strong> {{copy:proof.tsotne}}</p></div>
+        </div>
+      </div>
+      <p class="links landing-more"><a href="/#case-studies">{{copy:proof.link}}</a></p>
+    </section>
+  </div>
+
+  <section class="closing" id="book" aria-labelledby="book-title">
+    <div class="wrap">
+      <div class="closing-grid">
+        <div class="closing-copy">
+          <p class="usecase-eyebrow">A free 30-minute working session</p>
+          <h2 id="book-title">{{copy:closing.heading}}</h2>
+          <p class="measure">{{copy:closing.body}}</p>
+          <p class="nda">{{copy:closing.note}}</p>
+          <p class="booking-soon" id="booking-soon" role="status" hidden>Booking will open here shortly. In the meantime, use the LinkedIn links on the home page to reach us directly.</p>
+        </div>
+        <div class="closing-action">
+          {{include:_booking.html}}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site"><div class="wrap footer-bar"><p>Systems with Judgment</p><nav class="footer-links" aria-label="Footer"><a href="/">Homepage</a><a href="/#segments">Explore other businesses</a><a href="/secondbrain">What’s a second brain?</a></nav></div></footer>

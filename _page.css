@@ -173,18 +173,12 @@ header.site.is-stuck {
 .wordmark::after {
   content: "_";
   color: var(--coral);
-  animation: cursor-blink 1.2s steps(1) infinite;
-}
-
-@keyframes cursor-blink {
-  50% { opacity: 0; }
 }
 
 .tag {
   margin: 0;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--muted);
   line-height: 1.5;
 }
@@ -229,12 +223,12 @@ header.site.is-stuck {
 }
 
 @media (max-width: 519px) {
-  .book--header { font-size: 0.78rem; padding: 0.5rem 0.7rem; }
+  .book--header { font-size: 0.8125rem; padding: 0.5rem 0.7rem; }
 }
 
 @media (max-width: 430px) {
   .book--header {
-    font-size: 0.7rem;
+    font-size: 0.8125rem;
     padding: 0.45rem 0.55rem;
     max-width: 11.6rem;
     text-align: center;
@@ -327,6 +321,18 @@ h1 em {
   font-weight: 700;
 }
 
+.hero-offer {
+  margin: -0.4rem 0 1.6rem;
+  max-width: 31rem;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .hero-offer { font-size: 1.08rem; }
+}
+
 .founder-note {
   display: flex;
   align-items: center;
@@ -386,8 +392,8 @@ h1 em {
 
 .stat-chips span {
   font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   line-height: 1.45;
   color: var(--muted);
 }
@@ -531,9 +537,8 @@ h1 em {
 .flow-kind {
   display: block;
   margin-top: 0.14rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--coral);
 }
 
@@ -636,11 +641,10 @@ html.wf-play .is-human .flow-icon {
 .proof-heading {
   margin: 0 0 1rem;
   color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
   line-height: 1.4;
   text-align: center;
-  text-transform: uppercase;
 }
 
 ul.logos {
@@ -708,15 +712,6 @@ h2 {
   color: var(--muted);
 }
 
-.results .lede {
-  margin-bottom: 0;
-  max-width: var(--read);
-}
-
-.results .best-fit {
-  max-width: var(--read);
-}
-
 /* ---------- position band ---------- */
 
 .position-band {
@@ -734,6 +729,13 @@ h2 {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.5;
+}
+
+.position-band .best-fit {
+  margin-top: 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 /* ---------- segments ---------- */
@@ -945,6 +947,14 @@ html.wf-play .opp-list.is-in .opp-row:nth-child(3) .opp-fig svg * { transition-d
 
 .case-visual { margin: 0; }
 
+.case-label {
+  margin: 0 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--coral);
+}
+
 .case-copy h3 {
   margin: 0 0 1.2rem;
   font-size: 1.45rem;
@@ -985,7 +995,7 @@ html.wf-play .opp-list.is-in .opp-row:nth-child(3) .opp-fig svg * { transition-d
 
 .run-range {
   margin: 0;
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   color: var(--muted);
 }
 
@@ -1007,9 +1017,8 @@ html.wf-play .opp-list.is-in .opp-row:nth-child(3) .opp-fig svg * { transition-d
 .run-count span {
   display: block;
   margin-top: 0.25rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--muted);
 }
 
@@ -1025,7 +1034,7 @@ html.wf-play .opp-list.is-in .opp-row:nth-child(3) .opp-fig svg * { transition-d
   gap: 0.85rem;
   padding: 0.52rem 0;
   border-bottom: 1px solid color-mix(in srgb, var(--hairline) 55%, transparent);
-  font-size: 0.8rem;
+  font-size: 0.8125rem;
 }
 
 .run-log time {
@@ -1053,7 +1062,7 @@ html.wf-play .run-log[data-run-log].is-complete .run-end { opacity: 1; }
 
 .run-end {
   margin: 0.85rem 0 0;
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   color: var(--ink);
 }
 
@@ -1190,6 +1199,23 @@ html.wf-play .growth.is-drawn .growth-label {
   color: var(--muted);
 }
 
+/* a booking button under a section, with one line of context */
+.section-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.4rem;
+  margin: 2rem 0 0;
+}
+
+.section-cta p {
+  margin: 0;
+  max-width: 30rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
 /* ---------- founders ---------- */
 
 .founders-intro { margin-bottom: 2.4rem; }
@@ -1231,11 +1257,10 @@ html.wf-play .growth.is-drawn .growth-label {
 .role {
   margin: 0 0 0.85rem;
   font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   line-height: 1.7;
   color: var(--coral);
-  text-transform: uppercase;
 }
 
 .bio p:not(.role):not(.links) {
@@ -1243,6 +1268,38 @@ html.wf-play .growth.is-drawn .growth-label {
   font-size: 0.95rem;
   color: var(--muted);
 }
+
+.bio-more {
+  margin: 0 0 1rem;
+}
+
+.bio-more summary {
+  display: inline-block;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.1rem;
+}
+
+.bio-more summary::-webkit-details-marker { display: none; }
+
+.bio-more summary::after {
+  content: " +";
+  content: " +" / "";
+  color: var(--coral);
+}
+
+.bio-more[open] summary::after {
+  content: " \2212";
+  content: " \2212" / "";
+}
+
+.bio-more summary:hover { color: var(--coral); }
+
+.bio-more[open] summary { margin-bottom: 0.9rem; }
 
 .links {
   margin: 0;
@@ -1384,7 +1441,7 @@ footer.site {
 footer.site p {
   margin: 0.2rem 0 0;
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.03em;
   color: var(--muted);
 }
@@ -1448,9 +1505,8 @@ footer.site p {
 .pull-quote footer {
   margin-top: 0.75rem;
   font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--muted);
 }
 
@@ -1493,9 +1549,8 @@ footer.site p {
 .press-outlet {
   display: block;
   font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--coral);
 }
 
@@ -1503,8 +1558,8 @@ footer.site p {
   display: block;
   margin-top: 0.2rem;
   font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--muted);
 }
 
@@ -1529,9 +1584,8 @@ footer.site p {
   margin-top: auto;
   padding-top: 1.2rem;
   font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--ink);
 }
 
@@ -1613,9 +1667,8 @@ footer.site p {
 .eyebrow {
   margin: 0 0 1.1rem;
   font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--coral);
 }
 
@@ -1651,9 +1704,8 @@ footer.site p {
 .map-label {
   margin: 0;
   font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--coral);
 }
 
@@ -1698,8 +1750,8 @@ footer.site p {
   display: block;
   margin-bottom: 0.3rem;
   font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--ink);
 }
 
@@ -1753,7 +1805,7 @@ footer.site p {
   grid-column: 1 / -1;
   margin: 0.6rem 0 0;
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   color: var(--muted);
 }
 
@@ -1861,8 +1913,8 @@ html.wf-play .hero-brain.is-in img {
   padding-top: 0.8rem;
   border-top: 1px solid var(--hairline);
   font-family: var(--mono);
-  font-size: 0.74rem !important;
-  letter-spacing: 0.04em;
+  font-size: 0.8125rem !important;
+  letter-spacing: 0.01em;
   color: var(--ink) !important;
 }
 
@@ -1899,5 +1951,66 @@ html.wf-play .hero-brain.is-in img {
 @media (max-width: 599px) {
   .usecase-links { grid-template-columns: 1fr; }
   .day-list li { grid-template-columns: 1fr; gap: .75rem; }
-  .page-usecase .book--header { font-size: .72rem; padding: .65rem .7rem; }
+  .page-usecase .book--header { font-size: .8125rem; padding: .65rem .7rem; }
 }
+
+/* the booking band at the end of industry and landing pages */
+.page-usecase .closing { margin-top: 2rem; }
+.closing .usecase-eyebrow { margin-bottom: 0.9rem; }
+
+/* ---------- 404 page ---------- */
+
+.not-found {
+  padding: 4rem 0 2rem;
+  max-width: 40rem;
+}
+
+.not-found h1 {
+  font-size: clamp(2rem, 4.6vw, 2.9rem);
+}
+
+.not-found .links {
+  margin: 1.4rem 0 2rem;
+}
+
+/* ---------- campaign landing pages (landing/*.md) ---------- */
+
+.landing-hero .lede strong { color: var(--ink); font-weight: 700; }
+.landing-section { padding: 0 0 3.5rem; }
+.landing-section .steps { margin-top: 2rem; }
+.steps .step-when {
+  margin: 0 0 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--ink);
+}
+.landing-grid { margin-top: 2rem; }
+@media (min-width: 1100px) {
+  .landing-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.landing-control { margin: 1.6rem 0 0; max-width: 44rem; color: var(--muted); }
+.landing-control strong { color: var(--ink); font-weight: 600; }
+.landing-proof { display: grid; gap: 2rem; margin-top: 2rem; align-items: center; }
+@media (min-width: 900px) {
+  .landing-proof { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 3rem; }
+}
+.landing-stat { margin: 0; }
+.landing-stat strong {
+  display: block;
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.landing-stat span { display: block; margin-top: 0.8rem; max-width: 22rem; color: var(--muted); }
+.landing-people { display: grid; gap: 1.2rem; }
+.landing-person { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 1rem; align-items: center; }
+.landing-person img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--hairline);
+}
+.landing-person p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+.landing-person strong { color: var(--ink); font-weight: 600; }
+.landing-more { margin: 1.8rem 0 0; }

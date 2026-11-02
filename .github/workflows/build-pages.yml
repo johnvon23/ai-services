@@ -1,7 +1,8 @@
 # The live site is GitHub Pages serving the main branch as committed. This
-# workflow rebuilds index.html, press.html and secondbrain.html from the
-# Markdown copy sources on every push, and commits the result back when it
-# differs, so an edit to index.md or secondbrain.md is enough to deploy.
+# workflow rebuilds every page and sitemap.xml from the Markdown copy sources
+# on every push, and commits the result back when it differs, so an edit to
+# index.md, secondbrain.md or a page in use-cases/ or landing/ is enough to
+# deploy.
 name: Build pages from Markdown
 
 on:
@@ -33,12 +34,12 @@ jobs:
         run: npm run check
       - name: Commit rebuilt pages when they changed
         run: |
-          if git diff --quiet -- '*.html'; then
+          if git diff --quiet -- '*.html' sitemap.xml && [ -z "$(git status --porcelain -- '*.html' sitemap.xml)" ]; then
             echo "Built pages already match the committed HTML."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add '*.html'
+          git add '*.html' sitemap.xml
           git commit -m "Rebuild pages from Markdown copy"
           git push

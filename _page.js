@@ -1,6 +1,11 @@
 (function () {
   'use strict';
 
+  /* Every event goes to window.dataLayer (for any tag manager) and, when
+     site-config.js names a PostHog project key, to PostHog. Without a key no
+     analytics script loads and nothing leaves the page. */
+  var analytics = { enabled: false, ready: false, queue: [] };
+
   function track(name, payload) {
     try {
       window.dataLayer = window.dataLayer || [];
@@ -12,10 +17,62 @@
       }
       window.dataLayer.push(event);
     } catch (err) {}
+    sendToAnalytics(name, payload || {});
+  }
+
+  function sendToAnalytics(name, payload) {
+    if (!analytics.enabled) return;
+    if (!analytics.ready) {
+      analytics.queue.push([name, payload]);
+      return;
+    }
+    try {
+      window.posthog.capture(name, payload);
+    } catch (err) {}
   }
 
   function config() {
     return window.SITE_CONFIG || {};
+  }
+
+  function setupAnalytics() {
+    var settings = config();
+    var key = settings.posthogKey;
+    if (!key || window.posthog) return;
+    var host = settings.posthogHost || 'https://us.i.posthog.com';
+    analytics.enabled = true;
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.src = host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js';
+    script.onload = function () {
+      try {
+        var options = { api_host: host, defaults: '2026-08-30' };
+        if (settings.posthogCookieless) {
+          // no cookies or storage; PostHog counts visitors with a daily,
+          // privacy-preserving hash (needs "Cookieless tracking" switched on
+          // in the project's settings)
+          options.cookieless_mode = 'always';
+        } else {
+          // no cookies or storage either, but each page load is a new visitor
+          options.persistence = 'memory';
+        }
+        window.posthog.init(key, options);
+        analytics.ready = true;
+        while (analytics.queue.length) {
+          var item = analytics.queue.shift();
+          window.posthog.capture(item[0], item[1]);
+        }
+      } catch (err) {
+        analytics.enabled = false;
+      }
+    };
+    script.onerror = function () {
+      analytics.enabled = false;
+      analytics.queue = [];
+    };
+    document.head.appendChild(script);
   }
 
   function prefersReducedMotion() {
@@ -53,6 +110,51 @@
         });
       })(links[i]);
     }
+  }
+
+  /* Booking events from the Cal.com embed (cal.com/help/embedding/embed-events):
+     the calendar seen, the calendar drawn, a booking made, a failed load. */
+  function setupBookingEvents() {
+    var calendar = document.getElementById('my-cal-inline-30min');
+    if (!calendar) return;
+
+    // the visitor scrolled the booking calendar into view
+    onceInView(calendar, function () { track('calendar_viewed'); });
+
+    // the embed never drew its calendar (blocked script, network, Cal.com down)
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        if (!calendar.querySelector('iframe')) {
+          track('calendar_failed', { code: 'embed_not_loaded' });
+        }
+      }, 12000);
+    });
+
+    var cal = window.Cal && window.Cal.ns && window.Cal.ns['30min'];
+    if (typeof cal !== 'function') return;
+    var loaded = false;
+    cal('on', {
+      action: 'bookerViewed',
+      callback: function () {
+        if (loaded) return;
+        loaded = true;
+        track('calendar_loaded');
+      }
+    });
+    cal('on', {
+      action: 'bookingSuccessfulV2',
+      callback: function (e) {
+        var data = (e && e.detail && e.detail.data) || {};
+        track('booking_completed', { status: data.status || null });
+      }
+    });
+    cal('on', {
+      action: 'linkFailed',
+      callback: function (e) {
+        var data = (e && e.detail && e.detail.data) || {};
+        track('calendar_failed', { code: data.code || null });
+      }
+    });
   }
 
   function setupHeader() {
@@ -171,10 +273,12 @@
         var from = label ? parseFloat(label.getAttribute('data-count-from')) : 0;
         var to = label ? parseFloat(label.getAttribute('data-count-to')) : 0;
         var suffix = label ? (label.getAttribute('data-suffix') || '') : '';
-        if (label && !isNaN(from)) label.textContent = from + suffix;
+        // The label keeps its final figure in the page text until the chart
+        // comes into view; only then does it count up from the start value.
         onceInView(svg, function () {
           svg.classList.add('is-drawn');
           if (label && !isNaN(from) && !isNaN(to)) {
+            label.textContent = from + suffix;
             countUp(label, from, to, suffix, 2000);
           }
         });
@@ -318,7 +422,9 @@
     });
   }
 
+  setupAnalytics();
   setupBooking();
+  setupBookingEvents();
   setupHeader();
   setupScrollDepth();
   setupContactEmail();
