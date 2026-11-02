@@ -15,8 +15,9 @@
       <div class="hero-copy">
         <h1>{{copy:hero.heading}}</h1>
         <p class="lede">{{copy:hero.tagline}}</p>
+        <p class="hero-offer">{{copy:hero.offer}}</p>
         <a class="book" data-book="hero" href="#book">{{copy:cta.primary}}</a>
-        <p class="nda">{{copy:privacy.note}}</p>
+        <p class="nda">{{copy:hero.button_note}}</p>
         <div class="founder-note">
           <div class="faces">
             <img src="/assets/john-von-640.jpg" alt="{{attr:founders.john.name}}" width="128" height="128" style="object-position: center 38%;">
@@ -79,13 +80,9 @@
       </figure>
     </div>
 
-    <section class="block results" id="results">
-      <p class="lede">{{copy:results.intro}}</p>
-      <p class="best-fit">{{copy:results.best_fit_tools}}</p>
-    </section>
-
     <aside class="position-band" id="office">
       <p>{{copy:results.position}}</p>
+      <p class="best-fit">{{copy:results.best_fit_tools}}</p>
     </aside>
 
     <aside class="proof-strip" aria-label="{{attr:proof.label}}">
@@ -111,6 +108,41 @@
         </li>
       </ul>
     </aside>
+
+    <section class="block" id="process">
+      <h2>{{copy:process.heading}}</h2>
+      <p class="section-intro">{{copy:process.intro}}</p>
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>{{copy:process.step_1_heading}}</h3>
+            <p>{{copy:process.step_1_body}}</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>{{copy:process.step_2_heading}}</h3>
+            <p>{{copy:process.step_2_body}}</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>{{copy:process.step_3_heading}}</h3>
+            <p>{{copy:process.step_3_body}}</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>{{copy:process.step_4_heading}}</h3>
+            <p>{{copy:process.step_4_body}}</p>
+          </div>
+        </li>
+      </ol>
+      <div class="section-cta">
+        <a class="book" data-book="process" href="#book">{{copy:cta.primary}}</a>
+        <p>{{copy:process.cta_note}}</p>
+      </div>
+    </section>
 
     <section class="block" id="segments">
       <h2>{{copy:segments.heading}}</h2>
@@ -147,7 +179,7 @@
             <li>{{copy:segments.musictech.item_3}}</li>
           </ul>
         </article>
-        <article class="segment" id="founders">
+        <article class="segment" id="small-teams">
           <figure class="segment-fig" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="19" cy="15" r="5.5"/>
@@ -174,6 +206,7 @@
         <a href="/venues-and-promoters.html">Venues and promoters<span aria-hidden="true"> ↗</span></a>
         <a href="/artists-and-managers.html">Artist businesses and managers<span aria-hidden="true"> ↗</span></a>
         <a href="/schools-and-education.html">Schools and education<span aria-hidden="true"> ↗</span></a>
+        <a href="/music-tech.html">{{copy:segments.musictech.link}}<span aria-hidden="true"> ↗</span></a>
       </nav>
     </section>
 
@@ -224,37 +257,6 @@
       </div>
     </section>
 
-    <section class="block" id="process">
-      <h2>{{copy:process.heading}}</h2>
-      <p class="section-intro">{{copy:process.intro}}</p>
-      <ol class="steps">
-        <li>
-          <div>
-            <h3>{{copy:process.step_1_heading}}</h3>
-            <p>{{copy:process.step_1_body}}</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h3>{{copy:process.step_2_heading}}</h3>
-            <p>{{copy:process.step_2_body}}</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h3>{{copy:process.step_3_heading}}</h3>
-            <p>{{copy:process.step_3_body}}</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h3>{{copy:process.step_4_heading}}</h3>
-            <p>{{copy:process.step_4_body}}</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
     <section class="block" id="case-studies">
       <h2>{{copy:cases.heading}}</h2>
       <div class="cases">
@@ -281,6 +283,7 @@
             </div>
           </figure>
           <div class="case-copy">
+            <p class="case-label">{{copy:cases.futureproof.label}}</p>
             <h3>{{copy:cases.futureproof.heading}}</h3>
             <div class="fact">
               <p>{{copy:cases.futureproof.fact_1}}</p>
@@ -311,6 +314,7 @@
             </svg>
           </figure>
           <div class="case-copy">
+            <p class="case-label">{{copy:cases.labs.label}}</p>
             <h3>{{copy:cases.labs.heading}}</h3>
             <div class="fact">
               <p>{{copy:cases.labs.fact_1}}</p>
@@ -338,6 +342,7 @@
             </svg>
           </figure>
           <div class="case-copy">
+            <p class="case-label">{{copy:cases.icon.label}}</p>
             <h3>{{copy:cases.icon.heading}}</h3>
             <div class="fact">
               <p>{{copy:cases.icon.fact_1}}</p>
@@ -350,6 +355,10 @@
             </div>
           </div>
         </article>
+      </div>
+      <div class="section-cta">
+        <a class="book" data-book="cases" href="#book">{{copy:cta.primary}}</a>
+        <p>{{copy:cases.cta_note}}</p>
       </div>
     </section>
 
@@ -365,7 +374,10 @@
             <h3>{{copy:founders.john.name}}</h3>
             <p class="role">{{copy:founders.john.role}}</p>
             <p>{{copy:founders.john.bio_1}}</p>
-            <p>{{copy:founders.john.bio_2}}</p>
+            <details class="bio-more">
+              <summary>{{copy:founders.john.more_label}}</summary>
+              <p>{{copy:founders.john.bio_2}}</p>
+            </details>
             <p class="links">
               <a href="https://www.linkedin.com/in/johnvon/" target="_blank" rel="noopener noreferrer">{{copy:founders.john.linkedin_label}}<span class="visually-hidden"> {{copy:founders.john.linkedin_description}}</span></a>
               <a href="https://futureproofmusicschool.com" target="_blank" rel="noopener noreferrer">{{copy:founders.john.futureproof_label}}<span class="visually-hidden"> {{copy:founders.john.futureproof_description}}</span></a>
@@ -382,7 +394,10 @@
             <h3>{{copy:founders.tsotne.name}}</h3>
             <p class="role">{{copy:founders.tsotne.role_1}}<br>{{copy:founders.tsotne.role_2}}</p>
             <p>{{copy:founders.tsotne.bio_1}}</p>
-            <p>{{copy:founders.tsotne.bio_2}}</p>
+            <details class="bio-more">
+              <summary>{{copy:founders.tsotne.more_label}}</summary>
+              <p>{{copy:founders.tsotne.bio_2}}</p>
+            </details>
             <p class="links">
               <a href="https://www.linkedin.com/in/tsotnetunes/" target="_blank" rel="noopener noreferrer">{{copy:founders.tsotne.linkedin_label}}<span class="visually-hidden"> {{copy:founders.tsotne.linkedin_description}}</span></a>
               <a href="https://tunepal.ai" target="_blank" rel="noopener noreferrer">{{copy:founders.tsotne.tunepal_label}}<span class="visually-hidden"> {{copy:founders.tsotne.tunepal_description}}</span></a>
@@ -419,6 +434,14 @@
           <summary>{{copy:faq.question_6}}</summary>
           <p>{{copy:faq.answer_6}}</p>
         </details>
+        <details>
+          <summary>{{copy:faq.question_7}}</summary>
+          <p>{{copy:faq.answer_7}}</p>
+        </details>
+        <details>
+          <summary>{{copy:faq.question_8}}</summary>
+          <p>{{copy:faq.answer_8}}</p>
+        </details>
       </div>
     </section>
   </div>
@@ -432,24 +455,7 @@
           <p class="nda">{{copy:privacy.note}}</p>
         </div>
         <div class="closing-action">
-          <!-- Cal inline embed code begins -->
-          <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
-          <script type="text/javascript">
-            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-            Cal("init", "30min", {origin:"https://app.cal.com"});
-            Cal.config = Cal.config || {};
-            Cal.config.forwardQueryParams = true;
-
-            Cal.ns["30min"]("inline", {
-              elementOrSelector:"#my-cal-inline-30min",
-              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-              calLink: "john-von-seggern-czdmwr/30min",
-            });
-
-            Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-          </script>
-          <!-- Cal inline embed code ends -->
-          <a class="book-fallback" data-book="calendar_tab" id="booking-fallback" href="https://cal.com/john-von-seggern-czdmwr/30min" target="_blank" rel="noopener noreferrer">{{copy:closing.calendar_label}}<span class="visually-hidden"> {{copy:accessibility.new_tab}}</span></a>
+          {{include:_booking.html}}
         </div>
       </div>
       <p class="best-fit">{{copy:closing.best_fit_systems}}</p>

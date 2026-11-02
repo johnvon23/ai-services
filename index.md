@@ -41,8 +41,14 @@ AI systems for founders and small teams
 <!-- copy:hero.tagline -->
 Grow the business. *Not the busywork.*
 
+<!-- copy:hero.offer -->
+We find the recurring work eating your team’s week, from lead follow-up and support inboxes to reporting and admin, then automate it inside the tools you already use.
+
 <!-- copy:privacy.note -->
 Customer data, contracts, and unreleased work stay private. Happy to sign an NDA before the first call.
+
+<!-- copy:hero.button_note -->
+Free opportunity map within 48 hours. Your data stays private; NDA on request.
 
 <!-- copy:hero.founder_note -->
 We run these systems in our own music school and music-tech company. Speak directly with John and Tsotne. If we don’t see a worthwhile opportunity, we’ll tell you.
@@ -78,9 +84,6 @@ Automation handles the handoffs. Your team keeps the judgment.
 
 ## Results and positioning
 
-<!-- copy:results.intro -->
-We find the recurring work eating your week, from lead follow-up and support inboxes to reporting and admin, then build reliable automations inside the tools you already use.
-
 <!-- copy:results.best_fit_tools -->
 Best for founders and small teams with recurring work, more tools than people, and no time to work out AI on their own.
 
@@ -90,7 +93,7 @@ We automate the spreadsheet work. Not the creative work, the decisions, or the r
 ## Company proof
 
 <!-- copy:proof.label -->
-Companies we’ve founded, led, or built systems for
+Companies we’ve founded or worked at
 
 <!-- copy:proof.futureproof_name -->
 Futureproof Music School
@@ -142,6 +145,9 @@ Launch and release checklists that run themselves
 <!-- copy:segments.musictech.item_3 -->
 Customer feedback and review roundups
 
+<!-- copy:segments.musictech.link -->
+Music and audio tech teams
+
 <!-- copy:segments.founders.heading -->
 Founders and small teams, any field
 
@@ -192,13 +198,13 @@ Bring us the messy version. Walk us through the tools, the handoffs, and the thi
 Working session
 
 <!-- copy:process.step_1_body -->
-30 minutes, free. 
+30 minutes, free.
 
 <!-- copy:process.step_2_heading -->
 Opportunity map
 
 <!-- copy:process.step_2_body -->
-A short written audit: the workflows worth automating, ranked by hours saved, with a build recommendation.
+Free, within 48 hours: the workflows worth automating, ranked by hours saved, with a build recommendation.
 
 <!-- copy:process.step_3_heading -->
 Pilot build
@@ -211,6 +217,9 @@ Run and extend
 
 <!-- copy:process.step_4_body -->
 We maintain the system, or hand it to your team documented.
+
+<!-- copy:process.cta_note -->
+The first two steps are free. Pilots are quoted after the opportunity map.
 
 ## Case studies
 
@@ -282,6 +291,9 @@ Weekly KPI roll-up
 <!-- copy:cases.futureproof.end -->
 9:00am, the team logs in
 
+<!-- copy:cases.futureproof.label -->
+System we built
+
 <!-- copy:cases.futureproof.heading -->
 A team of four doing the work of twenty.
 
@@ -314,6 +326,9 @@ K
 <!-- copy:cases.labs.chart_period -->
 One year
 
+<!-- copy:cases.labs.label -->
+Growth we led
+
 <!-- copy:cases.labs.heading -->
 From 15K to 60K Instagram followers in one year.
 
@@ -343,6 +358,9 @@ Icon Collective’s online student population tripled during John’s seven-plus
 <!-- copy:cases.icon.chart_period -->
 Seven years
 
+<!-- copy:cases.icon.label -->
+Program we ran
+
 <!-- copy:cases.icon.heading -->
 Online student population tripled.
 
@@ -355,13 +373,16 @@ He designed a competency-based, self-paced learning model from scratch and broug
 <!-- copy:cases.icon.fact_3 -->
 The online student population tripled during his tenure.
 
+<!-- copy:cases.cta_note -->
+Bring one task your team repeats every week. We’ll tell you if it’s worth automating.
+
 ## Founders
 
 <!-- copy:founders.heading -->
 You’ll work directly with us.
 
 <!-- copy:founders.intro -->
-Both of us come from music production and music technology, not from outside consulting. Between us: two decades at Dubspot, Point Blank, Icon Collective, 343 Labs, and Native Instruments, one music school founded, one music technology company founded, and two AI products built from scratch.
+Both of us come from music production and music technology, not from outside consulting. Between us: two decades at Dubspot, Point Blank, Icon Collective, 343 Labs, and Native Instruments, one music school founded, one music technology company co-founded, and two AI products built from scratch.
 
 ### John von Seggern
 
@@ -376,6 +397,9 @@ John founded Futureproof Music School, where he built Kadence, an AI music-produ
 
 <!-- copy:founders.john.bio_2 -->
 Earlier, John co-founded Modus Institute, an online school teaching Lean process improvement, and spent six years managing Native Instruments’ North American support team. He wrote the books Ableton Live 6 Power! and Laptop Music Power!, plus the official reference manual for the Massive synthesizer, and has sound design credits on major films including WALL-E. He holds an MA in Ethnomusicology from UC Riverside and a BA in Music from Carleton College.
+
+<!-- copy:founders.john.more_label -->
+More about John
 
 <!-- copy:founders.john.linkedin_label -->
 LinkedIn
@@ -404,16 +428,19 @@ Press and interviews
 Tsotne Arbolishvili
 
 <!-- copy:founders.tsotne.role_1 -->
-Founder, CTO and CMO, TunePal
+Co-founder, CTO and CMO, TunePal
 
 <!-- copy:founders.tsotne.role_2 -->
 Former Head of Growth, 343 Labs
 
 <!-- copy:founders.tsotne.bio_1 -->
-Tsotne has spent sixteen years growing music and creative companies, and the last three building AI products and internal business systems. He is the founder, CTO and CMO of TunePal, a startup building a browser-based AI music-production tool that generates stems, analyzes loops, and builds full arrangements, including a native Ableton Live export he engineered himself. Before TunePal he spent six years as Head of Growth and Marketing at 343 Labs, the New York music school, where he also created 343 Pro Sessions, a masterclass series that brought more than twenty world-class artists to the school.
+Tsotne has spent sixteen years growing music and creative companies, and the last three building AI products and internal business systems. He is a co-founder, CTO and CMO of TunePal, a startup building a browser-based AI music-production tool that generates stems, analyzes loops, and builds full arrangements, including a native Ableton Live export he engineered himself. Before TunePal he spent six years as Head of Growth and Marketing at 343 Labs, the New York music school, where he also created 343 Pro Sessions, a masterclass series that brought more than twenty world-class artists to the school.
 
 <!-- copy:founders.tsotne.bio_2 -->
 His technical work is grounded in his own creative practice. He has produced electronic music in Ableton Live for eighteen-plus years (deep house and techno, with releases on Spotify, DJ sets at Good Room and TBA Brooklyn, and his own custom Max for Live devices) and creates 3D visuals in Cinema 4D and Unreal Engine. Since 2010 he has also consulted independently on AI, marketing, and automation for companies across music, SaaS, and the creator economy, guiding several from early stage to profitability.
+
+<!-- copy:founders.tsotne.more_label -->
+More about Tsotne
 
 <!-- copy:founders.tsotne.linkedin_label -->
 LinkedIn
@@ -433,39 +460,51 @@ TunePal
 Questions before a call.
 
 <!-- copy:faq.question_1 -->
-Do you replace staff?
+What happens in the 30-minute session?
 
 <!-- copy:faq.answer_1 -->
-No. Your team keeps the judgment, the money, and the customer relationships.
+You talk with John and Tsotne. Walk us through your tools, your handoffs, and what keeps slipping; no preparation needed. We’ll find the opportunity worth pursuing, or tell you if there isn’t one.
 
 <!-- copy:faq.question_2 -->
-What tools do you work with?
+Is the opportunity map free?
 
 <!-- copy:faq.answer_2 -->
-CRMs, email, spreadsheets, course and payment platforms, and project tools. We build inside the stack you already use.
+Yes. Within 48 hours of the session you get a short written map: the workflows worth automating, ranked by hours saved, with a build recommendation.
 
 <!-- copy:faq.question_3 -->
-How long until something is live?
-
-<!-- copy:faq.answer_3 -->
-A pilot is typically live in 2 to 4 weeks.
-
-<!-- copy:faq.question_4 -->
 What does it cost?
 
+<!-- copy:faq.answer_3 -->
+The working session and the opportunity map are free. Pilot pricing is quoted after the opportunity map, once we know the workflow.
+
+<!-- copy:faq.question_4 -->
+Do you replace staff?
+
 <!-- copy:faq.answer_4 -->
-The working session is free. Pilot pricing is quoted after the opportunity map, once we know the workflow.
+No. Your team keeps the judgment, the money, and the customer relationships.
 
 <!-- copy:faq.question_5 -->
-What about our private data?
+What tools do you work with?
 
 <!-- copy:faq.answer_5 -->
-We are happy to sign an NDA before the first call. Customer data, contracts, and unreleased work stay in your accounts.
+CRMs, email, spreadsheets, course and payment platforms, and project tools. We build inside the stack you already use.
 
 <!-- copy:faq.question_6 -->
-Do we need anyone technical on our side?
+How long until something is live?
 
 <!-- copy:faq.answer_6 -->
+A pilot is typically live in 2 to 4 weeks.
+
+<!-- copy:faq.question_7 -->
+What about our private data?
+
+<!-- copy:faq.answer_7 -->
+We are happy to sign an NDA before the first call. Customer data, contracts, and unreleased work stay in your accounts.
+
+<!-- copy:faq.question_8 -->
+Do we need anyone technical on our side?
+
+<!-- copy:faq.answer_8 -->
 No.
 
 ## Closing call to action and footer
@@ -475,9 +514,6 @@ Let’s find the best place to start.
 
 <!-- copy:closing.body -->
 Thirty minutes, free. Bring the systems, the bottlenecks, the unanswered questions. We’ll find the opportunity worth pursuing, or tell you if there isn’t one.
-
-<!-- copy:closing.calendar_label -->
-Open the calendar in a new tab
 
 <!-- copy:accessibility.new_tab -->
 (opens in a new tab)
